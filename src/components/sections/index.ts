@@ -1,0 +1,6 @@
+export { default as PhilosophySection } from './PhilosophySection'
+export { default as DentalTreatments } from './DentalTreatments'
+export { default as FacialAesthetics } from './FacialAesthetics'
+export { default as TeamSection } from './TeamSection'
+export { default as TestimonialsSection } from './TestimonialsSection'
+export { default as ContactSection } from './ContactSection'
