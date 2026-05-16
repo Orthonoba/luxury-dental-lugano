@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "about": "Chi Siamo",
+    "dental": "Dentale",
+    "facial": "Estetica Facciale",
+    "gallery": "Galleria",
+    "team": "Team",
+    "contact": "Contatto",
+    "bookNow": "Prenota"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Estetica Facciale",
+    "headline1": "Trasforma",
+    "headline2": "Il Tuo Sorriso,",
+    "headline3": "Rivela la Tua Bellezza",
+    "subtitle": "Dove la precisione svizzera incontra la bellezza naturale. Clinica premium a Lugano, Ticino.",
+    "ctaPrimary": "Prenota Consulenza",
+    "ctaSecondary": "Scopri i Servizi"
+  },
+  "common": {
+    "bookConsultation": "Prenota una Consulenza",
+    "learnMore": "Scopri di Più",
+    "contactUs": "Contattaci",
+    "viewAll": "Vedi Tutto"
+  },
+  "contact": {
+    "title": "Inizia il tuo percorso",
+    "subtitle": "Siamo qui per ascoltarti e guidarti verso il sorriso che meriti.",
+    "name": "Nome completo",
+    "email": "Email",
+    "phone": "Telefono",
+    "service": "Servizio di interesse",
+    "message": "Messaggio",
+    "send": "Invia messaggio",
+    "whatsapp": "Scrivici su WhatsApp"
+  }
+}

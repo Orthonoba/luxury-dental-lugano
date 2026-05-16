@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "about": "[FR] À Propos",
+    "dental": "[FR] Dentaire",
+    "facial": "[FR] Esthétique Faciale",
+    "gallery": "[FR] Galerie",
+    "team": "[FR] Équipe",
+    "contact": "[FR] Contact",
+    "bookNow": "[FR] Réserver"
+  },
+  "hero": {
+    "badge": "[FR] Digital Smile Design & Esthétique Faciale",
+    "headline1": "[FR] Transformez",
+    "headline2": "[FR] Votre Sourire,",
+    "headline3": "[FR] Révélez Votre Beauté",
+    "subtitle": "[FR] Where Swiss precision meets natural beauty. Premium clinic in Lugano, Ticino.",
+    "ctaPrimary": "[FR] Prendre rendez-vous",
+    "ctaSecondary": "[FR] Découvrir nos soins"
+  },
+  "common": {
+    "bookConsultation": "[FR] Prendre rendez-vous",
+    "learnMore": "[FR] En savoir plus",
+    "contactUs": "[FR] Nous contacter",
+    "viewAll": "[FR] Voir tout"
+  },
+  "contact": {
+    "title": "[FR] Commencez votre parcours",
+    "subtitle": "[FR] Nous sommes là pour vous écouter et vous guider.",
+    "name": "[FR] Nom complet",
+    "email": "[FR] Adresse email",
+    "phone": "[FR] Numéro de téléphone",
+    "service": "[FR] Service souhaité",
+    "message": "[FR] Message",
+    "send": "[FR] Envoyer le message",
+    "whatsapp": "[FR] Chat sur WhatsApp"
+  }
+}

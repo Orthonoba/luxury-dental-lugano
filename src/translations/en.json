@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "about": "About",
+    "dental": "Dental",
+    "facial": "Facial Aesthetics",
+    "gallery": "Gallery",
+    "team": "Team",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Facial Aesthetics",
+    "headline1": "Transform",
+    "headline2": "Your Smile,",
+    "headline3": "Reveal Your Beauty",
+    "subtitle": "Where Swiss precision meets natural beauty. Premium clinic in Lugano, Ticino.",
+    "ctaPrimary": "Book Consultation",
+    "ctaSecondary": "Explore Services"
+  },
+  "common": {
+    "bookConsultation": "Book a Consultation",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "viewAll": "View All"
+  },
+  "contact": {
+    "title": "Begin your journey",
+    "subtitle": "We are here to listen and guide you toward the smile you deserve.",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "service": "Service of interest",
+    "message": "Message",
+    "send": "Send message",
+    "whatsapp": "Chat on WhatsApp"
+  }
+}

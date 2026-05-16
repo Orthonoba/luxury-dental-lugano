@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Input } from '@/components/ui/Input'
+import { Textarea } from '@/components/ui/Textarea'
 
 const serviceOptions = [
   'Digital Smile Design',
@@ -20,10 +22,10 @@ const hours = [
   { day: 'Sunday', time: 'Closed' },
 ]
 
-const inputClass =
-  'w-full px-4 py-3.5 rounded-xl border border-beige bg-beige-light focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all duration-300 text-luxury-black placeholder:text-luxury-black/30 text-sm'
+const selectClass =
+  'w-full px-4 py-3.5 rounded-xl border border-beige bg-beige-light focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all duration-300 text-luxury-black text-sm appearance-none cursor-pointer'
 
-const labelClass =
+const selectLabelClass =
   'block text-[10px] tracking-[0.25em] uppercase text-luxury-black/40 font-semibold mb-2'
 
 export default function ContactSection() {
@@ -36,8 +38,10 @@ export default function ContactSection() {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const set = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-    setForm((prev) => ({ ...prev, [key]: e.target.value }))
+  const set =
+    (key: keyof typeof form) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setForm((prev) => ({ ...prev, [key]: e.target.value }))
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -65,8 +69,8 @@ export default function ContactSection() {
             className="font-display font-bold text-luxury-black leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
-            Begin Your
-            <span className="block text-olive italic font-medium">Transformation</span>
+            Begin Your{' '}
+            <span className="text-olive italic font-medium">Transformation</span>
           </motion.h2>
         </div>
 
@@ -101,74 +105,66 @@ export default function ContactSection() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="name" className={labelClass}>Full Name</label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      autoComplete="name"
-                      value={form.name}
-                      onChange={set('name')}
-                      className={inputClass}
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className={labelClass}>Email Address</label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      autoComplete="email"
-                      value={form.email}
-                      onChange={set('email')}
-                      className={inputClass}
-                      placeholder="your@email.com"
-                    />
-                  </div>
+                  <Input
+                    label="Full Name"
+                    id="name"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    value={form.name}
+                    onChange={set('name')}
+                    placeholder="Your full name"
+                  />
+                  <Input
+                    label="Email Address"
+                    id="email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    value={form.email}
+                    onChange={set('email')}
+                    placeholder="your@email.com"
+                  />
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
+                  <Input
+                    label="Phone Number"
+                    id="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    value={form.phone}
+                    onChange={set('phone')}
+                    placeholder="+41 91 994 50 51"
+                  />
                   <div>
-                    <label htmlFor="phone" className={labelClass}>Phone Number</label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      value={form.phone}
-                      onChange={set('phone')}
-                      className={inputClass}
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className={labelClass}>Service Interest</label>
+                    <label htmlFor="service" className={selectLabelClass}>
+                      Service Interest
+                    </label>
                     <select
                       id="service"
                       value={form.service}
                       onChange={set('service')}
-                      className={inputClass}
+                      className={selectClass}
                     >
                       <option value="">Select a service</option>
                       {serviceOptions.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
                       ))}
                     </select>
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="message" className={labelClass}>Your Message</label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    value={form.message}
-                    onChange={set('message')}
-                    className={`${inputClass} resize-none`}
-                    placeholder="Tell us about your goals and what you'd like to achieve..."
-                  />
-                </div>
+                <Textarea
+                  label="Your Message"
+                  id="message"
+                  value={form.message}
+                  onChange={set('message')}
+                  rows={5}
+                  placeholder="Tell us about your goals and what you'd like to achieve..."
+                />
 
                 <button
                   type="submit"
@@ -192,22 +188,25 @@ export default function ContactSection() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-2 space-y-8"
           >
-            {/* Map placeholder */}
-            <div className="h-52 rounded-2xl overflow-hidden bg-linear-to-br from-olive/8 via-beige to-beige-light relative border border-beige">
+            {/* Map placeholder — golden ratio */}
+            <div
+              className="w-full rounded-2xl overflow-hidden bg-linear-to-br from-olive/8 via-beige to-beige-light relative border border-beige"
+              style={{ aspectRatio: '1.618 / 1' }}
+            >
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-3">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" strokeWidth={1.5} className="w-5 h-5">
+                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" strokeWidth={1.5} className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                   </svg>
                 </div>
                 <p className="text-luxury-black font-semibold text-sm">Via Riva Paradiso 4</p>
-                <p className="text-luxury-black/40 text-xs mt-1">6900 Paradiso / Lugano, Switzerland</p>
+                <p className="text-luxury-black/50 text-xs mt-1">6900 Paradiso / Lugano, Switzerland</p>
                 <a
-                  href="https://maps.google.com/?q=Via+Riva+Paradiso+4,+6900+Lugano,+Switzerland"
+                  href="https://maps.google.com/?q=Via+Riva+Paradiso+4,+6900+Paradiso,+Lugano,+Switzerland"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 text-olive text-[10px] tracking-[0.2em] uppercase font-semibold hover:underline"
+                  className="mt-4 text-olive text-[10px] tracking-[0.2em] uppercase font-semibold hover:underline"
                 >
                   Get Directions →
                 </a>
@@ -220,9 +219,26 @@ export default function ContactSection() {
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gold font-semibold mb-3">
                   Contact
                 </p>
-                <a href="tel:0919945051" className="text-luxury-black font-medium text-sm hover:text-olive transition-colors">091 994 50 51</a>
-                <br />
-                <a href="mailto:info@luxurydental.ch" className="text-luxury-black/50 text-sm mt-1 hover:text-olive transition-colors">info@luxurydental.ch</a>
+                <div className="space-y-1">
+                  <a
+                    href="tel:0919945051"
+                    className="block text-luxury-black font-medium text-sm hover:text-olive transition-colors"
+                  >
+                    091 994 50 51
+                  </a>
+                  <a
+                    href="tel:0916826805"
+                    className="block text-luxury-black/60 text-sm hover:text-olive transition-colors"
+                  >
+                    091 682 68 05
+                  </a>
+                  <a
+                    href="mailto:info@luxurydental.ch"
+                    className="block text-luxury-black/50 text-sm mt-2 hover:text-olive transition-colors"
+                  >
+                    info@luxurydental.ch
+                  </a>
+                </div>
               </div>
 
               <div className="pb-6 border-b border-beige">
