@@ -139,8 +139,8 @@ function ComparisonSlider({
         className="absolute top-0 bottom-0 w-px bg-white shadow-[0_0_12px_rgba(255,255,255,0.8)] z-10 pointer-events-none"
         style={{ left: `${position}%` }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 text-luxury-black/50">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white shadow-2xl shadow-black/20 flex items-center justify-center border border-white/80">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} className="w-5 h-5 text-luxury-black/60">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
           </svg>
         </div>
@@ -203,14 +203,17 @@ export default function BeforeAfterGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="group"
             >
-              <ComparisonSlider
-                beforeBg={c.beforeBg}
-                afterBg={c.afterBg}
-                label={c.treatment}
-              />
+              <div className="overflow-hidden rounded-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-olive/10">
+                <ComparisonSlider
+                  beforeBg={c.beforeBg}
+                  afterBg={c.afterBg}
+                  label={c.treatment}
+                />
+              </div>
               <div className="mt-5">
-                <p className="font-display font-semibold text-luxury-black text-lg">
+                <p className="font-display font-semibold text-luxury-black text-lg group-hover:text-olive transition-colors duration-300">
                   {c.treatment}
                 </p>
                 <p className="text-luxury-black/40 text-xs tracking-wide mt-1">{c.description}</p>

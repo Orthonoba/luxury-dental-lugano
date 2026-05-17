@@ -6,6 +6,7 @@ import {
   FacialAesthetics,
   TeamSection,
   TestimonialsSection,
+  LatinPatientSection,
   ContactSection,
 } from '@/components/sections'
 import { BeforeAfterGallery } from '@/components/gallery'
@@ -23,6 +24,7 @@ export default function Home() {
         <BeforeAfterGallery />
         <TeamSection />
         <TestimonialsSection />
+        <LatinPatientSection />
         <ContactSection />
       </main>
       <Footer />

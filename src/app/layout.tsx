@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     'Premium dental and facial aesthetics clinic in Lugano, Switzerland. Digital Smile Design, Porcelain Veneers, Clear Aligners, and advanced facial treatments with Swiss precision and artistic excellence.',
   keywords:
-    'Luxury Dentist Lugano, Swiss Dental Clinic, Digital Smile Design Switzerland, Facial Aesthetics Lugano, dental aesthetics Ticino, veneers Lugano, clear aligners Switzerland, teeth whitening Lugano, porcelain veneers, anti-aging Lugano, skin rejuvenation, Paradiso Lugano, dentista Lugano, studio dentistico Ticino',
+    'Luxury Dentist Lugano, Swiss Dental Clinic, Digital Smile Design Switzerland, Facial Aesthetics Lugano, dental aesthetics Ticino, veneers Lugano, clear aligners Switzerland, teeth whitening Lugano, porcelain veneers, anti-aging Lugano, skin rejuvenation, Paradiso Lugano, dentista Lugano, studio dentistico Ticino, Dentista en Lugano, Clínica Dental Suiza, Diseño de Sonrisa Suiza, Estética Facial Lugano, Dentista Suiza, tratamiento dental Lugano, clinica dental premium Suiza',
   authors: [{ name: 'Luxury Dental & Facial Estética' }],
   openGraph: {
     title: 'Luxury Dental Paradiso — Lugano, Switzerland',
@@ -55,6 +55,7 @@ export const metadata: Metadata = {
       en: 'https://www.luxurydental.ch/en',
       de: 'https://www.luxurydental.ch/de',
       fr: 'https://www.luxurydental.ch/fr',
+      es: 'https://www.luxurydental.ch/es',
     },
   },
 }

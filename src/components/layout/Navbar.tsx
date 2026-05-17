@@ -1,38 +1,67 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from '@/navigation'
+import { useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll } from '@/hooks/useScroll'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/dental', label: 'Dental' },
   { href: '/facial-aesthetics', label: 'Facial' },
   { href: '/before-after', label: 'Gallery' },
   { href: '/team', label: 'Team' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
 
-const locales = ['IT', 'EN', 'DE', 'FR'] as const
+type LocaleCode = 'IT' | 'EN' | 'DE' | 'FR' | 'ES'
+const LOCALES: { code: LocaleCode; value: string; label: string }[] = [
+  { code: 'IT', value: 'it', label: 'Italiano' },
+  { code: 'EN', value: 'en', label: 'English' },
+  { code: 'DE', value: 'de', label: 'Deutsch' },
+  { code: 'FR', value: 'fr', label: 'Français' },
+  { code: 'ES', value: 'es', label: 'Español' },
+]
 
 export default function Navbar() {
   const scrolled = useScroll(60)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [currentLocale, setCurrentLocale] = useState<(typeof locales)[number]>('IT')
+  const [langOpen, setLangOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
+  const langRef = useRef<HTMLDivElement>(null)
 
-  const getActivePath = (path: string) =>
-    path.replace(/^\/(en|de|fr)/, '') || '/'
+  const currentLocale = LOCALES.find((l) => l.value === locale) ?? LOCALES[0]
 
+  const getActivePath = (path: string) => path.replace(/^\/(en|de|fr|es)/, '') || '/'
   const isActive = (href: string) => getActivePath(pathname) === href
 
-  const cycleLocale = () => {
-    const idx = locales.indexOf(currentLocale)
-    setCurrentLocale(locales[(idx + 1) % locales.length])
+  const switchLocale = (value: string) => {
+    router.replace(pathname, { locale: value })
+    setLangOpen(false)
   }
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  useEffect(() => {
+    if (menuOpen) setMenuOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   return (
     <motion.header
@@ -60,14 +89,14 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop Navigation — xl: and above */}
+        <div className="hidden xl:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'text-[11px] tracking-[0.2em] uppercase font-medium transition-all duration-300 relative group',
+                'text-[10px] tracking-[0.18em] uppercase font-medium transition-all duration-300 relative group whitespace-nowrap',
                 isActive(link.href) ? 'text-gold' : 'text-white/65 hover:text-white'
               )}
             >
@@ -80,45 +109,91 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop Right Side */}
-        <div className="hidden lg:flex items-center gap-4">
-          {/* Language Selector */}
-          <button
-            onClick={cycleLocale}
-            className="flex items-center gap-1.5 text-white/50 hover:text-white/80 transition-colors duration-300"
-            aria-label="Change language"
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+        {/* Desktop Right Side — xl: and above */}
+        <div className="hidden xl:flex items-center gap-4">
+          {/* Language Dropdown */}
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 text-white/50 hover:text-white/80 transition-colors duration-300"
+              aria-label="Change language"
+              aria-expanded={langOpen}
             >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-            <span className="text-[10px] tracking-[0.15em] uppercase font-medium">
-              {currentLocale}
-            </span>
-          </button>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              <span className="text-[10px] tracking-[0.15em] uppercase font-medium">
+                {currentLocale.code}
+              </span>
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={cn('transition-transform duration-200', langOpen && 'rotate-180')}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
 
-          {/* Book Now CTA */}
+            <AnimatePresence>
+              {langOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-full right-0 mt-3 bg-[#0a0d06]/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-black/40 min-w-[140px]"
+                >
+                  {LOCALES.map((loc) => (
+                    <button
+                      key={loc.value}
+                      onClick={() => switchLocale(loc.value)}
+                      className={cn(
+                        'w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors duration-200',
+                        loc.value === locale
+                          ? 'text-gold bg-white/5'
+                          : 'text-white/50 hover:text-white hover:bg-white/5'
+                      )}
+                    >
+                      <span className="text-[10px] tracking-[0.15em] uppercase font-semibold w-6">
+                        {loc.code}
+                      </span>
+                      <span className="text-[11px] text-white/40">{loc.label}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Book Consultation CTA */}
           <Link
             href="/contact"
-            className="inline-flex items-center px-6 py-2.5 bg-olive text-white text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive-light transition-all duration-300 hover:shadow-lg hover:shadow-olive/25 hover:-translate-y-px"
+            className="inline-flex items-center px-6 py-2.5 bg-olive text-white text-[10px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive-light transition-all duration-300 hover:shadow-lg hover:shadow-olive/25 hover:-translate-y-px whitespace-nowrap"
           >
-            Book Now
+            Book Consultation
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile / Tablet Hamburger (shown below xl:) */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
+          className="xl:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
@@ -140,7 +215,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile / Tablet Slide Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -148,21 +223,21 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden overflow-hidden bg-[#0a0d06]/95 backdrop-blur-xl border-t border-white/8"
+            className="xl:hidden overflow-hidden bg-[#0a0d06]/95 backdrop-blur-xl border-t border-white/8"
           >
-            <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-5">
+            <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-4">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
                     className={cn(
-                      'block text-[11px] tracking-[0.2em] uppercase font-medium transition-colors',
+                      'block text-[11px] tracking-[0.2em] uppercase font-medium transition-colors py-1',
                       isActive(link.href) ? 'text-gold' : 'text-white/60 hover:text-white'
                     )}
                   >
@@ -172,21 +247,28 @@ export default function Navbar() {
               ))}
 
               {/* Mobile Language & CTA */}
-              <div className="flex items-center justify-between mt-2 pt-5 border-t border-white/8">
-                <button
-                  onClick={cycleLocale}
-                  className="flex items-center gap-1.5 text-white/50 hover:text-white/80 transition-colors"
-                >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                  <span className="text-[10px] tracking-[0.15em] uppercase font-medium">{currentLocale}</span>
-                </button>
+              <div className="flex items-center justify-between mt-3 pt-5 border-t border-white/8">
+                {/* Language selector mobile */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {LOCALES.map((loc) => (
+                    <button
+                      key={loc.value}
+                      onClick={() => switchLocale(loc.value)}
+                      className={cn(
+                        'text-[9px] tracking-[0.15em] uppercase font-semibold px-2.5 py-1 rounded-full border transition-colors duration-200',
+                        loc.value === locale
+                          ? 'border-gold text-gold'
+                          : 'border-white/15 text-white/40 hover:border-white/30 hover:text-white/60'
+                      )}
+                    >
+                      {loc.code}
+                    </button>
+                  ))}
+                </div>
                 <Link
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="py-3 px-7 bg-olive text-white text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive-light transition-colors"
+                  className="py-3 px-6 bg-olive text-white text-[10px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive-light transition-colors shrink-0"
                 >
                   Book Now
                 </Link>

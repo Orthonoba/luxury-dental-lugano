@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "dental": "Dental",
+    "facial": "Estética Facial",
+    "gallery": "Galería",
+    "team": "Equipo",
+    "testimonials": "Testimonios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "bookNow": "Reservar"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Estética Facial",
+    "headline1": "Transforma",
+    "headline2": "Tu Sonrisa,",
+    "headline3": "Revela Tu Belleza",
+    "subtitle": "Donde la precisión suiza se encuentra con la belleza natural. Clínica premium en Lugano, Ticino.",
+    "ctaPrimary": "Reservar Consulta",
+    "ctaSecondary": "Explorar Servicios"
+  },
+  "common": {
+    "bookConsultation": "Reservar una Consulta",
+    "learnMore": "Saber Más",
+    "contactUs": "Contáctanos",
+    "viewAll": "Ver Todo"
+  },
+  "contact": {
+    "title": "Comienza tu viaje",
+    "subtitle": "Estamos aquí para escucharte y guiarte hacia la sonrisa que mereces.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Número de teléfono",
+    "service": "Servicio de interés",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "whatsapp": "Chatear por WhatsApp"
+  },
+  "footer": {
+    "ctaHeadline": "Tu Sonrisa Perfecta en Suiza",
+    "ctaSubtitle": "Tratamientos de lujo con la precisión suiza que mereces",
+    "bookConsultation": "Reservar Consulta",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Llamar a la Clínica",
+    "clinic": "Clínica",
+    "treatments": "Tratamientos",
+    "social": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "sitemap": "Mapa del Sitio",
+    "terms": "Términos de Servicio",
+    "copyright": "Todos los derechos reservados."
+  },
+  "latin": {
+    "eyebrow": "Pacientes Internacionales",
+    "headline": "Experiencia Dental de Lujo en Suiza",
+    "subheadline": "Transformaciones premium en Lugano",
+    "body": "Atención personalizada en español, tratamientos de vanguardia y la precisión suiza que mereces. Tu viaje a la sonrisa perfecta comienza aquí.",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "consultation": "Reservar Consulta"
+  }
+}

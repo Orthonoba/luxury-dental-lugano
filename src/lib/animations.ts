@@ -70,3 +70,21 @@ export const floatSlow = {
     ease: 'easeInOut' as const,
   },
 }
+
+export const slideUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: LUXURY_EASE },
+  },
+}
+
+export const blurIn: Variants = {
+  hidden: { opacity: 0, filter: 'blur(12px)' },
+  visible: {
+    opacity: 1,
+    filter: 'blur(0px)',
+    transition: { duration: 0.8, ease: LUXURY_EASE },
+  },
+}

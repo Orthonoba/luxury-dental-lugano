@@ -1,10 +1,13 @@
 {
   "nav": {
+    "home": "Home",
     "about": "About",
     "dental": "Dental",
     "facial": "Facial Aesthetics",
     "gallery": "Gallery",
     "team": "Team",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
     "contact": "Contact",
     "bookNow": "Book Now"
   },
@@ -33,5 +36,27 @@
     "message": "Message",
     "send": "Send message",
     "whatsapp": "Chat on WhatsApp"
+  },
+  "footer": {
+    "ctaHeadline": "Your Perfect Smile in Lugano",
+    "ctaSubtitle": "Luxury treatments with the Swiss precision you deserve",
+    "bookConsultation": "Book Consultation",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Call the Clinic",
+    "clinic": "Clinic",
+    "treatments": "Treatments",
+    "social": "Social",
+    "privacyPolicy": "Privacy Policy",
+    "sitemap": "Sitemap",
+    "terms": "Terms of Service",
+    "copyright": "All rights reserved."
+  },
+  "latin": {
+    "eyebrow": "International Patients",
+    "headline": "Luxury Dental Experience in Switzerland",
+    "subheadline": "Premium transformations in Lugano",
+    "body": "Personalized care, cutting-edge treatments and Swiss precision. Your journey to the perfect smile begins here.",
+    "whatsapp": "Chat on WhatsApp",
+    "consultation": "Book Consultation"
   }
 }

@@ -1,37 +1,62 @@
 {
   "nav": {
-    "about": "[FR] À Propos",
-    "dental": "[FR] Dentaire",
-    "facial": "[FR] Esthétique Faciale",
-    "gallery": "[FR] Galerie",
-    "team": "[FR] Équipe",
-    "contact": "[FR] Contact",
-    "bookNow": "[FR] Réserver"
+    "home": "Accueil",
+    "about": "À Propos",
+    "dental": "Dentaire",
+    "facial": "Esthétique Faciale",
+    "gallery": "Galerie",
+    "team": "Équipe",
+    "testimonials": "Avis",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Réserver"
   },
   "hero": {
-    "badge": "[FR] Digital Smile Design & Esthétique Faciale",
-    "headline1": "[FR] Transformez",
-    "headline2": "[FR] Votre Sourire,",
-    "headline3": "[FR] Révélez Votre Beauté",
-    "subtitle": "[FR] Where Swiss precision meets natural beauty. Premium clinic in Lugano, Ticino.",
-    "ctaPrimary": "[FR] Prendre rendez-vous",
-    "ctaSecondary": "[FR] Découvrir nos soins"
+    "badge": "Digital Smile Design & Esthétique Faciale",
+    "headline1": "Transformez",
+    "headline2": "Votre Sourire,",
+    "headline3": "Révélez Votre Beauté",
+    "subtitle": "Où la précision suisse rencontre la beauté naturelle. Clinique premium à Lugano, Tessin.",
+    "ctaPrimary": "Prendre rendez-vous",
+    "ctaSecondary": "Découvrir nos soins"
   },
   "common": {
-    "bookConsultation": "[FR] Prendre rendez-vous",
-    "learnMore": "[FR] En savoir plus",
-    "contactUs": "[FR] Nous contacter",
-    "viewAll": "[FR] Voir tout"
+    "bookConsultation": "Prendre rendez-vous",
+    "learnMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "viewAll": "Voir tout"
   },
   "contact": {
-    "title": "[FR] Commencez votre parcours",
-    "subtitle": "[FR] Nous sommes là pour vous écouter et vous guider.",
-    "name": "[FR] Nom complet",
-    "email": "[FR] Adresse email",
-    "phone": "[FR] Numéro de téléphone",
-    "service": "[FR] Service souhaité",
-    "message": "[FR] Message",
-    "send": "[FR] Envoyer le message",
-    "whatsapp": "[FR] Chat sur WhatsApp"
+    "title": "Commencez votre parcours",
+    "subtitle": "Nous sommes là pour vous écouter et vous guider.",
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "phone": "Numéro de téléphone",
+    "service": "Service souhaité",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "whatsapp": "Chat sur WhatsApp"
+  },
+  "footer": {
+    "ctaHeadline": "Votre Sourire Parfait à Lugano",
+    "ctaSubtitle": "Traitements de luxe avec la précision suisse que vous méritez",
+    "bookConsultation": "Prendre rendez-vous",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Appeler la clinique",
+    "clinic": "Clinique",
+    "treatments": "Traitements",
+    "social": "Réseaux sociaux",
+    "privacyPolicy": "Politique de confidentialité",
+    "sitemap": "Plan du site",
+    "terms": "Conditions d'utilisation",
+    "copyright": "Tous droits réservés."
+  },
+  "latin": {
+    "eyebrow": "Patients Internationaux",
+    "headline": "Expérience Dentaire de Luxe en Suisse",
+    "subheadline": "Transformations premium à Lugano",
+    "body": "Soins personnalisés, traitements de pointe et précision suisse. Votre voyage vers le sourire parfait commence ici.",
+    "whatsapp": "Chat sur WhatsApp",
+    "consultation": "Prendre rendez-vous"
   }
 }

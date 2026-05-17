@@ -1,10 +1,13 @@
 {
   "nav": {
+    "home": "Home",
     "about": "Chi Siamo",
     "dental": "Dentale",
     "facial": "Estetica Facciale",
     "gallery": "Galleria",
     "team": "Team",
+    "testimonials": "Testimonianze",
+    "blog": "Blog",
     "contact": "Contatto",
     "bookNow": "Prenota"
   },
@@ -33,5 +36,27 @@
     "message": "Messaggio",
     "send": "Invia messaggio",
     "whatsapp": "Scrivici su WhatsApp"
+  },
+  "footer": {
+    "ctaHeadline": "Il Tuo Sorriso Perfetto a Lugano",
+    "ctaSubtitle": "Trattamenti di lusso con la precisione svizzera che meriti",
+    "bookConsultation": "Prenota Consulenza",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Chiama la Clinica",
+    "clinic": "Clinica",
+    "treatments": "Trattamenti",
+    "social": "Social",
+    "privacyPolicy": "Privacy Policy",
+    "sitemap": "Mappa del Sito",
+    "terms": "Termini di Servizio",
+    "copyright": "Tutti i diritti riservati."
+  },
+  "latin": {
+    "eyebrow": "Pazienti Internazionali",
+    "headline": "Esperienza Dentale di Lusso in Svizzera",
+    "subheadline": "Trasformazioni premium a Lugano",
+    "body": "Assistenza personalizzata, trattamenti all'avanguardia e la precisione svizzera che meriti. Il tuo viaggio verso il sorriso perfetto inizia qui.",
+    "whatsapp": "Scrivici su WhatsApp",
+    "consultation": "Prenota Consulenza"
   }
 }

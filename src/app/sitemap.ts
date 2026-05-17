@@ -1,20 +1,40 @@
 import type { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/config/site'
 
+const routes = [
+  { path: '',                    priority: 1.0, changeFrequency: 'weekly'  as const },
+  { path: '/dental',             priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/facial-aesthetics',  priority: 0.9, changeFrequency: 'monthly' as const },
+  { path: '/about',              priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/team',               priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/before-after',       priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/contact',            priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/testimonials',       priority: 0.7, changeFrequency: 'monthly' as const },
+  { path: '/blog',               priority: 0.6, changeFrequency: 'weekly'  as const },
+  { path: '/privacy-policy',     priority: 0.3, changeFrequency: 'yearly'  as const },
+]
+
+const locales = ['en', 'de', 'fr', 'es']
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE_CONFIG.url
   const now = new Date()
 
-  return [
-    { url: base,                              lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${base}/dental`,                  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/facial-aesthetics`,       lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/about`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/team`,                    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/before-after`,            lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/contact`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/testimonials`,            lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/blog`,                    lastModified: now, changeFrequency: 'weekly',  priority: 0.6 },
-    { url: `${base}/privacy-policy`,           lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
-  ]
+  const italianRoutes = routes.map(({ path, priority, changeFrequency }) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency,
+    priority,
+  }))
+
+  const localizedRoutes = locales.flatMap((locale) =>
+    routes.map(({ path, priority, changeFrequency }) => ({
+      url: `${base}/${locale}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority: priority * 0.9,
+    }))
+  )
+
+  return [...italianRoutes, ...localizedRoutes]
 }
