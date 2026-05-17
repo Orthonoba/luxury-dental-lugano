@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { blurIn, LUXURY_EASE } from '@/lib/animations'
 
 const services = [
   {
@@ -56,13 +57,17 @@ export default function FacialAesthetics() {
             <span className="block text-olive text-[10px] tracking-[0.4em] uppercase font-medium mb-6">
               Facial Aesthetics
             </span>
-            <h2
+            <motion.h2
+              variants={blurIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="font-display font-bold text-luxury-black leading-[1.08] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4vw, 3.25rem)' }}
             >
               Radiance
               <span className="block italic font-medium text-olive">Refined</span>
-            </h2>
+            </motion.h2>
             <p className="text-luxury-black/55 leading-relaxed mb-10 text-base">
               Our facial aesthetic treatments combine the latest medical advances with a deep
               understanding of natural beauty, delivering transformative results with zero compromise.
@@ -75,12 +80,15 @@ export default function FacialAesthetics() {
               <div className="w-3 h-1 rounded-full bg-beige-light" />
             </div>
 
-            <a
+            <motion.a
               href="#contact"
-              className="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-olive text-olive text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive hover:text-white transition-all duration-400"
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              className="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-olive text-olive text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive hover:text-white transition-colors duration-400"
             >
               Book Facial Consultation
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Right — services */}
@@ -91,7 +99,8 @@ export default function FacialAesthetics() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: LUXURY_EASE }}
+                whileHover={{ x: 4 }}
                 className={`group flex gap-8 p-8 rounded-2xl border-l-2 border-transparent hover:border-gold hover:bg-white transition-all duration-400 cursor-default ${service.accent} hover:border-l-gold`}
               >
                 <span className="font-display text-5xl font-black text-luxury-black/8 group-hover:text-gold/15 transition-colors duration-400 shrink-0 leading-none tabular-nums">

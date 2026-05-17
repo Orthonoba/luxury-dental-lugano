@@ -1,5 +1,6 @@
 /* Luxury animation keyframes — used alongside Framer Motion */
 
+/* ── Accessibility ── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -10,15 +11,10 @@
   }
 }
 
+/* ── Core keyframes ── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
@@ -26,12 +22,48 @@
   to   { opacity: 1; }
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.6; }
+@keyframes blurReveal {
+  from { opacity: 0; filter: blur(12px); }
+  to   { opacity: 1; filter: blur(0); }
 }
 
-@keyframes shimmer {
+/* ── Luxury keyframes ── */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes shimmer-gold {
   0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(200, 169, 107, 0.15); }
+  50%       { border-color: rgba(200, 169, 107, 0.35); }
+}
+
+@keyframes scale-breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+/* ── Utility classes ── */
+.animate-fade-up     { animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-blur-reveal { animation: blurReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-float       { animation: float-gentle 6s ease-in-out infinite; }
+.animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
+
+.animate-shimmer-gold {
+  background: linear-gradient(90deg, #C8A96B 0%, #E8DCCB 40%, #C8A96B 60%, #D4B97A 100%);
+  background-size: 200% auto;
+  animation: shimmer-gold 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

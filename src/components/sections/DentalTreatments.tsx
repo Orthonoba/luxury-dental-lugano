@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { stagger, fadeUp, LUXURY_EASE } from '@/lib/animations'
 
 const treatments = [
   {
@@ -10,8 +11,7 @@ const treatments = [
       </svg>
     ),
     title: 'Digital Smile Design',
-    description:
-      'Advanced 3D digital planning that lets you preview your perfect smile before any treatment begins. Precision-engineered for flawless outcomes.',
+    description: 'Advanced 3D digital planning that lets you preview your perfect smile before any treatment begins. Precision-engineered for flawless outcomes.',
     tag: 'Signature',
   },
   {
@@ -21,8 +21,7 @@ const treatments = [
       </svg>
     ),
     title: 'Clear Aligners',
-    description:
-      'Invisible orthodontic treatment using precision-crafted aligners for a perfect bite and beautiful smile. Discreet, comfortable, and effective.',
+    description: 'Invisible orthodontic treatment using precision-crafted aligners for a perfect bite and beautiful smile. Discreet, comfortable, and effective.',
     tag: 'Popular',
   },
   {
@@ -32,8 +31,7 @@ const treatments = [
       </svg>
     ),
     title: 'Mouth Guards',
-    description:
-      'Custom-fitted protective guards for athletes and those with bruxism, engineered for maximum comfort and long-term protection.',
+    description: 'Custom-fitted protective guards for athletes and those with bruxism, engineered for maximum comfort and long-term protection.',
     tag: '',
   },
   {
@@ -43,8 +41,7 @@ const treatments = [
       </svg>
     ),
     title: 'Essix Retainers',
-    description:
-      'Ultra-thin, crystal-clear retainers that maintain your smile alignment with undetectable precision after orthodontic treatment.',
+    description: 'Ultra-thin, crystal-clear retainers that maintain your smile alignment with undetectable precision after orthodontic treatment.',
     tag: '',
   },
   {
@@ -54,8 +51,7 @@ const treatments = [
       </svg>
     ),
     title: 'Sleep Dentistry',
-    description:
-      'Comfortable dental care under conscious sedation for a completely anxiety-free treatment experience. Rest while we perfect your smile.',
+    description: 'Comfortable dental care under conscious sedation for a completely anxiety-free treatment experience. Rest while we perfect your smile.',
     tag: '',
   },
   {
@@ -65,8 +61,7 @@ const treatments = [
       </svg>
     ),
     title: 'Porcelain Veneers',
-    description:
-      'Ultra-thin, custom-crafted porcelain shells that create a luminous, flawless smile. The gold standard in cosmetic dental transformation.',
+    description: 'Ultra-thin, custom-crafted porcelain shells that create a luminous, flawless smile. The gold standard in cosmetic dental transformation.',
     tag: 'Premium',
   },
   {
@@ -76,31 +71,40 @@ const treatments = [
       </svg>
     ),
     title: 'Teeth Whitening',
-    description:
-      'Professional-grade whitening delivering dramatically brighter, more youthful results in a single session. Safe, fast, and lasting.',
+    description: 'Professional-grade whitening delivering dramatically brighter, more youthful results in a single session. Safe, fast, and lasting.',
     tag: '',
   },
 ]
 
+const cardVariant = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.07, ease: LUXURY_EASE },
+  }),
+}
+
 export default function DentalTreatments() {
   return (
-    <section id="dental" className="py-32 bg-luxury-black">
+    <section id="dental" className="py-32 bg-luxury-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-2xl mb-20">
+        <motion.div
+          className="max-w-2xl mb-20"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            variants={fadeUp}
             className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6"
           >
             Dental Excellence
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            variants={fadeUp}
             className="font-display font-bold text-white leading-[1.08]"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
@@ -117,28 +121,39 @@ export default function DentalTreatments() {
               Treatments
             </span>
           </motion.h2>
-        </div>
+        </motion.div>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden">
           {treatments.map((treatment, index) => (
             <motion.div
               key={treatment.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              custom={index}
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.06 }}
-              className="group relative bg-luxury-black p-8 hover:bg-white/4 transition-all duration-500 cursor-default"
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.35, ease: LUXURY_EASE }}
+              className="group relative bg-luxury-black p-8 cursor-default hover:bg-white/4"
+              style={{ transition: 'background-color 0.4s ease' }}
             >
+              {/* Gold top-border reveal on hover */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gold/0 group-hover:bg-gold/20 transition-colors duration-500" />
+
               {treatment.tag && (
                 <span className="absolute top-6 right-6 text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full bg-gold/15 text-gold font-semibold">
                   {treatment.tag}
                 </span>
               )}
 
-              <div className="text-gold/50 group-hover:text-gold mb-6 transition-colors duration-400">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+                className="text-gold/50 group-hover:text-gold mb-6 w-fit transition-colors duration-400"
+              >
                 {treatment.icon}
-              </div>
+              </motion.div>
 
               <h3 className="font-display font-semibold text-white text-lg mb-3 leading-snug">
                 {treatment.title}
@@ -149,11 +164,31 @@ export default function DentalTreatments() {
 
               <div className="flex items-center gap-2 text-gold/40 group-hover:text-gold transition-colors duration-300">
                 <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Learn More</span>
-                <span className="group-hover:translate-x-1 transition-transform duration-300 text-xs">→</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300 text-xs inline-block">→</span>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-center mt-14"
+        >
+          <motion.a
+            href="/dental"
+            whileHover={{ y: -2, scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            className="inline-flex items-center gap-3 px-8 py-4 border border-white/12 text-white/55 text-[11px] tracking-[0.25em] uppercase font-medium rounded-full hover:border-gold/30 hover:text-gold transition-colors duration-300"
+          >
+            View All Treatments
+            <span className="text-xs">→</span>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )

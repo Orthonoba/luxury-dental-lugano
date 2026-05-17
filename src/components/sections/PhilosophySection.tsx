@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { blurIn, LUXURY_EASE } from '@/lib/animations'
 
 const pillars = [
   {
@@ -45,13 +46,17 @@ export default function PhilosophySection() {
             <span className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6">
               Our Approach
             </span>
-            <h2
+            <motion.h2
+              variants={blurIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
               className="font-display font-bold text-luxury-black leading-[1.08] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
             >
               The Art of
-              <span className="block text-olive">Precision Beauty</span>
-            </h2>
+              <span className="block text-olive italic">Precision Beauty</span>
+            </motion.h2>
             <p className="text-luxury-black/55 text-lg leading-relaxed mb-6">
               At Luxury Dental & Facial Estética, we believe that exceptional results come from the
               intersection of scientific precision and artistic sensitivity.
@@ -61,13 +66,22 @@ export default function PhilosophySection() {
               the essential, and delivering results that stand the test of time. Every smile we
               design, every treatment we perform is guided by a deep respect for natural beauty.
             </p>
-            <a
+            <motion.a
               href="#contact"
-              className="inline-flex items-center gap-3 text-olive text-[11px] tracking-[0.25em] uppercase font-semibold hover:gap-5 transition-all duration-300"
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+              className="inline-flex items-center gap-3 text-olive text-[11px] tracking-[0.25em] uppercase font-semibold"
             >
               Begin Your Journey
-              <span className="w-8 h-px bg-olive inline-block transition-all duration-300" />
-            </a>
+              <motion.span
+                variants={{
+                  rest: { width: '2rem', transition: { ease: LUXURY_EASE, duration: 0.4 } },
+                  hover: { width: '3.5rem', transition: { ease: LUXURY_EASE, duration: 0.4 } },
+                }}
+                className="h-px bg-olive inline-block"
+              />
+            </motion.a>
           </motion.div>
 
           {/* Right column — pillars */}

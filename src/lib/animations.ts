@@ -88,3 +88,40 @@ export const blurIn: Variants = {
     transition: { duration: 0.8, ease: LUXURY_EASE },
   },
 }
+
+export const hoverLift = {
+  rest: { y: 0, scale: 1, transition: { duration: 0.4, ease: LUXURY_EASE } },
+  hover: { y: -6, scale: 1.01, transition: { duration: 0.4, ease: LUXURY_EASE } },
+}
+
+export const hoverGlow = {
+  rest: { boxShadow: '0 0 0px 0px rgba(85,107,47,0)' },
+  hover: { boxShadow: '0 20px 60px -12px rgba(85,107,47,0.2)' },
+}
+
+export const staggerFast: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+}
+
+export const staggerSlow: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.18 } },
+}
+
+export const revealLine: Variants = {
+  hidden: { scaleX: 0, originX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: { duration: 0.9, ease: LUXURY_EASE },
+  },
+}
+
+export const popIn: Variants = {
+  hidden: { scale: 0.85, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { type: 'spring', stiffness: 260, damping: 20 },
+  },
+}
