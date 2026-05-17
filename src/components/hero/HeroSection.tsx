@@ -29,6 +29,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ position: 'relative' }}
     >
       {/* Dark luxury background */}
       <div className="absolute inset-0 bg-linear-to-br from-[#0a0d06] via-[#141a0a] to-[#1e2810]" />

@@ -29,7 +29,7 @@ export function ParallaxLayer({
   const y = useTransform(scrollYProgress, [0, 1], range)
 
   return (
-    <div ref={ref} className={className} style={{ overflow: 'hidden' }}>
+    <div ref={ref} className={className} style={{ position: 'relative', overflow: 'hidden' }}>
       <motion.div style={{ y }}>{children}</motion.div>
     </div>
   )
