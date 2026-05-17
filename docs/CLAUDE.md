@@ -236,3 +236,82 @@ New variants added to `src/lib/animations.ts`:
 |---|---|
 | < 1280px (`xl:`) | Hamburger menu, all 9 links in slide-down panel |
 | ≥ 1280px (`xl:`) | Full 9-link horizontal nav + language dropdown |
+
+---
+
+## Latin Patient Acquisition Strategy
+
+**Dedicated landing page**: `/international-patients` — a standalone Spanish-language luxury landing page, separate from next-intl locale routing (no `/es/` conflict).
+
+### Route
+- `src/app/international-patients/page.tsx` — Server component, exports Spanish SEO metadata + JSON-LD
+- `src/app/international-patients/InternationalPatientsContent.tsx` — Client component with all 6 sections
+
+### Page structure (6 sections)
+1. **HeroSection** — Full-screen dark cinematic, Spanish headline "Tu Nueva Sonrisa en Suiza", dual WhatsApp+consultation CTAs
+2. **JoseGregorioSection** — Personal trust-builder. José Gregorio Rodriguez (Ortotécnico Dental, Higienista Oral, Especialista en Protectores Bucales, Estética Dental, Marketing Digital Dental). Builds emotional connection.
+3. **InternationalExperienceSection** — 4-step process cards (Consulta → Plan → Experiencia → Seguimiento)
+4. **VideoTestimonialsSection** — Dark carousel with video placeholders, nationality-labeled patient stories, interactive thumbnail selector
+5. **FreeCTASection** — Large emotional CTA: "Agenda tu Consulta Gratuita en Lugano" — beige bg, dual buttons
+6. **LuganoLifestyleSection** — Asymmetric image grid, location premium positioning
+
+### SEO (Spanish market)
+- **title**: "Dentista en Lugano | Clínica Dental Premium para Pacientes Internacionales"
+- **keywords**: Dentista en Lugano, Clínica Dental Suiza, Carillas Dentales Suiza, Diseño de Sonrisa Suiza, Invisalign Suiza, Dentista para Latinos en Suiza
+- **OG locale**: `es_ES`
+- **JSON-LD**: `availableLanguage: ['Spanish', 'Italian', 'English']`
+
+---
+
+## WhatsApp Conversion System
+
+Two WhatsApp numbers in use:
+| Number | Use | wa.me |
+|---|---|---|
+| +41 91 994 50 51 | General clinic (SITE_CONFIG, global float) | `wa.me/41919945051` |
+| +41 76 525 93 95 | José Gregorio / International patients | `wa.me/41765259395` |
+
+### Pre-filled messages
+| CTA | Message |
+|---|---|
+| Hero info | "Hola José Gregorio, quiero información sobre una consulta dental en Luxury Dental Paradiso." |
+| Consultation | "Hola José Gregorio, me gustaría agendar una consulta gratuita en Luxury Dental Paradiso." |
+
+**IMPORTANT**: Always URL-encode Spanish characters in WhatsApp message text (e.g., `%20`, `%C3%B3`, `%C3%A9`).
+
+---
+
+## Spanish Marketing Landing Architecture
+
+The `/international-patients` page is deliberately NOT a translated version of the main site. It is a standalone **conversion funnel** designed for:
+- Latin American dental tourists discovering Swiss dental options
+- Spanish-speaking expats in Switzerland seeking a familiar coordinator
+- Patients referred via social media / digital marketing campaigns
+
+It follows the pattern `page.tsx` (Server, metadata) + `Content.tsx` (Client, sections) — same as all other pages.
+
+---
+
+## International Patient Experience Strategy
+
+José Gregorio Rodriguez is the named coordinator for international patients. His section is essential for:
+- Building personal trust with Latin American patients who value warm, personal relationships
+- Differentiating from generic Swiss clinics
+- Creating a named point of contact (reduces anxiety for international patients)
+
+His credentials: Ortotécnico Dental, Higienista Oral, Especialista en Protectores Bucales, Estética Dental, Marketing Digital Dental
+
+---
+
+## Multilingual Expansion (updated)
+
+Current locale coverage:
+| Locale | URL | Translation file | Status |
+|---|---|---|---|
+| Italian (default) | `/` | `src/translations/it.json` | ✓ Complete |
+| English | `/en/` | `src/translations/en.json` | ✓ Complete |
+| German | `/de/` | `src/translations/de.json` | ✓ Complete |
+| French | `/fr/` | `src/translations/fr.json` | ✓ Complete |
+| Spanish | `/es/` | `src/translations/es.json` | ✓ Complete |
+
+Spanish landing page (standalone, not locale-prefixed): `/international-patients`

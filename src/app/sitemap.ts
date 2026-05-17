@@ -11,7 +11,8 @@ const routes = [
   { path: '/contact',            priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/testimonials',       priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/blog',               priority: 0.6, changeFrequency: 'weekly'  as const },
-  { path: '/privacy-policy',     priority: 0.3, changeFrequency: 'yearly'  as const },
+  { path: '/privacy-policy',          priority: 0.3, changeFrequency: 'yearly'  as const },
+  { path: '/international-patients',  priority: 0.95, changeFrequency: 'monthly' as const },
 ]
 
 const locales = ['en', 'de', 'fr', 'es']
