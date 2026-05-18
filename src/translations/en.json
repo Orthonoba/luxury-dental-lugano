@@ -52,6 +52,172 @@
       }
     ]
   },
+  "dental": {
+    "eyebrow": "Dental Excellence",
+    "headline1": "Precision Dental",
+    "headline2": "Treatments",
+    "learnMore": "Learn More",
+    "viewAll": "View All Treatments",
+    "treatments": [
+      {
+        "title": "Digital Smile Design",
+        "description": "Advanced 3D digital planning that lets you preview your perfect smile before any treatment begins. Precision-engineered for flawless outcomes.",
+        "tag": "Signature"
+      },
+      {
+        "title": "Clear Aligners",
+        "description": "Invisible orthodontic treatment using precision-crafted aligners for a perfect bite and beautiful smile. Discreet, comfortable, and effective.",
+        "tag": "Popular"
+      },
+      {
+        "title": "Mouth Guards",
+        "description": "Custom-fitted protective guards for athletes and those with bruxism, engineered for maximum comfort and long-term protection.",
+        "tag": ""
+      },
+      {
+        "title": "Essix Retainers",
+        "description": "Ultra-thin, crystal-clear retainers that maintain your smile alignment with undetectable precision after orthodontic treatment.",
+        "tag": ""
+      },
+      {
+        "title": "Sleep Dentistry",
+        "description": "Comfortable dental care under conscious sedation for a completely anxiety-free treatment experience. Rest while we perfect your smile.",
+        "tag": ""
+      },
+      {
+        "title": "Porcelain Veneers",
+        "description": "Ultra-thin, custom-crafted porcelain shells that create a luminous, flawless smile. The gold standard in cosmetic dental transformation.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Teeth Whitening",
+        "description": "Professional-grade whitening delivering dramatically brighter, more youthful results in a single session. Safe, fast, and lasting.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Facial Aesthetics",
+    "headline1": "Radiance",
+    "headline2": "Refined",
+    "body": "Our facial aesthetic treatments combine the latest medical advances with a deep understanding of natural beauty, delivering transformative results with zero compromise.",
+    "cta": "Book Facial Consultation",
+    "services": [
+      {
+        "title": "Facial Cleansing",
+        "description": "Medical-grade deep cleansing protocols that purify pores, restore skin balance, and create the perfect canvas for advanced treatments."
+      },
+      {
+        "title": "Skin Rejuvenation",
+        "description": "Advanced treatments stimulating cellular renewal with cutting-edge technology for visibly younger, more radiant, and luminous skin."
+      },
+      {
+        "title": "Facial Harmony",
+        "description": "Precision treatments that enhance facial proportions and create balanced, harmonious aesthetics — tailored to your unique bone structure."
+      },
+      {
+        "title": "Anti-Aging Treatments",
+        "description": "Comprehensive protocols addressing fine lines, volume loss, and skin laxity with medical precision and an artist's eye for natural results."
+      },
+      {
+        "title": "Hydration Therapies",
+        "description": "Intensive hydration protocols that restore moisture, luminosity, and suppleness at the deepest cellular level for lasting radiance."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Our Specialists",
+    "headline1": "Meet The",
+    "headline2": "Expert Team",
+    "members": [
+      {
+        "role": "Medical Director & Surgeon",
+        "bio": "Founder and Medical Director of Luxury Dental Paradiso. Expert in surgical and restorative dentistry, Digital Smile Design, and full-mouth rehabilitation with a holistic approach to oral health and beauty.",
+        "credentials": ["Medical Director", "DSD Certified", "Oral Surgeon"]
+      },
+      {
+        "role": "Specialist Dentist",
+        "bio": "Specialist in conservative and prosthetic dentistry. Expert in porcelain veneers, clear aligner therapy, and precision restorations that combine function with aesthetic excellence.",
+        "credentials": ["Prosthodontics", "Clear Aligners", "Aesthetic Dentistry"]
+      },
+      {
+        "role": "Administration",
+        "bio": "Ensures that every patient journey is seamless, from the first consultation to aftercare. Dedicated to delivering a luxury experience at every touchpoint of your visit.",
+        "credentials": ["Patient Relations", "Clinic Coordination", "Swiss Quality"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Client Stories",
+    "headline1": "Words From",
+    "headline2": "Our Clients",
+    "verified": "verified reviews",
+    "recommended": "Recommended",
+    "prevLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "items": [
+      {
+        "text": "The transformation is absolutely remarkable. The team understood exactly what I envisioned — and then delivered something even more beautiful. My smile is now my greatest source of confidence.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "I was hesitant about veneers, but the team was incredibly reassuring. The results are so natural — everyone assumes I was simply born with this smile. Truly exceptional craftsmanship.",
+        "treatment": "Porcelain Veneers"
+      },
+      {
+        "text": "After 14 months with clear aligners, my bite and smile are perfectly aligned. Seeing the digital preview before starting gave me complete confidence. A life-changing experience.",
+        "treatment": "Clear Aligners"
+      },
+      {
+        "text": "The facial rejuvenation was subtle, natural, and beautifully done. My colleagues thought I had returned from a restorative holiday. The results speak for themselves.",
+        "treatment": "Facial Aesthetics"
+      },
+      {
+        "text": "Professional whitening in one session gave me results I had wanted for years. The clinic environment is stunning, the team exceptional. Completely worth every franc.",
+        "treatment": "Teeth Whitening"
+      },
+      {
+        "text": "I drove from Como specifically for this clinic after seeing their work. Not disappointed — the attention to detail and the personalised approach are unlike anything I had experienced before.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "The entire journey was seamless — from the first digital preview to the final result. The team made me feel cared for at every step. My smile is now something I love to share.",
+        "treatment": "Clear Aligners"
+      },
+      {
+        "text": "As someone who works in design, I appreciate precision and beauty. This team delivers both. The veneers are flawless — they look more natural than my original teeth ever did.",
+        "treatment": "Porcelain Veneers"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Real Results",
+    "headline1": "Transformations",
+    "headline2": "That Speak",
+    "body": "Drag or use arrow keys to reveal each transformation. Every result reflects our commitment to precision and natural beauty.",
+    "before": "Before",
+    "after": "After",
+    "beforeLabel": "Original",
+    "afterLabel": "Transformed",
+    "cases": [
+      {
+        "treatment": "Digital Smile Design",
+        "description": "Complete smile makeover with porcelain veneers"
+      },
+      {
+        "treatment": "Porcelain Veneers",
+        "description": "Full arch porcelain veneer placement"
+      },
+      {
+        "treatment": "Teeth Whitening",
+        "description": "Professional in-office whitening session"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us",
+    "ariaLabel": "Chat with us on WhatsApp"
+  },
   "contact": {
     "eyebrow": "Book",
     "headline1": "Begin Your",

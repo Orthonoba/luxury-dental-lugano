@@ -2,39 +2,30 @@
 
 import { useState, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
-const cases = [
-  {
-    id: 1,
-    treatment: 'Digital Smile Design',
-    description: 'Complete smile makeover with porcelain veneers',
-    beforeBg: 'from-stone-200 via-stone-300 to-stone-400',
-    afterBg: 'from-amber-50 via-yellow-50 to-white',
-  },
-  {
-    id: 2,
-    treatment: 'Porcelain Veneers',
-    description: 'Full arch porcelain veneer placement',
-    beforeBg: 'from-slate-200 via-slate-300 to-slate-400',
-    afterBg: 'from-orange-50 via-amber-50 to-yellow-50',
-  },
-  {
-    id: 3,
-    treatment: 'Teeth Whitening',
-    description: 'Professional in-office whitening session',
-    beforeBg: 'from-yellow-100 via-yellow-200 to-yellow-300',
-    afterBg: 'from-white via-gray-50 to-slate-50',
-  },
+const caseMeta = [
+  { id: 1, beforeBg: 'from-stone-200 via-stone-300 to-stone-400',  afterBg: 'from-amber-50 via-yellow-50 to-white' },
+  { id: 2, beforeBg: 'from-slate-200 via-slate-300 to-slate-400',  afterBg: 'from-orange-50 via-amber-50 to-yellow-50' },
+  { id: 3, beforeBg: 'from-yellow-100 via-yellow-200 to-yellow-300', afterBg: 'from-white via-gray-50 to-slate-50' },
 ]
 
 function ComparisonSlider({
   beforeBg,
   afterBg,
   label,
+  beforeLabel,
+  afterLabel,
+  beforeWord,
+  afterWord,
 }: {
   beforeBg: string
   afterBg: string
   label: string
+  beforeLabel: string
+  afterLabel: string
+  beforeWord: string
+  afterWord: string
 }) {
   const [position, setPosition] = useState(50)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -61,31 +52,17 @@ function ComparisonSlider({
   }, [getPercent])
 
   const handleTouchMove = useCallback(
-    (e: React.TouchEvent) => {
-      setPosition(getPercent(e.touches[0].clientX))
-    },
+    (e: React.TouchEvent) => { setPosition(getPercent(e.touches[0].clientX)) },
     [getPercent]
   )
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     const step = e.shiftKey ? 10 : 5
     switch (e.key) {
-      case 'ArrowLeft':
-        e.preventDefault()
-        setPosition((p) => Math.max(0, p - step))
-        break
-      case 'ArrowRight':
-        e.preventDefault()
-        setPosition((p) => Math.min(100, p + step))
-        break
-      case 'Home':
-        e.preventDefault()
-        setPosition(0)
-        break
-      case 'End':
-        e.preventDefault()
-        setPosition(100)
-        break
+      case 'ArrowLeft':  e.preventDefault(); setPosition((p) => Math.max(0, p - step));   break
+      case 'ArrowRight': e.preventDefault(); setPosition((p) => Math.min(100, p + step)); break
+      case 'Home':       e.preventDefault(); setPosition(0);   break
+      case 'End':        e.preventDefault(); setPosition(100); break
     }
   }, [])
 
@@ -94,17 +71,17 @@ function ComparisonSlider({
       ref={containerRef}
       role="slider"
       tabIndex={0}
-      aria-label={`${label} — before and after comparison`}
+      aria-label={`${label} — ${beforeWord}/${afterWord}`}
       aria-valuenow={Math.round(position)}
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-valuetext={`${Math.round(position)}% before`}
+      aria-valuetext={`${Math.round(position)}% ${beforeWord}`}
       className="relative h-80 rounded-2xl overflow-hidden cursor-col-resize select-none touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
       onMouseDown={handleMouseDown}
       onTouchMove={handleTouchMove}
       onKeyDown={handleKeyDown}
     >
-      {/* After layer (base) */}
+      {/* After layer */}
       <div className={`absolute inset-0 bg-linear-to-br ${afterBg} flex flex-col items-center justify-center`}>
         <div className="text-center pointer-events-none">
           <div className="w-14 h-14 rounded-full bg-white/70 mx-auto mb-3 flex items-center justify-center shadow-sm">
@@ -112,8 +89,8 @@ function ComparisonSlider({
               <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
             </svg>
           </div>
-          <p className="text-luxury-black/40 text-[10px] tracking-[0.3em] uppercase">After</p>
-          <p className="text-luxury-black font-display font-bold text-xl mt-1">Transformed</p>
+          <p className="text-luxury-black/40 text-[10px] tracking-[0.3em] uppercase">{afterWord}</p>
+          <p className="text-luxury-black font-display font-bold text-xl mt-1">{afterLabel}</p>
         </div>
       </div>
 
@@ -128,12 +105,12 @@ function ComparisonSlider({
               <circle cx="12" cy="12" r="9" />
             </svg>
           </div>
-          <p className="text-luxury-black/30 text-[10px] tracking-[0.3em] uppercase">Before</p>
-          <p className="text-luxury-black/50 font-display font-bold text-xl mt-1">Original</p>
+          <p className="text-luxury-black/30 text-[10px] tracking-[0.3em] uppercase">{beforeWord}</p>
+          <p className="text-luxury-black/50 font-display font-bold text-xl mt-1">{beforeLabel}</p>
         </div>
       </div>
 
-      {/* Divider */}
+      {/* Divider handle */}
       <div
         aria-hidden="true"
         className="absolute top-0 bottom-0 w-px bg-white shadow-[0_0_12px_rgba(255,255,255,0.8)] z-10 pointer-events-none"
@@ -146,18 +123,26 @@ function ComparisonSlider({
         </div>
       </div>
 
-      {/* Labels */}
+      {/* Corner labels */}
       <div aria-hidden="true" className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-luxury-black/40 backdrop-blur-sm pointer-events-none">
-        <span className="text-white/80 text-[9px] tracking-[0.2em] uppercase">Before</span>
+        <span className="text-white/80 text-[9px] tracking-[0.2em] uppercase">{beforeWord}</span>
       </div>
       <div aria-hidden="true" className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-gold/80 backdrop-blur-sm pointer-events-none">
-        <span className="text-white text-[9px] tracking-[0.2em] uppercase">After</span>
+        <span className="text-white text-[9px] tracking-[0.2em] uppercase">{afterWord}</span>
       </div>
     </div>
   )
 }
 
 export default function BeforeAfterGallery() {
+  const t = useTranslations('gallery')
+
+  const cases = caseMeta.map((meta, i) => ({
+    ...meta,
+    treatment: t(`cases.${i}.treatment`),
+    description: t(`cases.${i}.description`),
+  }))
+
   return (
     <section id="gallery" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -169,7 +154,7 @@ export default function BeforeAfterGallery() {
             viewport={{ once: true }}
             className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6"
           >
-            Real Results
+            {t('eyebrow')}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -179,8 +164,8 @@ export default function BeforeAfterGallery() {
             className="font-display font-bold text-luxury-black leading-tight mb-6"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
-            Transformations
-            <span className="block text-olive italic font-medium">That Speak</span>
+            {t('headline1')}
+            <span className="block text-olive italic font-medium">{t('headline2')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -189,8 +174,7 @@ export default function BeforeAfterGallery() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-luxury-black/45 max-w-md mx-auto text-sm leading-relaxed"
           >
-            Drag or use arrow keys to reveal each transformation. Every result reflects our commitment to
-            precision and natural beauty.
+            {t('body')}
           </motion.p>
         </div>
 
@@ -210,6 +194,10 @@ export default function BeforeAfterGallery() {
                   beforeBg={c.beforeBg}
                   afterBg={c.afterBg}
                   label={c.treatment}
+                  beforeLabel={t('beforeLabel')}
+                  afterLabel={t('afterLabel')}
+                  beforeWord={t('before')}
+                  afterWord={t('after')}
                 />
               </div>
               <div className="mt-5">

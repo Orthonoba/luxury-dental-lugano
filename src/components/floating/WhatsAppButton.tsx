@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export default function WhatsAppButton() {
+  const t = useTranslations('whatsapp')
+
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
@@ -14,7 +17,7 @@ export default function WhatsAppButton() {
         href="https://wa.me/41919945051"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
+        aria-label={t('ariaLabel')}
         className="group relative flex items-center"
       >
         {/* Pulse ring */}
@@ -33,7 +36,7 @@ export default function WhatsAppButton() {
           whileHover={{ opacity: 1, x: 0, scale: 1 }}
           className="absolute right-full mr-3 bg-luxury-black text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200"
         >
-          Chat with us
+          {t('tooltip')}
           <span className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full border-l-4 border-l-luxury-black border-t-4 border-b-4 border-t-transparent border-b-transparent" />
         </motion.div>
       </a>

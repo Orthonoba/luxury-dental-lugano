@@ -1,39 +1,29 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { stagger, fadeUp, LUXURY_EASE } from '@/lib/animations'
 
-const team = [
-  {
-    name: 'Dra. Andrea Calandrino',
-    role: 'Medical Director & Surgeon',
-    initials: 'AC',
-    bio: 'Founder and Medical Director of Luxury Dental Paradiso. Expert in surgical and restorative dentistry, Digital Smile Design, and full-mouth rehabilitation with a holistic approach to oral health and beauty.',
-    credentials: ['Medical Director', 'DSD Certified', 'Oral Surgeon'],
-    gradient: 'from-olive/15 via-olive/5 to-beige-light',
-    accent: 'bg-olive',
-  },
-  {
-    name: 'Dr. Samperi Francesco',
-    role: 'Specialist Dentist',
-    initials: 'SF',
-    bio: 'Specialist in conservative and prosthetic dentistry. Expert in porcelain veneers, clear aligner therapy, and precision restorations that combine function with aesthetic excellence.',
-    credentials: ['Prosthodontics', 'Clear Aligners', 'Aesthetic Dentistry'],
-    gradient: 'from-gold/15 via-gold/5 to-beige-light',
-    accent: 'bg-gold',
-  },
-  {
-    name: 'Gaspare Ingoglia',
-    role: 'Administration',
-    initials: 'GI',
-    bio: 'Ensures that every patient journey is seamless, from the first consultation to aftercare. Dedicated to delivering a luxury experience at every touchpoint of your visit.',
-    credentials: ['Patient Relations', 'Clinic Coordination', 'Swiss Quality'],
-    gradient: 'from-luxury-black/8 via-luxury-black/4 to-beige-light',
-    accent: 'bg-luxury-black',
-  },
+const teamMeta = [
+  { name: 'Dra. Andrea Calandrino', initials: 'AC', gradient: 'from-olive/15 via-olive/5 to-beige-light', accent: 'bg-olive' },
+  { name: 'Dr. Samperi Francesco',  initials: 'SF', gradient: 'from-gold/15 via-gold/5 to-beige-light',   accent: 'bg-gold' },
+  { name: 'Gaspare Ingoglia',       initials: 'GI', gradient: 'from-luxury-black/8 via-luxury-black/4 to-beige-light', accent: 'bg-luxury-black' },
 ]
 
 export default function TeamSection() {
+  const t = useTranslations('team')
+
+  const team = teamMeta.map((meta, i) => ({
+    ...meta,
+    role: t(`members.${i}.role`),
+    bio: t(`members.${i}.bio`),
+    credentials: [
+      t(`members.${i}.credentials.0`),
+      t(`members.${i}.credentials.1`),
+      t(`members.${i}.credentials.2`),
+    ],
+  }))
+
   return (
     <section id="team" className="py-32 bg-beige-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -49,15 +39,15 @@ export default function TeamSection() {
             variants={fadeUp}
             className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6"
           >
-            Our Specialists
+            {t('eyebrow')}
           </motion.span>
           <motion.h2
             variants={fadeUp}
             className="font-display font-bold text-luxury-black leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
-            Meet The
-            <span className="block text-olive italic font-medium">Expert Team</span>
+            {t('headline1')}
+            <span className="block text-olive italic font-medium">{t('headline2')}</span>
           </motion.h2>
         </motion.div>
 

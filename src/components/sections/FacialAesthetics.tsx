@@ -1,47 +1,22 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { blurIn, LUXURY_EASE } from '@/lib/animations'
+import { Link } from '@/navigation'
 
-const services = [
-  {
-    number: '01',
-    title: 'Facial Cleansing',
-    description:
-      'Medical-grade deep cleansing protocols that purify pores, restore skin balance, and create the perfect canvas for advanced treatments.',
-    accent: 'border-l-olive',
-  },
-  {
-    number: '02',
-    title: 'Skin Rejuvenation',
-    description:
-      'Advanced treatments stimulating cellular renewal with cutting-edge technology for visibly younger, more radiant, and luminous skin.',
-    accent: 'border-l-gold',
-  },
-  {
-    number: '03',
-    title: 'Facial Harmony',
-    description:
-      'Precision treatments that enhance facial proportions and create balanced, harmonious aesthetics — tailored to your unique bone structure.',
-    accent: 'border-l-olive',
-  },
-  {
-    number: '04',
-    title: 'Anti-Aging Treatments',
-    description:
-      'Comprehensive protocols addressing fine lines, volume loss, and skin laxity with medical precision and an artist\'s eye for natural results.',
-    accent: 'border-l-gold',
-  },
-  {
-    number: '05',
-    title: 'Hydration Therapies',
-    description:
-      'Intensive hydration protocols that restore moisture, luminosity, and suppleness at the deepest cellular level for lasting radiance.',
-    accent: 'border-l-olive',
-  },
-]
+const accents = ['border-l-olive', 'border-l-gold', 'border-l-olive', 'border-l-gold', 'border-l-olive']
 
 export default function FacialAesthetics() {
+  const t = useTranslations('facial')
+
+  const services = Array.from({ length: 5 }, (_, i) => ({
+    number: String(i + 1).padStart(2, '0'),
+    title: t(`services.${i}.title`),
+    description: t(`services.${i}.description`),
+    accent: accents[i],
+  }))
+
   return (
     <section id="facial" className="py-32 bg-beige overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -55,7 +30,7 @@ export default function FacialAesthetics() {
             className="lg:col-span-2 lg:sticky lg:top-32 self-start"
           >
             <span className="block text-olive text-[10px] tracking-[0.4em] uppercase font-medium mb-6">
-              Facial Aesthetics
+              {t('eyebrow')}
             </span>
             <motion.h2
               variants={blurIn}
@@ -65,12 +40,11 @@ export default function FacialAesthetics() {
               className="font-display font-bold text-luxury-black leading-[1.08] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4vw, 3.25rem)' }}
             >
-              Radiance
-              <span className="block italic font-medium text-olive">Refined</span>
+              {t('headline1')}
+              <span className="block italic font-medium text-olive">{t('headline2')}</span>
             </motion.h2>
             <p className="text-luxury-black/55 leading-relaxed mb-10 text-base">
-              Our facial aesthetic treatments combine the latest medical advances with a deep
-              understanding of natural beauty, delivering transformative results with zero compromise.
+              {t('body')}
             </p>
 
             {/* Visual accent */}
@@ -80,15 +54,19 @@ export default function FacialAesthetics() {
               <div className="w-3 h-1 rounded-full bg-beige-light" />
             </div>
 
-            <motion.a
-              href="#contact"
+            <motion.div
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-              className="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-olive text-olive text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive hover:text-white transition-colors duration-400"
+              className="inline-block"
             >
-              Book Facial Consultation
-            </motion.a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-olive text-olive text-[11px] tracking-[0.2em] uppercase font-semibold rounded-full hover:bg-olive hover:text-white transition-colors duration-400"
+              >
+                {t('cta')}
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right — services */}

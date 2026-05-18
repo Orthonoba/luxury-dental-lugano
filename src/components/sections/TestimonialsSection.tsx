@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectFade, A11y, Mousewheel } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
@@ -9,11 +10,21 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 import { stagger, fadeUp, blurIn, LUXURY_EASE } from '@/lib/animations'
-import { TESTIMONIALS } from '@/data/testimonials'
+
+const testimonialsMeta = [
+  { name: 'Isabella M.',   location: 'Lugano, Svizzera',   avatar: 'IM', rating: 5 },
+  { name: 'Laurent B.',    location: 'Ginevra, Svizzera',  avatar: 'LB', rating: 5 },
+  { name: 'Valentina C.',  location: 'Milano, Italia',     avatar: 'VC', rating: 5 },
+  { name: 'Marco A.',      location: 'Lugano, Svizzera',   avatar: 'MA', rating: 5 },
+  { name: 'Sophie L.',     location: 'Zurigo, Svizzera',   avatar: 'SL', rating: 5 },
+  { name: 'Alessandro F.', location: 'Como, Italia',       avatar: 'AF', rating: 5 },
+  { name: 'Claire D.',     location: 'Losanna, Svizzera',  avatar: 'CD', rating: 5 },
+  { name: 'Riccardo V.',   location: 'Lugano, Svizzera',   avatar: 'RV', rating: 5 },
+]
 
 function StarRating({ count = 5 }: { count?: number }) {
   return (
-    <div className="flex items-center gap-1" aria-label={`${count} out of 5 stars`}>
+    <div className="flex items-center gap-1" aria-label={`${count} stelle su 5`}>
       {Array.from({ length: count }).map((_, i) => (
         <svg key={i} viewBox="0 0 24 24" fill="#C8A96B" className="w-4 h-4">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -25,6 +36,13 @@ function StarRating({ count = 5 }: { count?: number }) {
 
 export default function TestimonialsSection() {
   const swiperRef = useRef<SwiperType | null>(null)
+  const t = useTranslations('testimonials')
+
+  const testimonials = testimonialsMeta.map((meta, i) => ({
+    ...meta,
+    text: t(`items.${i}.text`),
+    treatment: t(`items.${i}.treatment`),
+  }))
 
   return (
     <section className="py-32 bg-luxury-black overflow-hidden relative">
@@ -50,14 +68,14 @@ export default function TestimonialsSection() {
             variants={fadeUp}
             className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6"
           >
-            Client Stories
+            {t('eyebrow')}
           </motion.span>
           <motion.h2
             variants={blurIn}
             className="font-display font-bold text-white leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
-            Words From{' '}
+            {t('headline1')}{' '}
             <span
               style={{
                 background: 'linear-gradient(135deg, #C8A96B 0%, #E8DCCB 100%)',
@@ -66,7 +84,7 @@ export default function TestimonialsSection() {
                 backgroundClip: 'text',
               }}
             >
-              Our Clients
+              {t('headline2')}
             </span>
           </motion.h2>
         </motion.div>
@@ -105,12 +123,12 @@ export default function TestimonialsSection() {
               </svg>
               <span className="text-white text-sm font-semibold">Google Reviews</span>
             </div>
-            <span className="text-white/30 text-[11px] tracking-[0.2em]">8 verified reviews</span>
+            <span className="text-white/30 text-[11px] tracking-[0.2em]">8 {t('verified')}</span>
           </div>
           <div className="w-px h-14 bg-white/10 hidden sm:block" />
           <div className="flex flex-col items-center">
             <span className="font-display font-bold text-white text-2xl">100%</span>
-            <span className="text-white/35 text-[11px] tracking-[0.15em] uppercase">Recommended</span>
+            <span className="text-white/35 text-[11px] tracking-[0.15em] uppercase">{t('recommended')}</span>
           </div>
         </motion.div>
 
@@ -135,14 +153,13 @@ export default function TestimonialsSection() {
             }}
             loop
             speed={900}
-            a11y={{ prevSlideMessage: 'Previous testimonial', nextSlideMessage: 'Next testimonial' }}
+            a11y={{ prevSlideMessage: t('prevLabel'), nextSlideMessage: t('nextLabel') }}
             onSwiper={(swiper) => { swiperRef.current = swiper }}
             className="luxury-testimonials-swiper"
           >
-            {TESTIMONIALS.map((testimonial) => (
+            {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.name}>
                 <div className="relative bg-white/4 border border-white/8 rounded-3xl px-8 py-12 lg:px-12 lg:py-14 backdrop-blur-sm shadow-2xl shadow-black/20">
-                  {/* Decorative quotation mark */}
                   <span
                     aria-hidden="true"
                     className="absolute -top-4 left-6 font-display text-[8rem] text-gold/10 leading-none select-none pointer-events-none"
@@ -151,17 +168,14 @@ export default function TestimonialsSection() {
                   </span>
 
                   <div className="relative text-center">
-                    {/* Stars */}
                     <div className="flex justify-center mb-8">
                       <StarRating count={testimonial.rating ?? 5} />
                     </div>
 
-                    {/* Quote */}
                     <blockquote className="font-display text-xl lg:text-2xl font-medium text-white/90 leading-relaxed mb-10 italic">
                       &ldquo;{testimonial.text}&rdquo;
                     </blockquote>
 
-                    {/* Author */}
                     <div className="flex items-center justify-center gap-4">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center border border-gold/30 bg-linear-to-br from-gold/20 to-olive/20 shrink-0">
                         <span className="text-gold font-semibold text-sm">{testimonial.avatar}</span>
@@ -181,13 +195,13 @@ export default function TestimonialsSection() {
             ))}
           </Swiper>
 
-          {/* Custom navigation arrows */}
+          {/* Navigation arrows */}
           <div className="flex items-center justify-center gap-4 mt-10">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.93 }}
               onClick={() => swiperRef.current?.slidePrev()}
-              aria-label="Previous testimonial"
+              aria-label={t('prevLabel')}
               className="w-11 h-11 rounded-full border border-white/10 text-white/50 hover:border-gold/50 hover:text-gold transition-all duration-300 flex items-center justify-center"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
@@ -195,14 +209,13 @@ export default function TestimonialsSection() {
               </svg>
             </motion.button>
 
-            {/* Swiper pagination renders here via CSS */}
             <div className="swiper-pagination-container flex gap-2" />
 
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.93 }}
               onClick={() => swiperRef.current?.slideNext()}
-              aria-label="Next testimonial"
+              aria-label={t('nextLabel')}
               className="w-11 h-11 rounded-full border border-white/10 text-white/50 hover:border-gold/50 hover:text-gold transition-all duration-300 flex items-center justify-center"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
@@ -213,34 +226,19 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
 
-      {/* Swiper CSS customisation — scoped to this section */}
       <style>{`
-        .luxury-testimonials-swiper {
-          overflow: visible;
-        }
-        .luxury-testimonials-swiper .swiper-wrapper {
-          align-items: stretch;
-        }
+        .luxury-testimonials-swiper { overflow: visible; }
+        .luxury-testimonials-swiper .swiper-wrapper { align-items: stretch; }
         .luxury-testimonials-swiper .swiper-pagination {
-          position: static;
-          margin-top: 2rem;
-          display: flex;
-          justify-content: center;
-          gap: 8px;
+          position: static; margin-top: 2rem;
+          display: flex; justify-content: center; gap: 8px;
         }
         .swiper-bullet-luxury {
-          display: inline-block;
-          width: 8px;
-          height: 6px;
-          border-radius: 9999px;
-          background: rgba(255,255,255,0.2);
-          cursor: pointer;
-          transition: all 0.4s ease;
+          display: inline-block; width: 8px; height: 6px;
+          border-radius: 9999px; background: rgba(255,255,255,0.2);
+          cursor: pointer; transition: all 0.4s ease;
         }
-        .swiper-bullet-luxury-active {
-          width: 32px;
-          background: #C8A96B;
-        }
+        .swiper-bullet-luxury-active { width: 32px; background: #C8A96B; }
       `}</style>
     </section>
   )

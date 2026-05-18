@@ -52,6 +52,172 @@
       }
     ]
   },
+  "dental": {
+    "eyebrow": "Eccellenza Dentale",
+    "headline1": "Trattamenti Dentali",
+    "headline2": "di Precisione",
+    "learnMore": "Scopri di Più",
+    "viewAll": "Vedi Tutti i Trattamenti",
+    "treatments": [
+      {
+        "title": "Digital Smile Design",
+        "description": "Pianificazione digitale 3D avanzata che ti permette di visualizzare il tuo sorriso ideale prima di qualsiasi trattamento. Progettato con precisione per risultati impeccabili.",
+        "tag": "Esclusivo"
+      },
+      {
+        "title": "Allineatori Trasparenti",
+        "description": "Trattamento ortodontico invisibile con allineatori di alta precisione per un morso perfetto e un sorriso straordinario. Discreto, confortevole ed efficace.",
+        "tag": "Popolare"
+      },
+      {
+        "title": "Bite Occlusale",
+        "description": "Protezioni personalizzate per sportivi e chi soffre di bruxismo, progettate per il massimo comfort e una protezione duratura nel tempo.",
+        "tag": ""
+      },
+      {
+        "title": "Retainer Essix",
+        "description": "Retainer ultrasottili e trasparenti che mantengono l'allineamento del sorriso con precisione impercettibile dopo il trattamento ortodontico.",
+        "tag": ""
+      },
+      {
+        "title": "Sedazione Conscia",
+        "description": "Cure dentali in totale comfort sotto sedazione conscia per un'esperienza completamente priva di ansia. Rilassati mentre perfezioniamo il tuo sorriso.",
+        "tag": ""
+      },
+      {
+        "title": "Faccette in Porcellana",
+        "description": "Sottilissimi gusci in porcellana personalizzati che creano un sorriso luminoso e impeccabile. Lo standard d'oro nella trasformazione estetica dentale.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Sbiancamento Dentale",
+        "description": "Sbiancamento professionale per risultati visibilmente più luminosi e giovanili in una sola seduta. Sicuro, rapido e duraturo.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Estetica Facciale",
+    "headline1": "Luminosità",
+    "headline2": "Raffinata",
+    "body": "I nostri trattamenti di estetica facciale uniscono le più recenti innovazioni mediche a una profonda comprensione della bellezza naturale, per risultati trasformativi senza compromessi.",
+    "cta": "Prenota Consulenza Estetica",
+    "services": [
+      {
+        "title": "Pulizia Facciale Profonda",
+        "description": "Protocolli di pulizia medicale che purificano i pori, ripristinano l'equilibrio cutaneo e creano la base perfetta per i trattamenti avanzati."
+      },
+      {
+        "title": "Ringiovanimento Cutaneo",
+        "description": "Trattamenti avanzati che stimolano il rinnovamento cellulare con tecnologie d'avanguardia per una pelle visibilmente più giovane, luminosa e radiosa."
+      },
+      {
+        "title": "Armonia Facciale",
+        "description": "Trattamenti di precisione che migliorano le proporzioni facciali e creano un'estetica equilibrata e armoniosa, personalizzata per la tua struttura ossea unica."
+      },
+      {
+        "title": "Trattamenti Anti-Age",
+        "description": "Protocolli completi che affrontano rughe, perdita di volume e rilassamento cutaneo con precisione medica e l'occhio artistico per risultati naturali."
+      },
+      {
+        "title": "Terapie Idratanti",
+        "description": "Protocolli di idratazione intensiva che ripristinano umidità, luminosità e morbidezza al livello cellulare più profondo per una radiosità duratura."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "I Nostri Specialisti",
+    "headline1": "Conosci il",
+    "headline2": "Team di Esperti",
+    "members": [
+      {
+        "role": "Direttrice Medica e Chirurga",
+        "bio": "Fondatrice e Direttrice Medica di Luxury Dental Paradiso. Esperta in chirurgia dentale e odontoiatria restaurativa, Digital Smile Design e riabilitazione completa della bocca, con un approccio olistico alla salute orale e alla bellezza.",
+        "credentials": ["Direttrice Medica", "DSD Certificata", "Chirurga Orale"]
+      },
+      {
+        "role": "Dentista Specialista",
+        "bio": "Specialista in odontoiatria conservativa e protesica. Esperto in faccette in porcellana, allineatori trasparenti e restauri di precisione che uniscono funzionalità ed eccellenza estetica.",
+        "credentials": ["Protesi Dentaria", "Allineatori Trasparenti", "Odontoiatria Estetica"]
+      },
+      {
+        "role": "Amministrazione e Pazienti",
+        "bio": "Garantisce che ogni percorso del paziente sia impeccabile, dalla prima consulenza alle cure post-trattamento. Dedicato a offrire un'esperienza di lusso ad ogni fase della tua visita.",
+        "credentials": ["Relazioni Pazienti", "Coordinamento Clinica", "Qualità Svizzera"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Storie dei Nostri Pazienti",
+    "headline1": "Le Parole dei",
+    "headline2": "Nostri Pazienti",
+    "verified": "recensioni verificate",
+    "recommended": "Consigliato",
+    "prevLabel": "Testimonianza precedente",
+    "nextLabel": "Testimonianza successiva",
+    "items": [
+      {
+        "text": "La trasformazione è assolutamente straordinaria. Il team ha capito esattamente quello che immaginavo — e ha consegnato qualcosa di ancora più bello. Il mio sorriso è ora la mia più grande fonte di fiducia.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "Ero titubante riguardo alle faccette, ma il team è stato incredibilmente rassicurante. I risultati sono così naturali — tutti pensano che io sia semplicemente nata con questo sorriso. Un'artigianalità davvero eccezionale.",
+        "treatment": "Faccette in Porcellana"
+      },
+      {
+        "text": "Dopo 14 mesi con gli allineatori, il mio morso e il mio sorriso sono perfettamente allineati. Vedere l'anteprima digitale prima di iniziare mi ha dato piena fiducia. Un'esperienza che cambia la vita.",
+        "treatment": "Allineatori Trasparenti"
+      },
+      {
+        "text": "Il ringiovanimento facciale è stato sottile, naturale e splendidamente eseguito. I miei colleghi pensavano che fossi tornato da una vacanza rigenerante. I risultati parlano da soli.",
+        "treatment": "Estetica Facciale"
+      },
+      {
+        "text": "Lo sbiancamento professionale in una sola seduta mi ha dato risultati che desideravo da anni. L'ambiente della clinica è splendido, il team eccezionale. Vale assolutamente ogni franco.",
+        "treatment": "Sbiancamento Dentale"
+      },
+      {
+        "text": "Sono venuto appositamente da Como per questa clinica dopo aver visto il loro lavoro. Non deluso — l'attenzione ai dettagli e l'approccio personalizzato sono unici rispetto a qualsiasi altra esperienza avuta.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "L'intero percorso è stato impeccabile — dall'anteprima digitale al risultato finale. Il team mi ha fatto sentire curata ad ogni passo. Il mio sorriso è ora qualcosa che amo condividere.",
+        "treatment": "Allineatori Trasparenti"
+      },
+      {
+        "text": "Come persona che lavora nel design, apprezzo la precisione e la bellezza. Questo team le offre entrambe. Le faccette sono impeccabili — sembrano più naturali dei miei denti originali.",
+        "treatment": "Faccette in Porcellana"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Risultati Reali",
+    "headline1": "Trasformazioni",
+    "headline2": "Che Parlano",
+    "body": "Trascina o usa i tasti freccia per rivelare ogni trasformazione. Ogni risultato riflette il nostro impegno per la precisione e la bellezza naturale.",
+    "before": "Prima",
+    "after": "Dopo",
+    "beforeLabel": "Originale",
+    "afterLabel": "Trasformato",
+    "cases": [
+      {
+        "treatment": "Digital Smile Design",
+        "description": "Trasformazione completa del sorriso con faccette in porcellana"
+      },
+      {
+        "treatment": "Faccette in Porcellana",
+        "description": "Posizionamento faccette su tutto l'arco dentale"
+      },
+      {
+        "treatment": "Sbiancamento Dentale",
+        "description": "Seduta di sbiancamento professionale in studio"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Scrivici",
+    "ariaLabel": "Chatta con noi su WhatsApp"
+  },
   "contact": {
     "eyebrow": "Prenota",
     "headline1": "Inizia la Tua",
