@@ -13,8 +13,8 @@
 
 /* ── Core keyframes ── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px) translateZ(0); }
+  to   { opacity: 1; transform: translateY(0) translateZ(0); }
 }
 
 @keyframes fadeIn {
@@ -23,8 +23,8 @@
 }
 
 @keyframes blurReveal {
-  from { opacity: 0; filter: blur(12px); }
-  to   { opacity: 1; filter: blur(0); }
+  from { opacity: 0; filter: blur(12px); transform: translateZ(0); }
+  to   { opacity: 1; filter: blur(0); transform: translateZ(0); }
 }
 
 /* ── Luxury keyframes ── */
@@ -34,8 +34,8 @@
 }
 
 @keyframes float-gentle {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0) translateZ(0); }
+  50%       { transform: translateY(-8px) translateZ(0); }
 }
 
 @keyframes shimmer-gold {
@@ -49,15 +49,54 @@
 }
 
 @keyframes scale-breathe {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.04); }
+  0%, 100% { transform: scale(1) translateZ(0); }
+  50%       { transform: scale(1.04) translateZ(0); }
+}
+
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,107,0); }
+  50%       { box-shadow: 0 0 24px 4px rgba(200,169,107,0.25); }
 }
 
 /* ── Utility classes ── */
-.animate-fade-up     { animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.animate-blur-reveal { animation: blurReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.animate-float       { animation: float-gentle 6s ease-in-out infinite; }
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.animate-blur-reveal {
+  animation: blurReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+}
+
+.animate-float {
+  animation: float-gentle 6s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
 .animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
+
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
+.animate-scale-breathe {
+  animation: scale-breathe 4s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-gradient-drift {
+  background-size: 200% 200%;
+  animation: gradient-drift 8s ease infinite;
+}
 
 .animate-shimmer-gold {
   background: linear-gradient(90deg, #C8A96B 0%, #E8DCCB 40%, #C8A96B 60%, #D4B97A 100%);

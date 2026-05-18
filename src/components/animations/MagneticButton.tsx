@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { LUXURY_EASE } from '@/lib/animations'
 
 interface MagneticButtonProps {
   children: React.ReactNode
@@ -42,7 +41,6 @@ export function MagneticButton({
 
   const handleMouseLeave = () => setPos({ x: 0, y: 0 })
 
-  const anchorProps = Tag === 'a' ? { href, target, rel } : {}
   const buttonProps = Tag === 'button' ? { onClick } : {}
 
   return (
@@ -54,7 +52,7 @@ export function MagneticButton({
     >
       <motion.div
         animate={{ x: pos.x, y: pos.y }}
-        transition={{ type: 'spring', stiffness: 350, damping: 30, ease: LUXURY_EASE }}
+        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
       >
         {Tag === 'a' ? (
           <a

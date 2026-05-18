@@ -34,6 +34,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const pathname = usePathname()
+  const [prevPathname, setPrevPathname] = useState(pathname)
   const router = useRouter()
   const locale = useLocale()
   const langRef = useRef<HTMLDivElement>(null)
@@ -58,10 +59,10 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
-  useEffect(() => {
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
     if (menuOpen) setMenuOpen(false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname])
+  }
 
   return (
     <motion.header

@@ -1,9 +1,9 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, EffectFade, A11y } from 'swiper/modules'
+import { Autoplay, Pagination, EffectFade, A11y, Mousewheel } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
@@ -123,9 +123,10 @@ export default function TestimonialsSection() {
           className="max-w-3xl mx-auto"
         >
           <Swiper
-            modules={[Autoplay, Pagination, EffectFade, A11y]}
+            modules={[Autoplay, Pagination, EffectFade, A11y, Mousewheel]}
             effect="fade"
             fadeEffect={{ crossFade: true }}
+            mousewheel={{ enabled: true, forceToAxis: true }}
             autoplay={{ delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             pagination={{
               clickable: true,

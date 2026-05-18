@@ -121,7 +121,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased relative">
         <IntlProvider locale={locale} messages={messages}>
           {children}
         </IntlProvider>

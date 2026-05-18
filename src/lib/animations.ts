@@ -125,3 +125,63 @@ export const popIn: Variants = {
     transition: { type: 'spring', stiffness: 260, damping: 20 },
   },
 }
+
+// ── Aliases & extended exports ─────────────────────────────────────────────
+
+/** Alias for `blurIn` */
+export const blurReveal = blurIn
+
+/** Alias for `floatAnimation` */
+export const floatingAnimation = floatAnimation
+
+/** Alias for `slideInLeft` */
+export const slideLeft = slideInLeft
+
+/** Alias for `slideInRight` */
+export const slideRight = slideInRight
+
+/** Stagger container with `delayChildren` for orchestrated reveals */
+export const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+}
+
+/** Premium hover — deeper lift with luxury shadow */
+export const premiumHover = {
+  rest: {
+    y: 0,
+    scale: 1,
+    boxShadow: '0 0px 0px 0px rgba(85,107,47,0)',
+    transition: { duration: 0.4, ease: LUXURY_EASE },
+  },
+  hover: {
+    y: -8,
+    scale: 1.02,
+    boxShadow: '0 24px 64px -12px rgba(85,107,47,0.22)',
+    transition: { duration: 0.4, ease: LUXURY_EASE },
+  },
+}
+
+/** Card hover — subtle lift with soft shadow */
+export const cardHover = {
+  rest: {
+    y: 0,
+    scale: 1,
+    boxShadow: '0 0px 0px 0px rgba(0,0,0,0)',
+    transition: { duration: 0.35, ease: LUXURY_EASE },
+  },
+  hover: {
+    y: -6,
+    scale: 1.01,
+    boxShadow: '0 16px 48px -8px rgba(85,107,47,0.12)',
+    transition: { duration: 0.35, ease: LUXURY_EASE },
+  },
+}
+
+/** Standard reusable transition config */
+export const smoothTransition = {
+  duration: 0.7,
+  ease: LUXURY_EASE,
+} as const

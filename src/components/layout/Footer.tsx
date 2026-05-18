@@ -1,4 +1,8 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { SITE_CONFIG } from '@/config/site'
+import { fadeUp, staggerContainer, LUXURY_EASE } from '@/lib/animations'
 
 const clinicLinks = [
   { label: 'About', href: '/about' },
@@ -38,7 +42,13 @@ export default function Footer() {
       {/* ═══════════════════════════════════════════════
           SECTION A — Cinematic CTA Block
       ═══════════════════════════════════════════════ */}
-      <div className="relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.9, ease: LUXURY_EASE }}
+        className="relative overflow-hidden"
+      >
         {/* Ambient glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(200,169,107,0.08),transparent)]" />
 
@@ -121,15 +131,21 @@ export default function Footer() {
 
         {/* Gold line separator */}
         <div className="h-px bg-linear-to-r from-transparent via-gold/15 to-transparent" />
-      </div>
+      </motion.div>
 
       {/* ═══════════════════════════════════════════════
           SECTION B — 4-column footer grid
       ═══════════════════════════════════════════════ */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-12">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-12"
+      >
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1 — Clinic */}
-          <div>
+          <motion.div variants={fadeUp}>
             {/* Logo */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-9 h-9 rounded-full bg-gold flex items-center justify-center shrink-0">
@@ -163,10 +179,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Column 2 — Treatments */}
-          <div>
+          <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
               Treatments
             </h4>
@@ -182,10 +198,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Column 3 — Contact */}
-          <div>
+          <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
               Contact
             </h4>
@@ -241,10 +257,10 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Column 4 — Social & Reviews */}
-          <div>
+          <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
               Social & Reviews
             </h4>
@@ -277,14 +293,20 @@ export default function Footer() {
                 <span className="text-[10px] text-white/30 tracking-wide">5.0 Google Reviews</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ═══════════════════════════════════════════════
           SECTION C — Micro footer
       ═══════════════════════════════════════════════ */}
-      <div className="border-t border-white/6">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: LUXURY_EASE }}
+        className="border-t border-white/6"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs">
             © 2026 {SITE_CONFIG.fullName}. All rights reserved.
@@ -301,7 +323,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   )
 }
