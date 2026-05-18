@@ -18,30 +18,33 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
 })
 
+const BASE_URL = 'https://www.luxurydental.ch'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.luxurydental.ch'),
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Luxury Dental Paradiso | Lugano, Switzerland',
+    default: 'Luxury Dental Paradiso | Lugano, Svizzera',
     template: '%s | Luxury Dental Paradiso — Lugano',
   },
   description:
-    'Premium dental and facial aesthetics clinic in Lugano, Switzerland. Digital Smile Design, Porcelain Veneers, Clear Aligners, and advanced facial treatments with Swiss precision and artistic excellence.',
+    'Clinica dentale premium e di estetica facciale a Lugano, Svizzera. Digital Smile Design, Faccette in Porcellana, Allineatori Trasparenti e trattamenti facciali avanzati con precisione svizzera ed eccellenza artistica.',
   keywords:
-    'Luxury Dentist Lugano, Swiss Dental Clinic, Digital Smile Design Switzerland, Facial Aesthetics Lugano, dental aesthetics Ticino, veneers Lugano, clear aligners Switzerland, teeth whitening Lugano, porcelain veneers, anti-aging Lugano, skin rejuvenation, Paradiso Lugano, dentista Lugano, studio dentistico Ticino, Dentista en Lugano, Clínica Dental Suiza, Diseño de Sonrisa Suiza, Estética Facial Lugano, Dentista Suiza, tratamiento dental Lugano, clinica dental premium Suiza',
+    'dentista Lugano, clinica dentale Svizzera, Digital Smile Design Svizzera, estetica facciale Lugano, dentistica estetica Ticino, faccette Lugano, allineatori Svizzera, sbiancamento denti Lugano, faccette in porcellana, anti-aging Lugano, ringiovanimento pelle, Paradiso Lugano, studio dentistico Ticino, Dentista en Lugano, Clínica Dental Suiza, Diseño de Sonrisa Suiza, Estética Facial Lugano, Luxury Dentist Lugano, Swiss Dental Clinic',
   authors: [{ name: 'Luxury Dental & Facial Estética' }],
   openGraph: {
-    title: 'Luxury Dental Paradiso — Lugano, Switzerland',
+    title: 'Luxury Dental Paradiso — Lugano, Svizzera',
     description:
-      'Where Swiss precision meets natural beauty. Premium dental and facial aesthetics in Lugano.',
+      'Dove la precisione svizzera incontra la bellezza naturale. Clinica premium di odontoiatria ed estetica facciale a Lugano.',
     type: 'website',
     locale: 'it_IT',
-    url: 'https://www.luxurydental.ch',
+    alternateLocale: ['es_ES', 'en_GB'],
+    url: `${BASE_URL}/it`,
     siteName: 'Luxury Dental Paradiso',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Luxury Dental Paradiso — Lugano, Switzerland',
-    description: 'Digital Smile Design & Facial Aesthetics — Swiss precision, natural beauty.',
+    title: 'Luxury Dental Paradiso — Lugano, Svizzera',
+    description: 'Digital Smile Design & Estetica Facciale — Precisione svizzera, bellezza naturale.',
   },
   robots: {
     index: true,
@@ -49,13 +52,12 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: 'https://www.luxurydental.ch',
+    canonical: `${BASE_URL}/it`,
     languages: {
-      it: 'https://www.luxurydental.ch',
-      en: 'https://www.luxurydental.ch/en',
-      de: 'https://www.luxurydental.ch/de',
-      fr: 'https://www.luxurydental.ch/fr',
-      es: 'https://www.luxurydental.ch/es',
+      'it': `${BASE_URL}/it`,
+      'es': `${BASE_URL}/es`,
+      'en': `${BASE_URL}/en`,
+      'x-default': `${BASE_URL}/it`,
     },
   },
 }
@@ -64,10 +66,11 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Dentist',
   name: 'Luxury Dental & Facial Estética',
-  url: 'https://www.luxurydental.ch',
+  url: BASE_URL,
   telephone: ['+41919945051', '+41916826805'],
   email: 'info@luxurydental.ch',
-  image: 'https://www.luxurydental.ch/og-image.jpg',
+  image: `${BASE_URL}/og-image.jpg`,
+  description: 'Clinica dentale premium e di estetica facciale a Lugano, Svizzera.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Via Riva Paradiso 4',
@@ -102,6 +105,12 @@ const jsonLd = {
     reviewCount: '8',
   },
   medicalSpecialty: ['Dentistry', 'Cosmetic Dentistry', 'Aesthetic Medicine'],
+  availableLanguage: ['Italian', 'Spanish', 'English'],
+  areaServed: [
+    { '@type': 'City', name: 'Lugano' },
+    { '@type': 'State', name: 'Ticino' },
+    { '@type': 'Country', name: 'Switzerland' },
+  ],
 }
 
 export default async function RootLayout({
@@ -120,6 +129,11 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* hreflang for multilingual SEO */}
+        <link rel="alternate" hrefLang="it" href={`${BASE_URL}/it`} />
+        <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
+        <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/it`} />
       </head>
       <body className="min-h-screen antialiased relative">
         <IntlProvider locale={locale} messages={messages}>

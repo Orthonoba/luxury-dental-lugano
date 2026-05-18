@@ -1,36 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { blurIn, LUXURY_EASE } from '@/lib/animations'
 
-const pillars = [
-  {
-    number: '01',
-    title: 'Swiss Precision',
-    description:
-      'Every treatment is executed with meticulous attention to detail, combining clinical excellence with artistic vision for results that are flawless and enduring.',
-  },
-  {
-    number: '02',
-    title: 'Natural Beauty',
-    description:
-      'We enhance your natural features, creating results that are harmonious, balanced, and authentically you — never overdone, always refined.',
-  },
-  {
-    number: '03',
-    title: 'Digital Dentistry',
-    description:
-      'Advanced 3D imaging and digital smile design technology allow us to preview and plan your transformation before any treatment begins.',
-  },
-  {
-    number: '04',
-    title: 'Personalized Care',
-    description:
-      'Each treatment plan is uniquely yours — designed around your goals, anatomy, and aesthetic vision, with zero compromise on quality.',
-  },
-]
-
 export default function PhilosophySection() {
+  const t = useTranslations('philosophy')
+
+  const pillars = [
+    { number: '01', title: t('pillars.0.title'), description: t('pillars.0.description') },
+    { number: '02', title: t('pillars.1.title'), description: t('pillars.1.description') },
+    { number: '03', title: t('pillars.2.title'), description: t('pillars.2.description') },
+    { number: '04', title: t('pillars.3.title'), description: t('pillars.3.description') },
+  ]
+
   return (
     <section id="philosophy" className="py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -44,7 +27,7 @@ export default function PhilosophySection() {
             className="lg:sticky lg:top-32"
           >
             <span className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6">
-              Our Approach
+              {t('eyebrow')}
             </span>
             <motion.h2
               variants={blurIn}
@@ -54,17 +37,14 @@ export default function PhilosophySection() {
               className="font-display font-bold text-luxury-black leading-[1.08] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
             >
-              The Art of
-              <span className="block text-olive italic">Precision Beauty</span>
+              {t('headline1')}
+              <span className="block text-olive italic">{t('headline2')}</span>
             </motion.h2>
             <p className="text-luxury-black/55 text-lg leading-relaxed mb-6">
-              At Luxury Dental & Facial Estética, we believe that exceptional results come from the
-              intersection of scientific precision and artistic sensitivity.
+              {t('body1')}
             </p>
             <p className="text-luxury-black/45 leading-relaxed mb-10">
-              Our philosophy is rooted in Swiss minimalism — removing the unnecessary, enhancing
-              the essential, and delivering results that stand the test of time. Every smile we
-              design, every treatment we perform is guided by a deep respect for natural beauty.
+              {t('body2')}
             </p>
             <motion.a
               href="#contact"
@@ -73,7 +53,7 @@ export default function PhilosophySection() {
               animate="rest"
               className="inline-flex items-center gap-3 text-olive text-[11px] tracking-[0.25em] uppercase font-semibold"
             >
-              Begin Your Journey
+              {t('cta')}
               <motion.span
                 variants={{
                   rest: { width: '2rem', transition: { ease: LUXURY_EASE, duration: 0.4 } },

@@ -2,28 +2,30 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { stagger, fadeUp, blurIn, LUXURY_EASE } from '@/lib/animations'
+import { Link } from '@/navigation'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
-
-const stats = [
-  { value: '1,200+', label: 'Smiles Transformed' },
-  { value: '15+', label: 'Years of Excellence' },
-  { value: '98%', label: 'Patient Satisfaction' },
-]
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
+  const t = useTranslations('hero')
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
 
-  // Cinematic parallax — subtle, architectural
   const orbY1 = useTransform(scrollYProgress, [0, 1], [0, -80])
   const orbY2 = useTransform(scrollYProgress, [0, 1], [0, -50])
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 60])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+
+  const stats = [
+    { value: '1.200+', label: t('stats.smiles') },
+    { value: '15+', label: t('stats.years') },
+    { value: '98%', label: t('stats.satisfaction') },
+  ]
 
   return (
     <section
@@ -40,23 +42,23 @@ export default function HeroSection() {
           style={{ y: orbY1 }}
           animate={{ opacity: [0.6, 0.95, 0.6] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-olive/10 blur-[130px]"
+          className="absolute top-1/4 -left-20 w-125 h-125 rounded-full bg-olive/10 blur-[130px]"
         />
         <motion.div
           style={{ y: orbY2 }}
           animate={{ opacity: [0.5, 0.8, 0.5] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-          className="absolute bottom-1/4 -right-20 w-[420px] h-[420px] rounded-full bg-gold/8 blur-[110px]"
+          className="absolute bottom-1/4 -right-20 w-105 h-105 rounded-full bg-gold/8 blur-[110px]"
         />
         <motion.div
           animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.08, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute top-2/3 left-1/3 w-[280px] h-[280px] rounded-full bg-beige/5 blur-[80px]"
+          className="absolute top-2/3 left-1/3 w-70 h-70 rounded-full bg-beige/5 blur-[80px]"
         />
         <motion.div
           animate={{ opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-          className="absolute top-10 right-1/4 w-[200px] h-[200px] rounded-full bg-gold/5 blur-[60px]"
+          className="absolute top-10 right-1/4 w-50 h-50 rounded-full bg-gold/5 blur-[60px]"
         />
       </div>
 
@@ -73,7 +75,7 @@ export default function HeroSection() {
       {/* Radial vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(10,13,6,0.55)_100%)] pointer-events-none" />
 
-      {/* Content — parallax scroll fade */}
+      {/* Content */}
       <motion.div
         style={{ y: contentY, opacity: heroOpacity }}
         className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-24"
@@ -94,17 +96,17 @@ export default function HeroSection() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-gold text-[10px] tracking-[0.35em] uppercase font-medium">
-                Digital Smile Design & Facial Aesthetics
+                {t('badge')}
               </span>
             </motion.div>
 
-            {/* Headline — blur reveal */}
+            {/* Headline */}
             <motion.h1
               variants={blurIn}
               className="font-display font-bold text-white leading-[1.04] tracking-tight mb-8"
               style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
             >
-              Transform
+              {t('headline1')}
               <span
                 className="block"
                 style={{
@@ -114,10 +116,10 @@ export default function HeroSection() {
                   backgroundClip: 'text',
                 }}
               >
-                Your Smile,
+                {t('headline2')}
               </span>
               <motion.span variants={fadeUp} className="block">
-                Reveal Your Beauty
+                {t('headline3')}
               </motion.span>
             </motion.h1>
 
@@ -126,33 +128,38 @@ export default function HeroSection() {
               variants={fadeUp}
               className="max-w-xl mx-auto lg:mx-0 text-white/50 text-lg lg:text-xl leading-relaxed mb-12"
             >
-              Where Swiss precision meets natural beauty. We craft personalized dental and
-              facial aesthetic treatments with artistry and clinical excellence.
+              {t('subtitle')}
             </motion.p>
 
-            {/* CTAs — spring hover */}
+            {/* CTAs */}
             <motion.div
               variants={fadeUp}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-16 lg:mb-0"
             >
-              <motion.a
-                href="/contact"
+              <motion.div
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                className="px-8 py-4 bg-olive text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-full hover:bg-olive-light transition-colors duration-300 hover:shadow-2xl hover:shadow-olive/35"
               >
-                Book Consultation
-              </motion.a>
-              <motion.a
-                href="/dental"
+                <Link
+                  href="/contact"
+                  className="inline-flex px-8 py-4 bg-olive text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-full hover:bg-olive-light transition-colors duration-300 hover:shadow-2xl hover:shadow-olive/35"
+                >
+                  {t('ctaPrimary')}
+                </Link>
+              </motion.div>
+              <motion.div
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                className="px-8 py-4 border border-white/15 text-white/80 text-[11px] tracking-[0.25em] uppercase font-medium rounded-full hover:bg-white/8 hover:border-white/30 transition-all duration-300"
               >
-                Explore Services
-              </motion.a>
+                <Link
+                  href="/dental"
+                  className="inline-flex px-8 py-4 border border-white/15 text-white/80 text-[11px] tracking-[0.25em] uppercase font-medium rounded-full hover:bg-white/8 hover:border-white/30 transition-all duration-300"
+                >
+                  {t('ctaSecondary')}
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Stats — desktop */}
@@ -199,8 +206,8 @@ export default function HeroSection() {
                 transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -bottom-8 -left-8 bg-luxury-black/90 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl"
               >
-                <p className="font-display text-2xl font-bold text-gold leading-none mb-1">1,200+</p>
-                <p className="text-white/40 text-[9px] tracking-[0.2em] uppercase">Smiles Transformed</p>
+                <p className="font-display text-2xl font-bold text-gold leading-none mb-1">1.200+</p>
+                <p className="text-white/40 text-[9px] tracking-[0.2em] uppercase">{t('stats.smiles')}</p>
               </motion.div>
 
               {/* Pulsing gold dot */}
@@ -231,14 +238,14 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Cinematic mouse-style scroll indicator */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
-        <span className="text-white/20 text-[8px] tracking-[0.5em] uppercase">Scroll</span>
+        <span className="text-white/20 text-[8px] tracking-[0.5em] uppercase">{t('scroll')}</span>
         <div className="relative w-5 h-8 rounded-full border border-white/15 flex items-start justify-center pt-1.5">
           <motion.div
             animate={{ y: [0, 14, 0], opacity: [1, 0, 1] }}

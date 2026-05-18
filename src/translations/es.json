@@ -18,15 +18,44 @@
     "headline3": "Revela Tu Belleza",
     "subtitle": "Donde la precisión suiza se encuentra con la belleza natural. Clínica premium en Lugano, Ticino.",
     "ctaPrimary": "Reservar Consulta",
-    "ctaSecondary": "Explorar Servicios"
+    "ctaSecondary": "Explorar Servicios",
+    "scroll": "Desplaza",
+    "stats": {
+      "smiles": "Sonrisas Transformadas",
+      "years": "Años de Excelencia",
+      "satisfaction": "Satisfacción de Pacientes"
+    }
   },
-  "common": {
-    "bookConsultation": "Reservar una Consulta",
-    "learnMore": "Saber Más",
-    "contactUs": "Contáctanos",
-    "viewAll": "Ver Todo"
+  "philosophy": {
+    "eyebrow": "Nuestro Enfoque",
+    "headline1": "El Arte de la",
+    "headline2": "Belleza Precisa",
+    "body1": "En Luxury Dental & Facial Estética, creemos que los resultados excepcionales surgen de la intersección entre la precisión científica y la sensibilidad artística.",
+    "body2": "Nuestra filosofía está arraigada en el minimalismo suizo — eliminar lo innecesario, realzar lo esencial y crear resultados que perduren en el tiempo. Cada sonrisa que diseñamos está guiada por un profundo respeto por la belleza natural.",
+    "cta": "Comienza Tu Viaje",
+    "pillars": [
+      {
+        "title": "Precisión Suiza",
+        "description": "Cada tratamiento se ejecuta con meticulosa atención al detalle, combinando excelencia clínica y visión artística para resultados impecables y duraderos."
+      },
+      {
+        "title": "Belleza Natural",
+        "description": "Realzamos tus rasgos naturales, creando resultados armoniosos, equilibrados y auténticamente tuyos — nunca exagerados, siempre refinados."
+      },
+      {
+        "title": "Odontología Digital",
+        "description": "El imaging 3D avanzado y el diseño digital de sonrisa nos permiten planificar y visualizar tu transformación antes de comenzar cualquier tratamiento."
+      },
+      {
+        "title": "Cuidado Personalizado",
+        "description": "Cada plan de tratamiento es únicamente tuyo — diseñado según tus objetivos, anatomía y visión estética, sin compromisos en la calidad."
+      }
+    ]
   },
   "contact": {
+    "eyebrow": "Reserva",
+    "headline1": "Comienza Tu",
+    "headline2": "Transformación",
     "title": "Comienza tu viaje",
     "subtitle": "Estamos aquí para escucharte y guiarte hacia la sonrisa que mereces.",
     "name": "Nombre completo",
@@ -35,11 +64,43 @@
     "service": "Servicio de interés",
     "message": "Mensaje",
     "send": "Enviar mensaje",
-    "whatsapp": "Chatear por WhatsApp"
+    "whatsapp": "Chatear por WhatsApp",
+    "fullName": "Nombre Completo",
+    "emailAddress": "Correo Electrónico",
+    "phoneNumber": "Número de Teléfono",
+    "serviceInterest": "Servicio de Interés",
+    "selectService": "Selecciona un servicio",
+    "yourMessage": "Tu Mensaje",
+    "messagePlaceholder": "Cuéntanos tus objetivos y lo que te gustaría lograr...",
+    "namePlaceholder": "Tu nombre completo",
+    "sendMessage": "Enviar Mensaje",
+    "privacy": "Tu información es completamente confidencial y nunca se comparte.",
+    "successTitle": "Mensaje Recibido",
+    "successMessage": "Gracias por contactarnos. Te responderemos en 24 horas para confirmar tu consulta.",
+    "openingHours": "Horarios",
+    "contactLabel": "Contacto",
+    "getDirections": "Cómo Llegar",
+    "chatWhatsApp": "Chat en WhatsApp",
+    "typicallyReplies": "Generalmente responde al instante",
+    "weekdays": "Lunes – Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "closed": "Cerrado",
+    "services": {
+      "smileDesign": "Diseño de Sonrisa Digital",
+      "aligners": "Alineadores Transparentes",
+      "veneers": "Carillas de Porcelana",
+      "whitening": "Blanqueamiento Dental",
+      "guards": "Férulas / Retenedores",
+      "sleep": "Sedación Dental",
+      "facial": "Estética Facial",
+      "other": "Otro"
+    }
   },
   "footer": {
-    "ctaHeadline": "Tu Sonrisa Perfecta en Suiza",
-    "ctaSubtitle": "Tratamientos de lujo con la precisión suiza que mereces",
+    "ctaHeadline": "Tu Sonrisa Perfecta",
+    "ctaHeadlineGold": "Comienza en Lugano",
+    "ctaSubtitle": "Tratamientos de lujo con la precisión suiza que mereces. Pacientes internacionales bienvenidos.",
     "bookConsultation": "Reservar Consulta",
     "whatsapp": "WhatsApp",
     "callClinic": "Llamar a la Clínica",
@@ -49,14 +110,60 @@
     "privacyPolicy": "Política de Privacidad",
     "sitemap": "Mapa del Sitio",
     "terms": "Términos de Servicio",
-    "copyright": "Todos los derechos reservados."
+    "copyright": "Todos los derechos reservados.",
+    "description": "Donde la precisión suiza se encuentra con la belleza natural.",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "hours": "Horarios",
+    "weekdays": "Lun–Vie: 9:00 – 19:00",
+    "saturday": "Sáb: 10:00 – 17:00",
+    "socialReviews": "Social & Reseñas",
+    "googleReviews": "5.0 Reseñas de Google",
+    "pills": {
+      "dental": "Odontología de Lujo en Lugano",
+      "smile": "Diseño de Sonrisa Digital",
+      "facial": "Estética Facial",
+      "care": "Atención Premium Suiza"
+    },
+    "links": {
+      "about": "Nosotros",
+      "philosophy": "Filosofía",
+      "technology": "Tecnología",
+      "team": "Equipo",
+      "smileDesign": "Diseño de Sonrisa",
+      "veneers": "Carillas de Porcelana",
+      "aligners": "Alineadores",
+      "sleep": "Sedación Dental",
+      "facial": "Estética Facial"
+    }
   },
   "latin": {
     "eyebrow": "Pacientes Internacionales",
-    "headline": "Experiencia Dental de Lujo en Suiza",
-    "subheadline": "Transformaciones premium en Lugano",
+    "headline": "Experiencia Dental de Lujo",
+    "headlineGold": "en Suiza",
+    "subheadline": "Transformaciones premium en Lugano, Paradiso",
     "body": "Atención personalizada en español, tratamientos de vanguardia y la precisión suiza que mereces. Tu viaje a la sonrisa perfecta comienza aquí.",
+    "body2": "Contamos con un equipo bilingüe listo para guiarte desde tu país de origen hasta la clínica. Coordinamos todo — desde la consulta hasta el tratamiento completo.",
     "whatsapp": "Escríbenos por WhatsApp",
-    "consultation": "Reservar Consulta"
+    "consultation": "Reservar Consulta",
+    "features": {
+      "certified": "Clínica certificada en Suiza",
+      "language": "Atención en Español",
+      "international": "Pacientes internacionales",
+      "stars": "Resultados 5 estrellas"
+    },
+    "idiomaLabel": "Idioma",
+    "idiomaValue": "🇪🇸 Español",
+    "locationLabel": "Ubicación",
+    "locationValue": "Lugano, Suiza",
+    "attentionLabel": "Atención",
+    "attentionValue": "Personalizada & en tu idioma"
+  },
+  "common": {
+    "bookConsultation": "Reservar una Consulta",
+    "learnMore": "Saber Más",
+    "contactUs": "Contáctanos",
+    "viewAll": "Ver Todo"
   }
 }

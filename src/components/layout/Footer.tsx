@@ -1,47 +1,49 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/navigation'
 import { SITE_CONFIG } from '@/config/site'
 import { fadeUp, staggerContainer, LUXURY_EASE } from '@/lib/animations'
-
-const clinicLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Philosophy', href: '/about#philosophy' },
-  { label: 'Technology', href: '/dental#technology' },
-  { label: 'Team', href: '/team' },
-]
-
-const treatmentLinks = [
-  { label: 'Smile Design', href: '/dental' },
-  { label: 'Porcelain Veneers', href: '/dental' },
-  { label: 'Clear Aligners', href: '/dental' },
-  { label: 'Sleep Dentistry', href: '/dental' },
-  { label: 'Facial Aesthetics', href: '/facial-aesthetics' },
-]
 
 const socialLinks = [
   { label: 'Instagram', href: SITE_CONFIG.social.instagram, abbr: 'IG' },
   { label: 'Facebook', href: SITE_CONFIG.social.facebook, abbr: 'FB' },
   { label: 'LinkedIn', href: '#', abbr: 'LI' },
-  { label: 'Google Reviews', href: '#', abbr: 'G★' },
-]
-
-const servicePills = [
-  'Luxury Dentistry in Lugano',
-  'Digital Smile Design',
-  'Facial Aesthetics',
-  'Swiss Premium Care',
+  { label: 'Google', href: '#', abbr: 'G★' },
 ]
 
 export default function Footer() {
+  const t = useTranslations('footer')
+
+  const clinicLinks = [
+    { label: t('links.about'), href: '/about' as const },
+    { label: t('links.philosophy'), href: '/about' as const },
+    { label: t('links.technology'), href: '/dental' as const },
+    { label: t('links.team'), href: '/team' as const },
+  ]
+
+  const treatmentLinks = [
+    { label: t('links.smileDesign'), href: '/dental' as const },
+    { label: t('links.veneers'), href: '/dental' as const },
+    { label: t('links.aligners'), href: '/dental' as const },
+    { label: t('links.sleep'), href: '/dental' as const },
+    { label: t('links.facial'), href: '/facial-aesthetics' as const },
+  ]
+
+  const servicePills = [
+    t('pills.dental'),
+    t('pills.smile'),
+    t('pills.facial'),
+    t('pills.care'),
+  ]
+
   return (
     <footer className="bg-luxury-black">
       {/* Decorative top separator */}
       <div className="h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
-      {/* ═══════════════════════════════════════════════
-          SECTION A — Cinematic CTA Block
-      ═══════════════════════════════════════════════ */}
+      {/* ═══ SECTION A — Cinematic CTA Block ═══ */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +72,7 @@ export default function Footer() {
             className="font-display font-bold text-white leading-[1.05] tracking-tight mb-6"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
           >
-            Your Perfect Smile
+            {t('ctaHeadline')}
             <br />
             <span
               style={{
@@ -80,23 +82,22 @@ export default function Footer() {
                 backgroundClip: 'text',
               }}
             >
-              Begins in Lugano
+              {t('ctaHeadlineGold')}
             </span>
           </h2>
 
           <p className="text-white/40 text-base leading-relaxed max-w-xl mx-auto mb-12">
-            Luxury dental and facial aesthetics with Swiss precision. International patients welcome.
-            Spanish-speaking assistance available.
+            {t('ctaSubtitle')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center px-8 py-4 bg-olive text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-full hover:bg-olive-light transition-all duration-300 hover:shadow-2xl hover:shadow-olive/30 hover:-translate-y-0.5"
             >
-              Book Consultation
-            </a>
+              {t('bookConsultation')}
+            </Link>
             <a
               href={SITE_CONFIG.contact.whatsapp}
               target="_blank"
@@ -106,7 +107,7 @@ export default function Footer() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-              WhatsApp
+              {t('whatsapp')}
             </a>
             <a
               href={`tel:${SITE_CONFIG.contact.phone.replace(/\s/g, '')}`}
@@ -124,18 +125,15 @@ export default function Footer() {
               >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              Call the Clinic
+              {t('callClinic')}
             </a>
           </div>
         </div>
 
-        {/* Gold line separator */}
         <div className="h-px bg-linear-to-r from-transparent via-gold/15 to-transparent" />
       </motion.div>
 
-      {/* ═══════════════════════════════════════════════
-          SECTION B — 4-column footer grid
-      ═══════════════════════════════════════════════ */}
+      {/* ═══ SECTION B — 4-column footer grid ═══ */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -146,7 +144,6 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1 — Clinic */}
           <motion.div variants={fadeUp}>
-            {/* Logo */}
             <div className="flex items-center gap-3 mb-6">
               <div className="w-9 h-9 rounded-full bg-gold flex items-center justify-center shrink-0">
                 <span className="font-display font-bold text-white text-sm">LD</span>
@@ -161,21 +158,21 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/30 text-sm leading-relaxed mb-7">
-              Where Swiss precision meets natural beauty.
+              {t('description')}
             </p>
 
             <h4 className="text-white/50 font-semibold text-[10px] tracking-[0.25em] uppercase mb-4">
-              Clinic
+              {t('clinic')}
             </h4>
             <ul className="space-y-2.5">
               {clinicLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a
+                  <Link
                     href={href}
                     className="text-white/30 text-sm hover:text-gold transition-colors duration-200"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -184,17 +181,17 @@ export default function Footer() {
           {/* Column 2 — Treatments */}
           <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
-              Treatments
+              {t('treatments')}
             </h4>
             <ul className="space-y-2.5">
               {treatmentLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a
+                  <Link
                     href={href}
                     className="text-white/30 text-sm hover:text-gold transition-colors duration-200"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -203,12 +200,12 @@ export default function Footer() {
           {/* Column 3 — Contact */}
           <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
-              Contact
+              {t('clinic')}
             </h4>
             <div className="space-y-4 text-sm">
               <div>
                 <p className="text-[10px] tracking-[0.2em] text-white/25 uppercase font-medium mb-1.5">
-                  Address
+                  {t('address')}
                 </p>
                 <p className="text-white/45 leading-relaxed">
                   {SITE_CONFIG.contact.address.street}
@@ -220,7 +217,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.2em] text-white/25 uppercase font-medium mb-1.5">
-                  Phone
+                  {t('phone')}
                 </p>
                 <a
                   href={`tel:${SITE_CONFIG.contact.phone.replace(/\s/g, '')}`}
@@ -237,7 +234,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.2em] text-white/25 uppercase font-medium mb-1.5">
-                  Email
+                  {t('email')}
                 </p>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
@@ -248,12 +245,12 @@ export default function Footer() {
               </div>
               <div className="pt-2 border-t border-white/6">
                 <p className="text-[10px] tracking-[0.2em] text-white/20 uppercase font-medium mb-1.5">
-                  Hours
+                  {t('hours')}
                 </p>
                 <p className="text-white/25 text-xs leading-relaxed">
-                  Mon–Fri: 9:00 – 19:00
+                  {t('weekdays')}
                   <br />
-                  Sat: 10:00 – 17:00
+                  {t('saturday')}
                 </p>
               </div>
             </div>
@@ -262,7 +259,7 @@ export default function Footer() {
           {/* Column 4 — Social & Reviews */}
           <motion.div variants={fadeUp}>
             <h4 className="text-white font-semibold text-[11px] tracking-[0.2em] uppercase mb-6">
-              Social & Reviews
+              {t('socialReviews')}
             </h4>
             <div className="grid grid-cols-2 gap-2.5 mb-8">
               {socialLinks.map(({ label, href, abbr }) => (
@@ -290,16 +287,14 @@ export default function Footer() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-[10px] text-white/30 tracking-wide">5.0 Google Reviews</span>
+                <span className="text-[10px] text-white/30 tracking-wide">{t('googleReviews')}</span>
               </div>
             </div>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* ═══════════════════════════════════════════════
-          SECTION C — Micro footer
-      ═══════════════════════════════════════════════ */}
+      {/* ═══ SECTION C — Micro footer ═══ */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -309,17 +304,17 @@ export default function Footer() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs">
-            © 2026 {SITE_CONFIG.fullName}. All rights reserved.
+            © 2026 {SITE_CONFIG.fullName}. {t('copyright')}
           </p>
           <div className="flex items-center gap-6 text-white/20 text-xs">
-            <a href="/privacy-policy" className="hover:text-white/40 transition-colors">
-              Privacy Policy
-            </a>
+            <Link href="/privacy-policy" className="hover:text-white/40 transition-colors">
+              {t('privacyPolicy')}
+            </Link>
             <a href="/sitemap.xml" className="hover:text-white/40 transition-colors">
-              Sitemap
+              {t('sitemap')}
             </a>
             <a href="#" className="hover:text-white/40 transition-colors">
-              Terms of Service
+              {t('terms')}
             </a>
           </div>
         </div>

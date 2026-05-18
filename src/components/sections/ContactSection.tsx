@@ -2,25 +2,9 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
-
-const serviceOptions = [
-  'Digital Smile Design',
-  'Clear Aligners',
-  'Porcelain Veneers',
-  'Teeth Whitening',
-  'Mouth Guards / Retainers',
-  'Sleep Dentistry',
-  'Facial Aesthetics',
-  'Other',
-]
-
-const hours = [
-  { day: 'Monday – Friday', time: '9:00 – 19:00' },
-  { day: 'Saturday', time: '10:00 – 17:00' },
-  { day: 'Sunday', time: 'Closed' },
-]
 
 const selectClass =
   'w-full px-4 py-3.5 rounded-xl border border-beige bg-beige-light focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all duration-300 text-luxury-black text-sm appearance-none cursor-pointer'
@@ -28,14 +12,27 @@ const selectClass =
 const selectLabelClass =
   'block text-[10px] tracking-[0.25em] uppercase text-luxury-black/40 font-semibold mb-2'
 
+const hours = [
+  { dayKey: 'weekdays', time: '9:00 – 19:00', closed: false },
+  { dayKey: 'saturday', time: '10:00 – 17:00', closed: false },
+  { dayKey: 'sunday', time: '', closed: true },
+]
+
 export default function ContactSection() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  })
+  const t = useTranslations('contact')
+
+  const serviceOptions = [
+    { key: 'smileDesign', label: t('services.smileDesign') },
+    { key: 'aligners', label: t('services.aligners') },
+    { key: 'veneers', label: t('services.veneers') },
+    { key: 'whitening', label: t('services.whitening') },
+    { key: 'guards', label: t('services.guards') },
+    { key: 'sleep', label: t('services.sleep') },
+    { key: 'facial', label: t('services.facial') },
+    { key: 'other', label: t('services.other') },
+  ]
+
+  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   const set =
@@ -59,7 +56,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="block text-gold text-[10px] tracking-[0.4em] uppercase font-medium mb-6"
           >
-            Get In Touch
+            {t('eyebrow')}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -69,8 +66,8 @@ export default function ContactSection() {
             className="font-display font-bold text-luxury-black leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
           >
-            Begin Your{' '}
-            <span className="text-olive italic font-medium">Transformation</span>
+            {t('headline1')}{' '}
+            <span className="text-olive italic font-medium">{t('headline2')}</span>
           </motion.h2>
         </div>
 
@@ -96,40 +93,40 @@ export default function ContactSection() {
                   </svg>
                 </motion.div>
                 <h3 className="font-display text-2xl font-bold text-luxury-black mb-3">
-                  Message Received
+                  {t('successTitle')}
                 </h3>
                 <p className="text-luxury-black/50 max-w-sm">
-                  Thank you for reaching out. We will contact you within 24 hours to confirm your consultation.
+                  {t('successMessage')}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <Input
-                    label="Full Name"
+                    label={t('fullName')}
                     id="name"
                     type="text"
                     required
                     autoComplete="name"
                     value={form.name}
                     onChange={set('name')}
-                    placeholder="Your full name"
+                    placeholder={t('namePlaceholder')}
                   />
                   <Input
-                    label="Email Address"
+                    label={t('emailAddress')}
                     id="email"
                     type="email"
                     required
                     autoComplete="email"
                     value={form.email}
                     onChange={set('email')}
-                    placeholder="your@email.com"
+                    placeholder="info@esempio.com"
                   />
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <Input
-                    label="Phone Number"
+                    label={t('phoneNumber')}
                     id="phone"
                     type="tel"
                     autoComplete="tel"
@@ -139,7 +136,7 @@ export default function ContactSection() {
                   />
                   <div>
                     <label htmlFor="service" className={selectLabelClass}>
-                      Service Interest
+                      {t('serviceInterest')}
                     </label>
                     <select
                       id="service"
@@ -147,10 +144,10 @@ export default function ContactSection() {
                       onChange={set('service')}
                       className={selectClass}
                     >
-                      <option value="">Select a service</option>
+                      <option value="">{t('selectService')}</option>
                       {serviceOptions.map((s) => (
-                        <option key={s} value={s}>
-                          {s}
+                        <option key={s.key} value={s.label}>
+                          {s.label}
                         </option>
                       ))}
                     </select>
@@ -158,23 +155,23 @@ export default function ContactSection() {
                 </div>
 
                 <Textarea
-                  label="Your Message"
+                  label={t('yourMessage')}
                   id="message"
                   value={form.message}
                   onChange={set('message')}
                   rows={5}
-                  placeholder="Tell us about your goals and what you'd like to achieve..."
+                  placeholder={t('messagePlaceholder')}
                 />
 
                 <button
                   type="submit"
                   className="w-full py-4 bg-luxury-black text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-xl hover:bg-olive transition-all duration-400 hover:shadow-xl hover:shadow-olive/20"
                 >
-                  Send Message
+                  {t('sendMessage')}
                 </button>
 
                 <p className="text-luxury-black/30 text-xs text-center">
-                  Your information is completely confidential and never shared.
+                  {t('privacy')}
                 </p>
               </form>
             )}
@@ -188,7 +185,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-2 space-y-8"
           >
-            {/* Map placeholder — golden ratio */}
+            {/* Map placeholder */}
             <div
               className="w-full rounded-2xl overflow-hidden bg-linear-to-br from-olive/8 via-beige to-beige-light relative border border-beige"
               style={{ aspectRatio: '1.618 / 1' }}
@@ -208,7 +205,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="mt-4 text-olive text-[10px] tracking-[0.2em] uppercase font-semibold hover:underline"
                 >
-                  Get Directions →
+                  {t('getDirections')} →
                 </a>
               </div>
             </div>
@@ -217,7 +214,7 @@ export default function ContactSection() {
             <div className="space-y-6">
               <div className="pb-6 border-b border-beige">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gold font-semibold mb-3">
-                  Contact
+                  {t('contactLabel')}
                 </p>
                 <div className="space-y-1">
                   <a
@@ -243,20 +240,14 @@ export default function ContactSection() {
 
               <div className="pb-6 border-b border-beige">
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gold font-semibold mb-3">
-                  Opening Hours
+                  {t('openingHours')}
                 </p>
                 <div className="space-y-2">
-                  {hours.map(({ day, time }) => (
-                    <div key={day} className="flex justify-between text-sm">
-                      <span className="text-luxury-black/50">{day}</span>
-                      <span
-                        className={
-                          time === 'Closed'
-                            ? 'text-luxury-black/25'
-                            : 'text-luxury-black font-medium'
-                        }
-                      >
-                        {time}
+                  {hours.map(({ dayKey, time, closed }) => (
+                    <div key={dayKey} className="flex justify-between text-sm">
+                      <span className="text-luxury-black/50">{t(dayKey as 'weekdays' | 'saturday' | 'sunday')}</span>
+                      <span className={closed ? 'text-luxury-black/25' : 'text-luxury-black font-medium'}>
+                        {closed ? t('closed') : time}
                       </span>
                     </div>
                   ))}
@@ -277,9 +268,9 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-luxury-black font-semibold text-sm group-hover:text-[#128C7E] transition-colors">
-                    Chat on WhatsApp
+                    {t('chatWhatsApp')}
                   </p>
-                  <p className="text-luxury-black/40 text-xs mt-0.5">Typically replies instantly</p>
+                  <p className="text-luxury-black/40 text-xs mt-0.5">{t('typicallyReplies')}</p>
                 </div>
               </a>
             </div>

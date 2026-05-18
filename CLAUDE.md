@@ -2,6 +2,82 @@
 
 ---
 
+## Multilingual Architecture
+
+### Locale routing
+
+`src/i18n/routing.ts` — defines locales, default, and prefix strategy.
+
+| Setting | Value | Effect |
+|---|---|---|
+| `locales` | `['it', 'es', 'en']` | Italian, Spanish, English |
+| `defaultLocale` | `'it'` | Italian is the primary language |
+| `localePrefix` | `'always'` | All locales use an explicit URL prefix |
+| `localeDetection` | `false` | No browser-header sniffing |
+
+**Routes:** `/it`, `/es`, `/en` — visiting `/` redirects to `/it` via next-intl middleware.
+
+### Translation files
+
+`src/translations/{locale}.json` — one JSON per locale (`it.json`, `es.json`, `en.json`).
+
+Top-level namespaces:
+
+| Namespace | Used by |
+|---|---|
+| `nav` | Navbar (navLinks, bookNow) |
+| `hero` | HeroSection (badge, headlines, CTAs, stats, scroll) |
+| `philosophy` | PhilosophySection (eyebrow, headlines, pillars array) |
+| `contact` | ContactSection (form labels, service list, hours, success state) |
+| `footer` | Footer (CTA block, pills, links, columns, micro-footer) |
+| `latin` | LatinPatientSection (headline, features, floating cards) |
+| `common` | Shared CTAs (bookConsultation, learnMore, contactUs, viewAll) |
+
+### Using translations in components
+
+Client components use `useTranslations(namespace)` from `next-intl`:
+
+```tsx
+import { useTranslations } from 'next-intl'
+const t = useTranslations('nav')
+return <span>{t('bookNow')}</span>
+```
+
+Arrays in JSON (e.g. `philosophy.pillars`) are accessed with index notation:
+`t('pillars.0.title')`, `t('pillars.1.description')`, etc.
+
+### Locale-aware navigation
+
+**Always** import `Link`, `usePathname`, `useRouter` from `@/navigation` (NOT `next/link` or `next/navigation`) for locale-aware routing. The `@/navigation` module wraps next-intl's `createNavigation(routing)`.
+
+```tsx
+import { Link, usePathname, useRouter } from '@/navigation'
+```
+
+### Language switcher
+
+`Navbar.tsx` — shows IT, ES, EN pills (desktop dropdown + mobile pills). Switches locale via `router.replace(pathname, { locale })`. No page reload, locale persists across navigation.
+
+### SEO — multilingual
+
+`src/app/layout.tsx`:
+- `metadata.alternates.languages` maps all locale URLs including `x-default → /it`
+- Manual `<link rel="alternate" hrefLang="...">` tags in `<head>` for broad crawler support
+- OpenGraph `locale: 'it_IT'` with `alternateLocale: ['es_ES', 'en_GB']`
+
+`src/app/sitemap.ts`:
+- Generates all locale-prefixed URLs (`/it/...`, `/es/...`, `/en/...`)
+- Italian routes have full priority; others are weighted at ×0.9
+
+### Adding a new locale (future)
+
+1. Add locale code to `routing.ts` `locales` array
+2. Create `src/translations/{locale}.json` mirroring the existing structure
+3. Add the locale to `LOCALES` array in `Navbar.tsx`
+4. Update `layout.tsx` `metadata.alternates.languages` and `<link hrefLang>` tags
+
+---
+
 ## Animation Architecture
 
 ### Core motion library
