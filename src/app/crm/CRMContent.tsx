@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 interface PatientLead {
   id: string
@@ -8,7 +8,7 @@ interface PatientLead {
   email: string
   phone: string | null
   message: string | null
-  createdAt: Date
+  createdAt: string | Date
 }
 
 interface ContactMessage {
@@ -17,14 +17,14 @@ interface ContactMessage {
   email: string
   subject: string
   message: string
-  createdAt: Date
+  createdAt: string | Date
 }
 
 interface Newsletter {
   id: string
   email: string
   locale: string
-  createdAt: Date
+  createdAt: string | Date
 }
 
 interface CRMContentProps {
@@ -36,11 +36,28 @@ interface CRMContentProps {
 
 type Tab = 'leads' | 'messages' | 'subscribers'
 
+const PAGE_SIZE = 50
+
+// ── CSV export helper ─────────────────────────────────────────────────────────
+function exportCsv(filename: string, rows: string[][], headers: string[]) {
+  const escape = (v: string) => `"${v.replace(/"/g, '""')}"`
+  const lines = [headers.map(escape).join(','), ...rows.map((r) => r.map(escape).join(','))]
+  const blob = new Blob([lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
 export default function CRMContent({ authorized, leads, messages, subscribers }: CRMContentProps) {
   const [token, setToken] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [tab, setTab] = useState<Tab>('leads')
+  const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1)
 
   const handleLogin = async () => {
     if (!token.trim()) return
@@ -64,6 +81,76 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
     }
   }
 
+  const handleTabChange = (t: Tab) => {
+    setTab(t)
+    setSearch('')
+    setPage(1)
+  }
+
+  const formatDate = (d: string | Date) =>
+    new Date(d).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })
+
+  // ── Filtered + paginated data ─────────────────────────────────────────────
+  const filteredLeads = useMemo(() => {
+    const q = search.toLowerCase()
+    return q
+      ? leads.filter((l) => l.name.toLowerCase().includes(q) || l.email.toLowerCase().includes(q))
+      : leads
+  }, [leads, search])
+
+  const filteredMessages = useMemo(() => {
+    const q = search.toLowerCase()
+    return q
+      ? messages.filter(
+          (m) =>
+            m.name.toLowerCase().includes(q) ||
+            m.email.toLowerCase().includes(q) ||
+            m.subject.toLowerCase().includes(q),
+        )
+      : messages
+  }, [messages, search])
+
+  const filteredSubscribers = useMemo(() => {
+    const q = search.toLowerCase()
+    return q
+      ? subscribers.filter(
+          (s) => s.email.toLowerCase().includes(q) || s.locale.toLowerCase().includes(q),
+        )
+      : subscribers
+  }, [subscribers, search])
+
+  const activeData = tab === 'leads' ? filteredLeads : tab === 'messages' ? filteredMessages : filteredSubscribers
+  const totalPages = Math.max(1, Math.ceil(activeData.length / PAGE_SIZE))
+  const safePage = Math.min(page, totalPages)
+  const pagedLeads = filteredLeads.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
+  const pagedMessages = filteredMessages.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
+  const pagedSubscribers = filteredSubscribers.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
+
+  // ── CSV handlers ─────────────────────────────────────────────────────────
+  const exportLeads = () =>
+    exportCsv(
+      'leads.csv',
+      leads.map((l) => [l.name, l.email, l.phone ?? '', l.message ?? '', formatDate(l.createdAt)]),
+      ['Name', 'Email', 'Phone', 'Message', 'Date'],
+    )
+
+  const exportMessages = () =>
+    exportCsv(
+      'messages.csv',
+      messages.map((m) => [m.name, m.email, m.subject, m.message, formatDate(m.createdAt)]),
+      ['Name', 'Email', 'Subject', 'Message', 'Date'],
+    )
+
+  const exportSubscribers = () =>
+    exportCsv(
+      'subscribers.csv',
+      subscribers.map((s) => [s.email, s.locale, formatDate(s.createdAt)]),
+      ['Email', 'Locale', 'Subscribed'],
+    )
+
+  // ── Shared toolbar ────────────────────────────────────────────────────────
+  const exportFn = tab === 'leads' ? exportLeads : tab === 'messages' ? exportMessages : exportSubscribers
+
   if (!authorized) {
     return (
       <div className="min-h-screen bg-luxury-black flex items-center justify-center px-6">
@@ -83,9 +170,7 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
             placeholder="Admin token"
             className="w-full px-4 py-3 rounded-xl bg-white/6 border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-gold/40 transition-colors mb-4"
           />
-          {error && (
-            <p className="text-red-400 text-xs mb-4">{error}</p>
-          )}
+          {error && <p className="text-red-400 text-xs mb-4">{error}</p>}
           <button
             onClick={handleLogin}
             disabled={loading || !token.trim()}
@@ -103,9 +188,6 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
     { id: 'messages', label: 'Messages', count: messages.length },
     { id: 'subscribers', label: 'Newsletter', count: subscribers.length },
   ]
-
-  const formatDate = (d: Date) =>
-    new Date(d).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })
 
   return (
     <div className="min-h-screen bg-luxury-black text-white">
@@ -132,7 +214,7 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
         {tabs.map((t) => (
           <button
             key={t.id}
-            onClick={() => setTab(t.id)}
+            onClick={() => handleTabChange(t.id)}
             className={`flex items-center gap-2 py-4 px-1 text-[11px] tracking-[0.18em] uppercase font-medium border-b-2 transition-colors mr-6 ${
               tab === t.id
                 ? 'border-gold text-gold'
@@ -151,8 +233,33 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
         ))}
       </div>
 
+      {/* Toolbar: search + export */}
+      <div className="px-6 lg:px-8 pt-6 pb-2 flex items-center gap-3">
+        <input
+          type="search"
+          value={search}
+          onChange={(e) => { setSearch(e.target.value); setPage(1) }}
+          placeholder="Search by name, email…"
+          className="flex-1 max-w-xs px-4 py-2 rounded-xl bg-white/4 border border-white/10 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-gold/30 transition-colors"
+        />
+        {search && (
+          <span className="text-white/30 text-xs">
+            {activeData.length} result{activeData.length !== 1 ? 's' : ''}
+          </span>
+        )}
+        <button
+          onClick={exportFn}
+          className="ml-auto flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 text-white/50 text-[11px] tracking-[0.15em] uppercase hover:border-gold/30 hover:text-gold/70 transition-colors"
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-70">
+            <path d="M6 1v7M3 5l3 3 3-3M2 10h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          Export CSV
+        </button>
+      </div>
+
       {/* Table */}
-      <div className="px-6 lg:px-8 py-8 overflow-x-auto">
+      <div className="px-6 lg:px-8 py-4 overflow-x-auto">
         {tab === 'leads' && (
           <table className="w-full min-w-[640px]">
             <thead>
@@ -165,12 +272,14 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
               </tr>
             </thead>
             <tbody>
-              {leads.length === 0 ? (
+              {pagedLeads.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-12 text-center text-white/20 text-sm">No leads yet</td>
+                  <td colSpan={5} className="py-12 text-center text-white/20 text-sm">
+                    {search ? 'No results found' : 'No leads yet'}
+                  </td>
                 </tr>
               ) : (
-                leads.map((l) => (
+                pagedLeads.map((l) => (
                   <tr key={l.id} className="border-t border-white/4 hover:bg-white/2 transition-colors">
                     <td className="py-3.5 pr-6 text-white/80 text-sm font-medium whitespace-nowrap">{l.name}</td>
                     <td className="py-3.5 pr-6 text-white/55 text-sm">{l.email}</td>
@@ -198,12 +307,14 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
               </tr>
             </thead>
             <tbody>
-              {messages.length === 0 ? (
+              {pagedMessages.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-12 text-center text-white/20 text-sm">No messages yet</td>
+                  <td colSpan={5} className="py-12 text-center text-white/20 text-sm">
+                    {search ? 'No results found' : 'No messages yet'}
+                  </td>
                 </tr>
               ) : (
-                messages.map((m) => (
+                pagedMessages.map((m) => (
                   <tr key={m.id} className="border-t border-white/4 hover:bg-white/2 transition-colors">
                     <td className="py-3.5 pr-6 text-white/80 text-sm font-medium whitespace-nowrap">{m.name}</td>
                     <td className="py-3.5 pr-6 text-white/55 text-sm">{m.email}</td>
@@ -231,16 +342,20 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
               </tr>
             </thead>
             <tbody>
-              {subscribers.length === 0 ? (
+              {pagedSubscribers.length === 0 ? (
                 <tr>
-                  <td colSpan={3} className="py-12 text-center text-white/20 text-sm">No subscribers yet</td>
+                  <td colSpan={3} className="py-12 text-center text-white/20 text-sm">
+                    {search ? 'No results found' : 'No subscribers yet'}
+                  </td>
                 </tr>
               ) : (
-                subscribers.map((s) => (
+                pagedSubscribers.map((s) => (
                   <tr key={s.id} className="border-t border-white/4 hover:bg-white/2 transition-colors">
                     <td className="py-3.5 pr-6 text-white/70 text-sm">{s.email}</td>
                     <td className="py-3.5 pr-6">
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-gold/70 border border-gold/20 rounded-full px-2 py-0.5">{s.locale}</span>
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-gold/70 border border-gold/20 rounded-full px-2 py-0.5">
+                        {s.locale}
+                      </span>
                     </td>
                     <td className="py-3.5 text-white/25 text-xs">{formatDate(s.createdAt)}</td>
                   </tr>
@@ -250,6 +365,29 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
           </table>
         )}
       </div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="px-6 lg:px-8 pb-8 flex items-center gap-4">
+          <button
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={safePage === 1}
+            className="px-4 py-2 rounded-full border border-white/10 text-white/40 text-[11px] tracking-[0.15em] uppercase hover:border-white/20 hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            ← Previous
+          </button>
+          <span className="text-white/25 text-xs">
+            Page {safePage} of {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={safePage === totalPages}
+            className="px-4 py-2 rounded-full border border-white/10 text-white/40 text-[11px] tracking-[0.15em] uppercase hover:border-white/20 hover:text-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            Next →
+          </button>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createRateLimiter } from '@/lib/rateLimit'
+
+const isRateLimited = createRateLimiter(20, 60_000) // 20 req/min per IP
 
 const FAQ = [
   {
@@ -53,6 +56,11 @@ const FALLBACK =
   "I'm not sure about that specific question — please contact us directly at info@luxurydental.ch or call +41 91 994 50 51 and our team will be happy to help."
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+  }
+
   try {
     const { message } = await request.json()
     if (!message || typeof message !== 'string') {

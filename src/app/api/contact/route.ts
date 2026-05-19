@@ -1,24 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { createRateLimiter } from '@/lib/rateLimit'
+import { sendLeadNotification } from '@/lib/email'
 import { z } from 'zod'
 
-// ── Rate limiting (in-memory, per-IP, 10 req/min) ─────────────────────────────
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now()
-  const window = 60_000
-  const limit = 10
-
-  const entry = rateLimitMap.get(ip)
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + window })
-    return false
-  }
-  entry.count++
-  if (rateLimitMap.size > 10_000) rateLimitMap.clear()
-  return entry.count > limit
-}
+const isRateLimited = createRateLimiter(10, 60_000) // 10 req/min per IP
 
 const ContactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -39,10 +25,7 @@ export async function POST(request: NextRequest) {
     const parsed = ContactSchema.safeParse(body)
 
     if (!parsed.success) {
-      return NextResponse.json(
-        { error: 'Invalid form data' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid form data' }, { status: 400 })
     }
 
     const { name, email, phone, service, message } = parsed.data
@@ -52,9 +35,17 @@ export async function POST(request: NextRequest) {
       message || null,
     ].filter(Boolean).join('\n\n') || null
 
-    await prisma.patientLead.create({
+    const lead = await prisma.patientLead.create({
       data: { name, email, phone: phone || null, message: combinedMessage },
     })
+
+    // Fire-and-forget email — failure never breaks the form submission
+    sendLeadNotification({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone,
+      message: lead.message,
+    }).catch((err) => console.error('[contact] Email notification failed:', err))
 
     return NextResponse.json({ success: true }, { status: 201 })
   } catch (error) {

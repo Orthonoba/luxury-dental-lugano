@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createRateLimiter } from '@/lib/rateLimit'
+
+const isRateLimited = createRateLimiter(5, 10 * 60_000) // 5 attempts per 10 min per IP
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: 'Too many attempts. Try again later.' }, { status: 429 })
+  }
+
   try {
     const { token } = await request.json()
 

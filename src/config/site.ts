@@ -1,3 +1,11 @@
+import type { ClinicConfig } from './clinic'
+
+/**
+ * SITE_CONFIG — the white-label instance configuration for Luxury Dental Paradiso.
+ *
+ * To deploy a new clinic: update this file with the clinic's data, then update
+ * src/translations/*.json and follow the steps in WHITE_LABEL_GUIDE.md.
+ */
 export const SITE_CONFIG = {
   name: 'Luxury Dental',
   tagline: '& Facial Estética',
@@ -20,6 +28,7 @@ export const SITE_CONFIG = {
       country: 'Switzerland',
       zip: '6900',
       full: 'Via Riva Paradiso 4, 6900 Paradiso / Lugano, Switzerland',
+      coordinates: { lat: 45.9824, lng: 8.9424 },
     },
   },
   hours: [
@@ -33,4 +42,4 @@ export const SITE_CONFIG = {
     tiktok: '#',
     youtube: '#',
   },
-} as const
+} as const satisfies ClinicConfig

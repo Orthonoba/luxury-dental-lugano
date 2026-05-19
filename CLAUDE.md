@@ -10,16 +10,16 @@
 
 | Setting | Value | Effect |
 |---|---|---|
-| `locales` | `['it', 'es', 'en']` | Italian, Spanish, English |
-| `defaultLocale` | `'it'` | Italian is the primary language |
+| `locales` | `['en', 'es', 'it', 'de', 'fr']` | English, Spanish, Italian, German, French |
+| `defaultLocale` | `'en'` | English is the primary language |
 | `localePrefix` | `'always'` | All locales use an explicit URL prefix |
 | `localeDetection` | `false` | No browser-header sniffing |
 
-**Routes:** `/it`, `/es`, `/en` — visiting `/` redirects to `/it` via next-intl middleware.
+**Routes:** `/en`, `/es`, `/it`, `/de`, `/fr` — visiting `/` redirects to `/en` via next-intl middleware.
 
 ### Translation files
 
-`src/translations/{locale}.json` — one JSON per locale (`it.json`, `es.json`, `en.json`).
+`src/translations/{locale}.json` — one JSON per locale (`en.json`, `es.json`, `it.json`, `de.json`, `fr.json`).
 
 Top-level namespaces:
 
