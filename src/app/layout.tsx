@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
 import IntlProvider from '@/providers/IntlProvider'
+import AIChatbot from '@/components/floating/AIChatbot'
 import './globals.css'
 
 const inter = Inter({
@@ -142,6 +143,7 @@ export default async function RootLayout({
       <body className="min-h-screen antialiased relative">
         <IntlProvider locale={locale} messages={messages}>
           {children}
+          <AIChatbot />
         </IntlProvider>
       </body>
     </html>

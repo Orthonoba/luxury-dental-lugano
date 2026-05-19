@@ -2,6 +2,24 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
 
+// ── Rate limiting (in-memory, per-IP, 10 req/min) ─────────────────────────────
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const window = 60_000
+  const limit = 10
+
+  const entry = rateLimitMap.get(ip)
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + window })
+    return false
+  }
+  entry.count++
+  if (rateLimitMap.size > 10_000) rateLimitMap.clear()
+  return entry.count > limit
+}
+
 const ContactSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email(),
@@ -11,6 +29,11 @@ const ContactSchema = z.object({
 })
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+  if (isRateLimited(ip)) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+  }
+
   try {
     const body = await request.json()
     const parsed = ContactSchema.safeParse(body)
