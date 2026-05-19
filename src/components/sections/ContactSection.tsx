@@ -34,15 +34,34 @@ export default function ContactSection() {
 
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const set =
     (key: keyof typeof form) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm((prev) => ({ ...prev, [key]: e.target.value }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error((data as { error?: string }).error ?? 'Something went wrong. Please try again.')
+      }
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -165,10 +184,14 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-luxury-black text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-xl hover:bg-olive transition-all duration-400 hover:shadow-xl hover:shadow-olive/20"
+                  disabled={loading}
+                  className="w-full py-4 bg-olive text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-xl hover:bg-olive-light transition-all duration-300 hover:shadow-xl hover:shadow-olive/20 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {t('sendMessage')}
+                  {loading ? t('sending') : t('sendMessage')}
                 </button>
+                {error && (
+                  <p className="text-red-500 text-xs text-center mt-1">{error}</p>
+                )}
 
                 <p className="text-luxury-black/30 text-xs text-center">
                   {t('privacy')}

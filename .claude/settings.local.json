@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node \"C:\\\\Users\\\\Asus\\\\luxury.dental\\\\node_modules\\\\prisma\\\\dist\\\\bin.js\" generate --schema=\"C:\\\\Users\\\\Asus\\\\luxury.dental\\\\prisma\\\\schema.prisma\" 2>&1)",
+      "PowerShell($pkg = Get-Content \"C:\\\\Users\\\\Asus\\\\luxury.dental\\\\node_modules\\\\prisma\\\\package.json\" | ConvertFrom-Json; $pkg.bin; $pkg.main)",
+      "Bash(npm run *)"
+    ]
+  }
+}

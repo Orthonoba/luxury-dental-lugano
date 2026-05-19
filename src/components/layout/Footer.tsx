@@ -152,9 +152,14 @@ export default function Footer() {
                 <p className="font-display font-semibold text-white text-sm tracking-wide leading-none">
                   {SITE_CONFIG.name}
                 </p>
-                <p className="text-[10px] tracking-[0.2em] text-white/40 mt-0.5">
-                  {SITE_CONFIG.tagline}
-                </p>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <p className="text-[10px] tracking-[0.2em] text-white/40">{SITE_CONFIG.tagline}</p>
+                  <svg width="14" height="10" viewBox="0 0 14 10" xmlns="http://www.w3.org/2000/svg" aria-label="Switzerland" role="img" className="opacity-50 shrink-0">
+                    <rect width="14" height="10" fill="#D52B1E" rx="1"/>
+                    <rect x="6" y="1" width="2" height="8" fill="#FFFFFF"/>
+                    <rect x="3" y="3.5" width="8" height="3" fill="#FFFFFF"/>
+                  </svg>
+                </div>
               </div>
             </div>
             <p className="text-white/30 text-sm leading-relaxed mb-7">
@@ -212,7 +217,14 @@ export default function Footer() {
                   <br />
                   {SITE_CONFIG.contact.address.zip} {SITE_CONFIG.contact.address.city}
                   <br />
-                  {SITE_CONFIG.contact.address.country}
+                  <span className="inline-flex items-center gap-1.5">
+                    {SITE_CONFIG.contact.address.country}
+                    <svg width="12" height="9" viewBox="0 0 14 10" xmlns="http://www.w3.org/2000/svg" aria-label="Switzerland" role="img" className="opacity-50 inline-block" style={{ verticalAlign: 'middle' }}>
+                      <rect width="14" height="10" fill="#D52B1E" rx="1"/>
+                      <rect x="6" y="1" width="2" height="8" fill="#FFFFFF"/>
+                      <rect x="3" y="3.5" width="8" height="3" fill="#FFFFFF"/>
+                    </svg>
+                  </span>
                 </p>
               </div>
               <div>

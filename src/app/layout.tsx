@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     description:
       'Dove la precisione svizzera incontra la bellezza naturale. Clinica premium di odontoiatria ed estetica facciale a Lugano.',
     type: 'website',
-    locale: 'it_IT',
-    alternateLocale: ['es_ES', 'en_GB'],
-    url: `${BASE_URL}/it`,
+    locale: 'en_GB',
+    alternateLocale: ['es_ES', 'it_IT', 'de_DE', 'fr_FR'],
+    url: `${BASE_URL}/en`,
     siteName: 'Luxury Dental Paradiso',
   },
   twitter: {
@@ -52,12 +52,14 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: `${BASE_URL}/it`,
+    canonical: `${BASE_URL}/en`,
     languages: {
-      'it': `${BASE_URL}/it`,
-      'es': `${BASE_URL}/es`,
       'en': `${BASE_URL}/en`,
-      'x-default': `${BASE_URL}/it`,
+      'es': `${BASE_URL}/es`,
+      'it': `${BASE_URL}/it`,
+      'de': `${BASE_URL}/de`,
+      'fr': `${BASE_URL}/fr`,
+      'x-default': `${BASE_URL}/en`,
     },
   },
 }
@@ -105,7 +107,7 @@ const jsonLd = {
     reviewCount: '8',
   },
   medicalSpecialty: ['Dentistry', 'Cosmetic Dentistry', 'Aesthetic Medicine'],
-  availableLanguage: ['Italian', 'Spanish', 'English'],
+  availableLanguage: ['English', 'Spanish', 'German', 'French'],
   areaServed: [
     { '@type': 'City', name: 'Lugano' },
     { '@type': 'State', name: 'Ticino' },
@@ -130,10 +132,12 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* hreflang for multilingual SEO */}
-        <link rel="alternate" hrefLang="it" href={`${BASE_URL}/it`} />
-        <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
         <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
-        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/it`} />
+        <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
+        <link rel="alternate" hrefLang="it" href={`${BASE_URL}/it`} />
+        <link rel="alternate" hrefLang="de" href={`${BASE_URL}/de`} />
+        <link rel="alternate" hrefLang="fr" href={`${BASE_URL}/fr`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en`} />
       </head>
       <body className="min-h-screen antialiased relative">
         <IntlProvider locale={locale} messages={messages}>

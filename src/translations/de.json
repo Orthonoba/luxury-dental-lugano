@@ -18,15 +18,210 @@
     "headline3": "Enthüllen Sie Ihre Schönheit",
     "subtitle": "Wo Schweizer Präzision auf natürliche Schönheit trifft. Premium-Klinik in Lugano, Tessin.",
     "ctaPrimary": "Beratung buchen",
-    "ctaSecondary": "Leistungen entdecken"
+    "ctaSecondary": "Leistungen entdecken",
+    "scroll": "Scrollen",
+    "stats": {
+      "smiles": "Lächeln transformiert",
+      "years": "Jahre Exzellenz",
+      "satisfaction": "Patientenzufriedenheit"
+    }
   },
-  "common": {
-    "bookConsultation": "Beratung buchen",
+  "philosophy": {
+    "eyebrow": "Unser Ansatz",
+    "headline1": "Die Kunst der",
+    "headline2": "Präzisionsschönheit",
+    "body1": "Bei Luxury Dental & Facial Estética glauben wir, dass außergewöhnliche Ergebnisse aus der Verbindung von wissenschaftlicher Präzision und künstlerischer Sensibilität entstehen.",
+    "body2": "Unsere Philosophie wurzelt im Schweizer Minimalismus — das Unnötige entfernen, das Wesentliche hervorheben und Ergebnisse liefern, die den Test der Zeit bestehen. Jedes Lächeln, das wir gestalten, wird von einem tiefen Respekt vor natürlicher Schönheit geleitet.",
+    "cta": "Beginnen Sie Ihre Reise",
+    "pillars": [
+      {
+        "title": "Schweizer Präzision",
+        "description": "Jede Behandlung wird mit akribischer Liebe zum Detail ausgeführt und verbindet klinische Exzellenz mit künstlerischer Vision für makellose und dauerhafte Ergebnisse."
+      },
+      {
+        "title": "Natürliche Schönheit",
+        "description": "Wir betonen Ihre natürlichen Züge und schaffen harmonische, ausgewogene und authentische Ergebnisse — niemals übertrieben, immer raffiniert."
+      },
+      {
+        "title": "Digitale Zahnheilkunde",
+        "description": "Fortschrittliche 3D-Bildgebung und digitale Lächeldesign-Technologie ermöglichen es uns, Ihre Transformation vor Beginn jeder Behandlung zu visualisieren und zu planen."
+      },
+      {
+        "title": "Persönliche Betreuung",
+        "description": "Jeder Behandlungsplan ist einzigartig für Sie — gestaltet nach Ihren Zielen, Ihrer Anatomie und Ihrer ästhetischen Vision, ohne Kompromisse bei der Qualität."
+      }
+    ]
+  },
+  "dental": {
+    "eyebrow": "Zahnexzellenz",
+    "headline1": "Präzise Zahn-",
+    "headline2": "behandlungen",
     "learnMore": "Mehr erfahren",
-    "contactUs": "Kontakt",
-    "viewAll": "Alle anzeigen"
+    "viewAll": "Alle Behandlungen anzeigen",
+    "treatments": [
+      {
+        "title": "Digital Smile Design",
+        "description": "Fortschrittliche digitale 3D-Planung, die es Ihnen ermöglicht, Ihr perfektes Lächeln vor Beginn jeder Behandlung zu sehen. Präzisionsgefertigt für makellose Ergebnisse.",
+        "tag": "Signature"
+      },
+      {
+        "title": "Transparente Aligner",
+        "description": "Unsichtbare kieferorthopädische Behandlung mit präzisionsgefertigten Alignern für einen perfekten Biss und ein schönes Lächeln. Diskret, bequem und effektiv.",
+        "tag": "Beliebt"
+      },
+      {
+        "title": "Mundschutzschienen",
+        "description": "Maßgefertigte Schutzschienen für Sportler und Personen mit Bruxismus, konzipiert für maximalen Komfort und langfristigen Schutz.",
+        "tag": ""
+      },
+      {
+        "title": "Essix-Retainer",
+        "description": "Ultradünne, kristallklare Retainer, die Ihre Zahnstellung nach der kieferorthopädischen Behandlung mit nicht erkennbarer Präzision erhalten.",
+        "tag": ""
+      },
+      {
+        "title": "Schlafzahnheilkunde",
+        "description": "Komfortable Zahnbehandlung unter bewusster Sedierung für ein völlig angstfreies Behandlungserlebnis. Entspannen Sie sich, während wir Ihr Lächeln perfektionieren.",
+        "tag": ""
+      },
+      {
+        "title": "Porzellanfurniere",
+        "description": "Ultradünne, maßgefertigte Porzellanschalen, die ein leuchtendes, makelloses Lächeln erzeugen. Der Goldstandard in der kosmetischen Zahntransformation.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Zahnaufhellung",
+        "description": "Professionelles Aufhellen in medizinischer Qualität liefert dramatisch hellere, jugendlichere Ergebnisse in einer einzigen Sitzung. Sicher, schnell und langanhaltend.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Gesichtsästhetik",
+    "headline1": "Strahlend",
+    "headline2": "Verfeinert",
+    "body": "Unsere gesichtsästhetischen Behandlungen verbinden die neuesten medizinischen Fortschritte mit einem tiefen Verständnis natürlicher Schönheit und liefern transformative Ergebnisse ohne Kompromisse.",
+    "cta": "Gesichtsberatung buchen",
+    "services": [
+      {
+        "title": "Gesichtsreinigung",
+        "description": "Medizinische Tiefenreinigungsprotokolle, die Poren reinigen, das Hautgleichgewicht wiederherstellen und die perfekte Grundlage für fortschrittliche Behandlungen schaffen."
+      },
+      {
+        "title": "Hautverjüngung",
+        "description": "Fortschrittliche Behandlungen, die zelluläre Erneuerung mit modernster Technologie stimulieren, für sichtbar jüngere, strahlendere und leuchtendere Haut."
+      },
+      {
+        "title": "Gesichtsharmonie",
+        "description": "Präzisionsbehandlungen, die Gesichtsanteile verbessern und ausgewogene, harmonische Ästhetik schaffen — abgestimmt auf Ihre einzigartige Knochenstruktur."
+      },
+      {
+        "title": "Anti-Aging-Behandlungen",
+        "description": "Umfassende Protokolle gegen feine Linien, Volumenverlust und Hauterschlaffung mit medizinischer Präzision und dem Auge eines Künstlers für natürliche Ergebnisse."
+      },
+      {
+        "title": "Hydratationstherapien",
+        "description": "Intensive Hydratationsprotokolle, die Feuchtigkeit, Leuchtkraft und Geschmeidigkeit auf tiefster zellulärer Ebene für anhaltende Strahlkraft wiederherstellen."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Unsere Spezialisten",
+    "headline1": "Lernen Sie das",
+    "headline2": "Expertenteam kennen",
+    "members": [
+      {
+        "role": "Ärztlicher Direktor & Chirurg",
+        "bio": "Gründer und Ärztlicher Direktor von Luxury Dental Paradiso. Experte für chirurgische und restaurative Zahnheilkunde, Digital Smile Design und vollständige Mundrehabilitation mit einem ganzheitlichen Ansatz für Mundgesundheit und Schönheit.",
+        "credentials": ["Ärztlicher Direktor", "DSD-zertifiziert", "Oralchirurg"]
+      },
+      {
+        "role": "Fachzahnarzt",
+        "bio": "Spezialist für konservative und prothetische Zahnheilkunde. Experte für Porzellanfurniere, transparente Aligner-Therapie und präzise Restaurationen, die Funktion mit ästhetischer Exzellenz verbinden.",
+        "credentials": ["Prothetik", "Transparente Aligner", "Ästhetische Zahnheilkunde"]
+      },
+      {
+        "role": "Verwaltung",
+        "bio": "Sorgt dafür, dass jede Patientenreise reibungslos verläuft, von der ersten Konsultation bis zur Nachsorge. Engagiert für ein luxuriöses Erlebnis an jedem Berührungspunkt Ihres Besuchs.",
+        "credentials": ["Patientenbeziehungen", "Klinikkoordination", "Schweizer Qualität"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Patientengeschichten",
+    "headline1": "Worte unserer",
+    "headline2": "Patienten",
+    "verified": "verifizierte Bewertungen",
+    "recommended": "Empfohlen",
+    "prevLabel": "Vorherige Bewertung",
+    "nextLabel": "Nächste Bewertung",
+    "items": [
+      {
+        "text": "Die Transformation ist absolut bemerkenswert. Das Team hat genau verstanden, was ich mir vorgestellt habe — und dann etwas noch Schöneres geliefert. Mein Lächeln ist jetzt meine größte Quelle des Selbstvertrauens.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "Ich war skeptisch gegenüber Furnieren, aber das Team war unglaublich beruhigend. Die Ergebnisse sind so natürlich — alle nehmen an, dass ich einfach mit diesem Lächeln geboren wurde. Wirklich außergewöhnliches Handwerk.",
+        "treatment": "Porzellanfurniere"
+      },
+      {
+        "text": "Nach 14 Monaten mit transparenten Alignern sind mein Biss und mein Lächeln perfekt ausgerichtet. Die digitale Vorschau vor dem Start gab mir volles Vertrauen. Ein lebensveränderndes Erlebnis.",
+        "treatment": "Transparente Aligner"
+      },
+      {
+        "text": "Die Gesichtsverjüngung war subtil, natürlich und wunderschön gemacht. Meine Kollegen dachten, ich wäre aus einem erholsamen Urlaub zurückgekehrt. Die Ergebnisse sprechen für sich.",
+        "treatment": "Gesichtsästhetik"
+      },
+      {
+        "text": "Professionelles Aufhellen in einer Sitzung lieferte mir Ergebnisse, die ich jahrelang wollte. Die Klinikumgebung ist atemberaubend, das Team außergewöhnlich. Jeden Franken absolut wert.",
+        "treatment": "Zahnaufhellung"
+      },
+      {
+        "text": "Ich fuhr extra aus Como für diese Klinik, nachdem ich ihre Arbeit gesehen hatte. Nicht enttäuscht — die Liebe zum Detail und der persönliche Ansatz sind unvergleichlich.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "Die gesamte Reise war nahtlos — von der ersten digitalen Vorschau bis zum Endergebnis. Das Team hat mich bei jedem Schritt umsorgt. Mein Lächeln ist jetzt etwas, das ich gerne zeige.",
+        "treatment": "Transparente Aligner"
+      },
+      {
+        "text": "Als jemand, der im Design arbeitet, schätze ich Präzision und Schönheit. Dieses Team liefert beides. Die Furniere sind makellos — sie sehen natürlicher aus als meine ursprünglichen Zähne.",
+        "treatment": "Porzellanfurniere"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Echte Ergebnisse",
+    "headline1": "Transformationen",
+    "headline2": "Die Sprechen",
+    "body": "Ziehen oder verwenden Sie Pfeiltasten, um jede Transformation zu enthüllen. Jedes Ergebnis spiegelt unser Engagement für Präzision und natürliche Schönheit wider.",
+    "before": "Vorher",
+    "after": "Nachher",
+    "beforeLabel": "Original",
+    "afterLabel": "Transformiert",
+    "cases": [
+      {
+        "treatment": "Digital Smile Design",
+        "description": "Vollständige Lächeln-Erneuerung mit Porzellanfurnieren"
+      },
+      {
+        "treatment": "Porzellanfurniere",
+        "description": "Vollbogen Porzellanfurnier-Platzierung"
+      },
+      {
+        "treatment": "Zahnaufhellung",
+        "description": "Professionelle In-Office-Aufhellungssitzung"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Chat mit uns",
+    "ariaLabel": "Chat mit uns auf WhatsApp"
   },
   "contact": {
+    "eyebrow": "Buchen",
+    "headline1": "Beginnen Sie Ihre",
+    "headline2": "Transformation",
     "title": "Beginnen Sie Ihre Reise",
     "subtitle": "Wir sind hier, um Ihnen zuzuhören und Sie zu begleiten.",
     "name": "Vollständiger Name",
@@ -35,10 +230,43 @@
     "service": "Gewünschte Leistung",
     "message": "Nachricht",
     "send": "Nachricht senden",
-    "whatsapp": "WhatsApp schreiben"
+    "whatsapp": "WhatsApp schreiben",
+    "fullName": "Vollständiger Name",
+    "emailAddress": "E-Mail-Adresse",
+    "phoneNumber": "Telefonnummer",
+    "serviceInterest": "Leistungsinteresse",
+    "selectService": "Leistung auswählen",
+    "yourMessage": "Ihre Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihren Zielen und was Sie erreichen möchten...",
+    "namePlaceholder": "Ihr vollständiger Name",
+    "sendMessage": "Nachricht senden",
+    "sending": "Senden...",
+    "privacy": "Ihre Daten sind vollständig vertraulich und werden niemals weitergegeben.",
+    "successTitle": "Nachricht erhalten",
+    "successMessage": "Vielen Dank für Ihre Nachricht. Wir werden uns innerhalb von 24 Stunden bei Ihnen melden, um Ihre Beratung zu bestätigen.",
+    "openingHours": "Öffnungszeiten",
+    "contactLabel": "Kontakt",
+    "getDirections": "Wegbeschreibung",
+    "chatWhatsApp": "WhatsApp schreiben",
+    "typicallyReplies": "Antwortet in der Regel sofort",
+    "weekdays": "Montag – Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
+    "closed": "Geschlossen",
+    "services": {
+      "smileDesign": "Digital Smile Design",
+      "aligners": "Transparente Aligner",
+      "veneers": "Porzellanfurniere",
+      "whitening": "Zahnaufhellung",
+      "guards": "Mundschutz / Retainer",
+      "sleep": "Schlafzahnheilkunde",
+      "facial": "Gesichtsästhetik",
+      "other": "Sonstiges"
+    }
   },
   "footer": {
-    "ctaHeadline": "Ihr Perfektes Lächeln in Lugano",
+    "ctaHeadline": "Ihr Perfektes Lächeln",
+    "ctaHeadlineGold": "Beginnt in Lugano",
     "ctaSubtitle": "Luxusbehandlungen mit Schweizer Präzision",
     "bookConsultation": "Beratung buchen",
     "whatsapp": "WhatsApp",
@@ -49,14 +277,60 @@
     "privacyPolicy": "Datenschutz",
     "sitemap": "Sitemap",
     "terms": "Nutzungsbedingungen",
-    "copyright": "Alle Rechte vorbehalten."
+    "copyright": "Alle Rechte vorbehalten.",
+    "description": "Wo Schweizer Präzision auf natürliche Schönheit trifft.",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "hours": "Öffnungszeiten",
+    "weekdays": "Mo–Fr: 9:00 – 19:00",
+    "saturday": "Sa: 10:00 – 17:00",
+    "socialReviews": "Soziale Medien & Bewertungen",
+    "googleReviews": "5.0 Google-Bewertungen",
+    "pills": {
+      "dental": "Luxuszahnheilkunde in Lugano",
+      "smile": "Digital Smile Design",
+      "facial": "Gesichtsästhetik",
+      "care": "Schweizer Premiumbetreuung"
+    },
+    "links": {
+      "about": "Über Uns",
+      "philosophy": "Philosophie",
+      "technology": "Technologie",
+      "team": "Team",
+      "smileDesign": "Lächeldesign",
+      "veneers": "Porzellanfurniere",
+      "aligners": "Transparente Aligner",
+      "sleep": "Schlafzahnheilkunde",
+      "facial": "Gesichtsästhetik"
+    }
   },
   "latin": {
     "eyebrow": "Internationale Patienten",
-    "headline": "Luxus-Zahnerlebnis in der Schweiz",
-    "subheadline": "Premium-Transformationen in Lugano",
+    "headline": "Luxus-Zahnerlebnis",
+    "headlineGold": "in der Schweiz",
+    "subheadline": "Premium-Transformationen in Lugano, Paradiso",
     "body": "Persönliche Betreuung, modernste Behandlungen und Schweizer Präzision. Ihre Reise zum perfekten Lächeln beginnt hier.",
+    "body2": "Unser mehrsprachiges Team begleitet Sie von Ihrem Heimatland bis zu unserer Klinik. Wir koordinieren alles — von der Erstberatung bis zur vollständigen Behandlung.",
     "whatsapp": "WhatsApp schreiben",
-    "consultation": "Beratung buchen"
+    "consultation": "Beratung buchen",
+    "features": {
+      "certified": "Schweizer zertifizierte Klinik",
+      "language": "Mehrsprachige Betreuung",
+      "international": "Internationale Patienten",
+      "stars": "5-Sterne-Ergebnisse"
+    },
+    "idiomaLabel": "Sprache",
+    "idiomaValue": "DE · ES · EN",
+    "locationLabel": "Standort",
+    "locationValue": "Lugano, Schweiz",
+    "attentionLabel": "Service",
+    "attentionValue": "Persönlich & mehrsprachig"
+  },
+  "common": {
+    "bookConsultation": "Beratung buchen",
+    "learnMore": "Mehr erfahren",
+    "contactUs": "Kontakt",
+    "viewAll": "Alle anzeigen"
   }
 }

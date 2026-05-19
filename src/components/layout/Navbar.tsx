@@ -7,11 +7,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll } from '@/hooks/useScroll'
 import { cn } from '@/lib/utils'
 
-type LocaleCode = 'IT' | 'ES' | 'EN'
+type LocaleCode = 'EN' | 'ES' | 'DE' | 'FR'
 const LOCALES: { code: LocaleCode; value: string; label: string }[] = [
-  { code: 'IT', value: 'it', label: 'Italiano' },
-  { code: 'ES', value: 'es', label: 'Español' },
   { code: 'EN', value: 'en', label: 'English' },
+  { code: 'ES', value: 'es', label: 'Español' },
+  { code: 'DE', value: 'de', label: 'Deutsch' },
+  { code: 'FR', value: 'fr', label: 'Français' },
 ]
 
 export default function Navbar() {
@@ -83,7 +84,14 @@ export default function Navbar() {
             <p className="font-display text-sm font-semibold tracking-wide leading-none">
               Luxury Dental
             </p>
-            <p className="text-[10px] tracking-[0.2em] text-white/50 mt-0.5">& Facial Estética</p>
+            <div className="flex items-center gap-1.5 mt-0.5">
+              <p className="text-[10px] tracking-[0.2em] text-white/50">& Facial Estética</p>
+              <svg width="14" height="10" viewBox="0 0 14 10" xmlns="http://www.w3.org/2000/svg" aria-label="Switzerland" role="img" className="opacity-70 shrink-0">
+                <rect width="14" height="10" fill="#D52B1E" rx="1"/>
+                <rect x="6" y="1" width="2" height="8" fill="#FFFFFF"/>
+                <rect x="3" y="3.5" width="8" height="3" fill="#FFFFFF"/>
+              </svg>
+            </div>
           </div>
         </Link>
 

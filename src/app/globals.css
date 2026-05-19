@@ -4,15 +4,15 @@
 @theme {
   --color-beige: #E8DCCB;
   --color-beige-light: #F5F0E8;
-  --color-olive: #556B2F;
-  --color-olive-light: #6B8A3C;
+  --color-olive: #607C3A;
+  --color-olive-light: #627E3C;
   --color-gold: #C8A96B;
   --color-gold-light: #D4B97A;
   --color-luxury-black: #111111;
   --color-luxury-dark: #1A1A1A;
 
   --shadow-card: 0 8px 32px -8px rgba(0,0,0,0.10);
-  --shadow-luxury: 0 24px 64px -12px rgba(85,107,47,0.18);
+  --shadow-luxury: 0 24px 64px -12px rgba(96,124,58,0.18);
   --shadow-gold: 0 16px 48px -8px rgba(200,169,107,0.20);
 }
 
