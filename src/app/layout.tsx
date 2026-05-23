@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
-import IntlProvider from '@/providers/IntlProvider'
-import AIChatbot from '@/components/floating/AIChatbot'
 import './globals.css'
 
 const inter = Inter({
@@ -122,8 +120,6 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const locale = await getLocale()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const messages = (await import(`../translations/${locale}.json`)).default as Record<string, any>
 
   return (
     <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
@@ -141,10 +137,7 @@ export default async function RootLayout({
         <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en`} />
       </head>
       <body className="min-h-screen antialiased relative">
-        <IntlProvider locale={locale} messages={messages}>
-          {children}
-          <AIChatbot />
-        </IntlProvider>
+        {children}
       </body>
     </html>
   )
