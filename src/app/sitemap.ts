@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/config/site'
+import { sanityFetch } from '@/sanity/lib/live'
+import { allPostSlugsQuery } from '@/sanity/lib/queries'
 
 const routes = [
   { path: '',                          priority: 1.0,  changeFrequency: 'weekly'  as const },
@@ -23,11 +25,11 @@ const routes = [
 
 const locales = ['en', 'es', 'it', 'de', 'fr']
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = SITE_CONFIG.url
   const now = new Date()
 
-  return locales.flatMap((locale) =>
+  const staticEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     routes.map(({ path, priority, changeFrequency }) => ({
       url: `${base}/${locale}${path}`,
       lastModified: now,
@@ -35,4 +37,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: locale === 'it' ? priority : priority * 0.9,
     }))
   )
+
+  let blogEntries: MetadataRoute.Sitemap = []
+  try {
+    const result = await sanityFetch<{ slug: string }[]>({ query: allPostSlugsQuery })
+    const slugs = result.data ?? []
+    blogEntries = locales.flatMap((locale) =>
+      slugs.map(({ slug }) => ({
+        url: `${base}/${locale}/blog/${slug}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: locale === 'it' ? 0.7 : 0.63,
+      }))
+    )
+  } catch {
+    blogEntries = []
+  }
+
+  return [...staticEntries, ...blogEntries]
 }

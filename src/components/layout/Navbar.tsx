@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll } from '@/hooks/useScroll'
 import { cn } from '@/lib/utils'
 
-type LocaleCode = 'EN' | 'ES' | 'DE' | 'FR'
+type LocaleCode = 'IT' | 'EN' | 'ES' | 'DE' | 'FR'
 const LOCALES: { code: LocaleCode; value: string; label: string }[] = [
+  { code: 'IT', value: 'it', label: 'Italiano' },
   { code: 'EN', value: 'en', label: 'English' },
   { code: 'ES', value: 'es', label: 'Español' },
   { code: 'DE', value: 'de', label: 'Deutsch' },
