@@ -14,6 +14,8 @@ import {
 } from '@/sanity/lib/queries'
 import type { SanityPost } from '@/sanity/lib/queries'
 import { SITE_CONFIG } from '@/config/site'
+import { Link } from '@/navigation'
+import { routing } from '@/i18n/routing'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -22,7 +24,8 @@ interface PageProps {
 export async function generateStaticParams() {
   try {
     const result = await sanityFetch<{ slug: string }[]>({ query: allPostSlugsQuery })
-    return (result.data ?? []).map(({ slug }) => ({ slug }))
+    const slugs = (result.data ?? []).map(({ slug }) => ({ slug }))
+    return routing.locales.flatMap((locale) => slugs.map((s) => ({ locale, ...s })))
   } catch {
     return []
   }
@@ -233,7 +236,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {related.map((rel, index) => (
-                  <a
+                  <Link
                     key={rel._id}
                     href={`/blog/${rel.slug.current}`}
                     className="group block"
@@ -263,7 +266,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     <h3 className="font-display font-bold text-luxury-black text-lg leading-snug group-hover:text-olive transition-colors duration-300">
                       {rel.title}
                     </h3>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -284,12 +287,12 @@ export default async function BlogPostPage({ params }: PageProps) {
             <p className="text-white/40 mb-10">
               Book a complimentary consultation with our team in Lugano.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex px-8 py-4 bg-olive text-white text-[11px] tracking-[0.25em] uppercase font-semibold rounded-full hover:bg-olive-light transition-all duration-300 hover:shadow-xl hover:shadow-olive/25 hover:-translate-y-0.5"
             >
               Book Consultation
-            </a>
+            </Link>
           </div>
         </section>
       </main>
