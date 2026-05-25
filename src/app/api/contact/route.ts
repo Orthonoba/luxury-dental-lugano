@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { createRateLimiter } from '@/lib/rateLimit'
-import { sendLeadNotification } from '@/lib/email'
+import { sendLeadNotification, sendPatientConfirmation } from '@/lib/email'
 import { z } from 'zod'
 
 const isRateLimited = createRateLimiter(10, 60_000) // 10 req/min per IP
@@ -39,13 +39,19 @@ export async function POST(request: NextRequest) {
       data: { name, email, phone: phone || null, message: combinedMessage },
     })
 
-    // Fire-and-forget email — failure never breaks the form submission
+    // Fire-and-forget emails — failure never breaks the form submission
     sendLeadNotification({
       name: lead.name,
       email: lead.email,
       phone: lead.phone,
       message: lead.message,
-    }).catch((err) => console.error('[contact] Email notification failed:', err))
+    }).catch((err) => console.error('[contact] Admin notification failed:', err))
+
+    sendPatientConfirmation({
+      name: lead.name,
+      email: lead.email,
+      service: parsed.data.service,
+    }).catch((err) => console.error('[contact] Patient confirmation failed:', err))
 
     return NextResponse.json({ success: true }, { status: 201 })
   } catch (error) {

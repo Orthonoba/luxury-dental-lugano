@@ -76,3 +76,62 @@ function escHtml(str: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
 }
+
+interface PatientConfirmationData {
+  name: string
+  email: string
+  service?: string | null
+}
+
+/** Sends a booking confirmation to the patient. No-ops silently if RESEND_API_KEY is not set. */
+export async function sendPatientConfirmation(data: PatientConfirmationData): Promise<void> {
+  if (!resend) return
+
+  const firstName = escHtml(data.name.split(' ')[0])
+  const serviceRow = data.service
+    ? `<tr>
+        <td style="padding: 8px 0; color: #888; font-size: 12px; width: 140px; vertical-align: top;">Servizio / Service</td>
+        <td style="padding: 8px 0; font-size: 14px; font-weight: 600;">${escHtml(data.service)}</td>
+      </tr>`
+    : ''
+
+  const html = `
+    <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
+      <div style="background: #0a0d06; padding: 24px 32px; border-radius: 8px 8px 0 0;">
+        <p style="margin: 0; color: #C8A96B; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;">
+          Luxury Dental &amp; Facial Estética — Lugano
+        </p>
+        <h1 style="margin: 8px 0 0; color: #fff; font-size: 20px; font-weight: 600;">Grazie per averci contattato</h1>
+        <p style="margin: 4px 0 0; color: #aaa; font-size: 13px;">Thank you for reaching out</p>
+      </div>
+      <div style="border: 1px solid #e8e0d5; border-top: none; padding: 28px 32px; border-radius: 0 0 8px 8px; background: #fdfaf7;">
+        <p style="font-size: 15px; line-height: 1.6; margin: 0 0 12px;">
+          Caro/a <strong>${firstName}</strong>,<br/>
+          abbiamo ricevuto la sua richiesta e la contatteremo entro <strong>24 ore</strong>.
+        </p>
+        <p style="font-size: 13px; color: #666; line-height: 1.6; margin: 0 0 20px;">
+          <em>Dear ${firstName}, we have received your enquiry and will be in touch within 24 hours.</em>
+        </p>
+        ${serviceRow ? `<table style="width: 100%; border-collapse: collapse; border-top: 1px solid #e8e0d5; padding-top: 16px; margin-top: 4px;">${serviceRow}</table>` : ''}
+        <div style="margin-top: 24px; padding: 20px; background: #f5f0e8; border-radius: 8px;">
+          <p style="margin: 0 0 8px; font-size: 12px; color: #888; letter-spacing: 0.1em; text-transform: uppercase;">Contatti diretti / Direct contact</p>
+          <p style="margin: 0; font-size: 13px; line-height: 2;">
+            📞 <a href="tel:+41919945051" style="color: #6b7f3a; text-decoration: none;">+41 91 994 5051</a><br/>
+            📧 <a href="mailto:info@luxurydental.ch" style="color: #6b7f3a; text-decoration: none;">info@luxurydental.ch</a><br/>
+            📍 Via Riva Paradiso 4, 6900 Paradiso, Lugano (TI)
+          </p>
+        </div>
+        <p style="margin: 20px 0 0; font-size: 12px; color: #aaa; text-align: center;">
+          Luxury Dental &amp; Facial Estética — Precisione svizzera, bellezza naturale.
+        </p>
+      </div>
+    </div>
+  `
+
+  await resend.emails.send({
+    from: FROM_EMAIL,
+    to: data.email,
+    subject: 'Luxury Dental — Abbiamo ricevuto la sua richiesta / We received your enquiry',
+    html,
+  })
+}

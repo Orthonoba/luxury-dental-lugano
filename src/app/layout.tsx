@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
 import './globals.css'
+import CookieConsent from '@/components/ui/CookieConsent'
+import GoogleAnalytics from '@/components/ui/GoogleAnalytics'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -138,6 +140,8 @@ export default async function RootLayout({
       </head>
       <body className="min-h-screen antialiased relative">
         {children}
+        <CookieConsent locale={locale} />
+        <GoogleAnalytics />
       </body>
     </html>
   )

@@ -16,6 +16,9 @@ const envSchema = z.object({
   NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().optional(),
   NEXT_PUBLIC_SANITY_DATASET: z.string().optional(),
   NEXT_PUBLIC_SANITY_API_VERSION: z.string().optional(),
+
+  // Google Analytics 4 — optional, format: G-XXXXXXXXXX
+  NEXT_PUBLIC_GA_ID: z.string().regex(/^G-[A-Z0-9]+$/).optional(),
 })
 
 // Validate on module load — fails fast with clear error messages in production
