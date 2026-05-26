@@ -164,3 +164,20 @@ Mousewheel is enabled with `forceToAxis: true` to prevent accidental page scroll
 - All animated sections use `viewport={{ once: true }}` so content doesn't re-animate
 - Reduced-motion: CSS disables all `animation` and `transition` durations; Framer Motion v12 respects `prefers-reduced-motion` natively
 - Before/after comparison slider (`BeforeAfterGallery`) is keyboard-accessible with arrow keys
+
+---
+
+## Deployment
+
+See `skills.md` for the full deployment reference (Nixpacks vs Dockerfile, env vars table, Prisma workflow, troubleshooting).
+
+### Key invariants
+
+- `next.config.mjs` must keep the `withNextIntl(nextConfig)` export — removing the wrapper breaks all locale routing across all 5 locales
+- `next.config.mjs` must stay `.mjs` (ESM) — do not create or rename to `next.config.js`
+- `output: 'standalone'` in `next.config.mjs` is required for the Dockerfile runner stage (`server.js`)
+- Node version 20 is declared in 4 places that must stay in sync: `.nvmrc`, `nixpacks.toml`, `Dockerfile` (all 3 stages), `package.json` engines
+- Prisma generates to `src/generated/prisma` — do not change the schema `output` path
+- `.npmrc` with `legacy-peer-deps=true` is required for `npm ci` to succeed (peer dep conflicts with React 18)
+- `DATABASE_URL` is a runtime env var in Coolify — it is NOT baked into the image; a placeholder is used at build time
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` are baked at build time — changing them requires a full redeploy

@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ─── Stage 1: install dependencies ───────────────────────────────────────────
-FROM node:22-alpine AS deps
+FROM node:20-alpine AS deps
 WORKDIR /app
 
 RUN apk add --no-cache libc6-compat
@@ -11,7 +11,7 @@ COPY package.json package-lock.json* ./
 RUN npm ci --ignore-scripts
 
 # ─── Stage 2: build ──────────────────────────────────────────────────────────
-FROM node:22-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # NEXT_PUBLIC_* vars must be baked in at build time
@@ -40,7 +40,7 @@ RUN npx prisma generate
 RUN npx next build
 
 # ─── Stage 3: production runner ──────────────────────────────────────────────
-FROM node:22-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
