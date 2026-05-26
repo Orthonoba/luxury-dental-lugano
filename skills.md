@@ -135,3 +135,50 @@ npm start            # next start -H 0.0.0.0 -p 3000
 ```
 
 Health check endpoint: `GET /api/health` — returns `{"status":"ok","checks":{"db":"ok"}}` when DB is reachable.
+
+---
+
+## Booking System
+
+### New dependencies
+- `react-hook-form` ^7.76.1 — form state management
+- `@hookform/resolvers` ^5.4.0 — Zod adapter for react-hook-form
+- `date-fns` ^4.3.0 — date calculation utilities
+- `react-is` — required peer dependency of `@sanity/ui` (installed to fix build)
+
+### New routes
+| Route | Type | Description |
+|---|---|---|
+| `/[locale]/book/dental` | Page | Odontología Avanzada booking |
+| `/[locale]/book/facial-aesthetics` | Page | Estética Facial booking |
+| `GET /api/appointments/availability` | API | Available time slots for a date+type |
+| `POST /api/appointments/dental` | API | Create dental booking |
+| `POST /api/appointments/facial` | API | Create facial aesthetics booking |
+
+### New Prisma model: `BookingRequest`
+Fields: `id, type, firstName, lastName, email, phone, dateOfBirth?, service, notes?, desiredDate, desiredTime, status (default: pending), gdprConsent, createdAt, updatedAt`
+
+Indexes: `email`, `desiredDate`, `(type, desiredDate)`
+
+**CRITICAL:** Run migration before deploying to Coolify:
+```bash
+DATABASE_URL="<neon-url>" npx prisma migrate deploy
+```
+
+### New components
+- `src/lib/validations/booking.ts` — Zod schemas + service/treatment constants
+- `src/components/forms/DateTimePicker.tsx` — custom calendar + time slot picker
+- `src/components/forms/DentalBookingForm.tsx` — dental booking form (react-hook-form)
+- `src/components/forms/FacialBookingForm.tsx` — facial booking form (react-hook-form)
+- `src/components/sections/BookingSpecialties.tsx` — home page conversion section
+
+### Business hours (Europe/Zurich)
+- Mon–Fri: 09:00–17:30, 30-min slots (18 total)
+- Saturday: 09:00–12:30, 30-min slots (8 total)
+- Sunday: blocked
+
+### Double-booking prevention
+API routes check for conflicts before creating: `prisma.bookingRequest.findFirst({ where: { type, desiredDate, desiredTime, status: { not: 'cancelled' } } })` → 409 if found.
+
+### GDPR
+Both forms require `gdprConsent: z.literal(true)` — the `z.literal(true)` pattern means the checkbox must be explicitly checked (not just truthy). Default value in useForm is `undefined` to prevent premature validation errors.

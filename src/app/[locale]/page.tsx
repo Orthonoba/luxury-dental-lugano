@@ -4,6 +4,7 @@ import {
   PhilosophySection,
   DentalTreatments,
   FacialAesthetics,
+  BookingSpecialties,
   TeamSection,
   TestimonialsSection,
   LatinPatientSection,
@@ -21,6 +22,7 @@ export default function Home() {
         <PhilosophySection />
         <DentalTreatments />
         <FacialAesthetics />
+        <BookingSpecialties />
         <BeforeAfterGallery />
         <TeamSection />
         <TestimonialsSection />

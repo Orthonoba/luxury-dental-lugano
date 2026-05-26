@@ -169,7 +169,7 @@ Mousewheel is enabled with `forceToAxis: true` to prevent accidental page scroll
 
 ## Deployment
 
-See `skills.md` for the full deployment reference (Nixpacks vs Dockerfile, env vars table, Prisma workflow, troubleshooting).
+See `skills.md` for the full deployment reference (including booking system) (Nixpacks vs Dockerfile, env vars table, Prisma workflow, troubleshooting).
 
 ### Key invariants
 
@@ -181,3 +181,42 @@ See `skills.md` for the full deployment reference (Nixpacks vs Dockerfile, env v
 - `.npmrc` with `legacy-peer-deps=true` is required for `npm ci` to succeed (peer dep conflicts with React 18)
 - `DATABASE_URL` is a runtime env var in Coolify — it is NOT baked into the image; a placeholder is used at build time
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` are baked at build time — changing them requires a full redeploy
+
+---
+
+## Booking System
+
+### Routes
+- `/[locale]/book/dental` — Odontología Avanzada booking form
+- `/[locale]/book/facial-aesthetics` — Estética Facial booking form
+- `GET /api/appointments/availability?date=YYYY-MM-DD&type=dental|facial` — available time slots
+- `POST /api/appointments/dental` — create dental booking
+- `POST /api/appointments/facial` — create facial booking
+
+### Architecture
+- **Forms:** React Hook Form + Zod (`src/lib/validations/booking.ts`)
+- **Calendar:** Custom `DateTimePicker` component (`src/components/forms/DateTimePicker.tsx`) — no react-big-calendar
+- **Data:** `BookingRequest` Prisma model (type, firstName, lastName, email, phone, dateOfBirth?, service, notes?, desiredDate, desiredTime, status, gdprConsent)
+- **Email:** `sendBookingNotification` + `sendBookingConfirmation` appended to `src/lib/email.ts`
+- **Home section:** `BookingSpecialties` added between FacialAesthetics and BeforeAfterGallery
+
+### Business rules enforced
+- Mon–Fri: 09:00–17:30 (18 slots, 30-min intervals)
+- Saturday: 09:00–12:30 (8 slots)
+- Sunday: blocked
+- Double-booking prevention: 409 conflict check on desiredDate+desiredTime+type
+- Slot availability: cached 30s via Cache-Control header
+- Rate limiting: 5 req/min (form submissions), 60 req/min (availability polling)
+- GDPR: `z.literal(true)` — checkbox must be explicitly checked
+
+### GDPR compliance
+- Forms include mandatory consent checkbox (RGPD art. 6.1.a)
+- Data stored in `BookingRequest` table only
+- `gdprConsent: Boolean` field stored with every booking
+
+### Database migration
+When deploying schema changes to Coolify:
+```bash
+DATABASE_URL="<neon-url>" npx prisma migrate deploy
+```
+The `BookingRequest` migration must be applied before the new API routes handle traffic.

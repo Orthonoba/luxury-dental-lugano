@@ -42,3 +42,25 @@ model Newsletter {
   locale    String   @default("en")
   createdAt DateTime @default(now())
 }
+
+model BookingRequest {
+  id          String   @id @default(cuid())
+  type        String   // "dental" | "facial"
+  firstName   String
+  lastName    String
+  email       String
+  phone       String
+  dateOfBirth String?
+  service     String
+  notes       String?
+  desiredDate DateTime
+  desiredTime String
+  status      String   @default("pending")
+  gdprConsent Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([email])
+  @@index([desiredDate])
+  @@index([type, desiredDate])
+}
