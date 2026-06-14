@@ -10,11 +10,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/**',
-      },
-      {
-        protocol: 'https',
         hostname: '**',
       },
     ],
@@ -40,7 +35,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://api.openai.com https://*.sanity.io wss://*.sanity.io https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              "connect-src 'self' https://api.openai.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
               "frame-src https://calendly.com",
               "frame-ancestors 'none'",
             ].join('; '),

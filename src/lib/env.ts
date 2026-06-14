@@ -12,11 +12,6 @@ const envSchema = z.object({
   // Optional — enables AI chatbot when set
   OPENAI_API_KEY: z.string().optional(),
 
-  // Sanity CMS — required at build time, optional at runtime (baked into bundle)
-  NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().optional(),
-  NEXT_PUBLIC_SANITY_DATASET: z.string().optional(),
-  NEXT_PUBLIC_SANITY_API_VERSION: z.string().optional(),
-
   // Google Analytics 4 — optional, format: G-XXXXXXXXXX
   NEXT_PUBLIC_GA_ID: z.string().regex(/^G-[A-Z0-9]+$/).optional(),
 })
