@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: `${BASE_URL}/en`,
+    canonical: `${BASE_URL}/it`,
     languages: {
       'en': `${BASE_URL}/en`,
       'es': `${BASE_URL}/es`,
       'it': `${BASE_URL}/it`,
       'de': `${BASE_URL}/de`,
       'fr': `${BASE_URL}/fr`,
-      'x-default': `${BASE_URL}/en`,
+      'x-default': `${BASE_URL}/it`,
     },
   },
 }
@@ -136,7 +136,7 @@ export default async function RootLayout({
         <link rel="alternate" hrefLang="it" href={`${BASE_URL}/it`} />
         <link rel="alternate" hrefLang="de" href={`${BASE_URL}/de`} />
         <link rel="alternate" hrefLang="fr" href={`${BASE_URL}/fr`} />
-        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/en`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/it`} />
       </head>
       <body className="min-h-screen antialiased relative">
         {children}
