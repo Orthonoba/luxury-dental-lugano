@@ -1,0 +1,68 @@
+import type { Testimonial } from '@/types/testimonial'
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: 'Isabella M.',
+    location: 'Lugano, Switzerland',
+    treatment: 'Digital Smile Design',
+    avatar: 'IM',
+    rating: 5,
+    text: 'The transformation is absolutely remarkable. The team understood exactly what I envisioned — and then delivered something even more beautiful. My smile is now my greatest source of confidence.',
+  },
+  {
+    name: 'Laurent B.',
+    location: 'Geneva, Switzerland',
+    treatment: 'Porcelain Veneers',
+    avatar: 'LB',
+    rating: 5,
+    text: "I was hesitant about veneers, but the team was incredibly reassuring. The results are so natural — everyone assumes I was simply born with this smile. Truly exceptional craftsmanship.",
+  },
+  {
+    name: 'Valentina C.',
+    location: 'Milan, Italy',
+    treatment: 'Clear Aligners',
+    avatar: 'VC',
+    rating: 5,
+    text: 'After 14 months with clear aligners, my bite and smile are perfectly aligned. Seeing the digital preview before starting gave me complete confidence. A life-changing experience.',
+  },
+  {
+    name: 'Marco A.',
+    location: 'Lugano, Switzerland',
+    treatment: 'Facial Aesthetics',
+    avatar: 'MA',
+    rating: 5,
+    text: 'The facial rejuvenation was subtle, natural, and beautifully done. My colleagues thought I had returned from a restorative holiday. The results speak for themselves.',
+  },
+  {
+    name: 'Sophie L.',
+    location: 'Zurich, Switzerland',
+    treatment: 'Teeth Whitening',
+    avatar: 'SL',
+    rating: 5,
+    text: 'Professional whitening in one session gave me results I had wanted for years. The clinic environment is stunning, the team exceptional. Completely worth every franc.',
+  },
+  {
+    name: 'Alessandro F.',
+    location: 'Como, Italy',
+    treatment: 'Digital Smile Design',
+    avatar: 'AF',
+    rating: 5,
+    text: 'I drove from Como specifically for this clinic after seeing their work. Not disappointed — the attention to detail and the personalised approach are unlike anything I had experienced before.',
+  },
+  {
+    name: 'Claire D.',
+    location: 'Lausanne, Switzerland',
+    treatment: 'Clear Aligners',
+    avatar: 'CD',
+    rating: 5,
+    text: 'The entire journey was seamless — from the first digital preview to the final result. The team made me feel cared for at every step. My smile is now something I love to share.',
+  },
+  {
+    name: 'Riccardo V.',
+    location: 'Lugano, Switzerland',
+    treatment: 'Porcelain Veneers',
+    avatar: 'RV',
+    rating: 5,
+    text: 'As someone who works in design, I appreciate precision and beauty. This team delivers both. The veneers are flawless — they look more natural than my original teeth ever did.',
+  },
+]

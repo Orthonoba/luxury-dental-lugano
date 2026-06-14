@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "dental": "Dental",
+    "facial": "Facial Aesthetics",
+    "gallery": "Gallery",
+    "team": "Team",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Facial Aesthetics",
+    "headline1": "Transform",
+    "headline2": "Your Smile,",
+    "headline3": "Reveal Your Beauty",
+    "subtitle": "Where Swiss precision meets natural beauty. Premium clinic in Lugano, Ticino.",
+    "ctaPrimary": "Book Consultation",
+    "ctaSecondary": "Explore Services",
+    "scroll": "Scroll",
+    "stats": {
+      "smiles": "Smiles Transformed",
+      "years": "Years of Excellence",
+      "satisfaction": "Patient Satisfaction"
+    }
+  },
+  "philosophy": {
+    "eyebrow": "Our Approach",
+    "headline1": "The Art of",
+    "headline2": "Precision Beauty",
+    "body1": "At Luxury Dental & Facial Estética, we believe that exceptional results come from the intersection of scientific precision and artistic sensitivity.",
+    "body2": "Our philosophy is rooted in Swiss minimalism — removing the unnecessary, enhancing the essential, and delivering results that stand the test of time. Every smile we design is guided by a deep respect for natural beauty.",
+    "cta": "Begin Your Journey",
+    "pillars": [
+      {
+        "title": "Swiss Precision",
+        "description": "Every treatment is executed with meticulous attention to detail, combining clinical excellence with artistic vision for results that are flawless and enduring."
+      },
+      {
+        "title": "Natural Beauty",
+        "description": "We enhance your natural features, creating results that are harmonious, balanced, and authentically you — never overdone, always refined."
+      },
+      {
+        "title": "Digital Dentistry",
+        "description": "Advanced 3D imaging and digital smile design technology allow us to preview and plan your transformation before any treatment begins."
+      },
+      {
+        "title": "Personalized Care",
+        "description": "Each treatment plan is uniquely yours — designed around your goals, anatomy, and aesthetic vision, with zero compromise on quality."
+      }
+    ]
+  },
+  "dental": {
+    "eyebrow": "Dental Excellence",
+    "headline1": "Precision Dental",
+    "headline2": "Treatments",
+    "learnMore": "Learn More",
+    "viewAll": "View All Treatments",
+    "treatments": [
+      {
+        "title": "Digital Smile Design",
+        "description": "Advanced 3D digital planning that lets you preview your perfect smile before any treatment begins. Precision-engineered for flawless outcomes.",
+        "tag": "Signature"
+      },
+      {
+        "title": "Clear Aligners",
+        "description": "Invisible orthodontic treatment using precision-crafted aligners for a perfect bite and beautiful smile. Discreet, comfortable, and effective.",
+        "tag": "Popular"
+      },
+      {
+        "title": "Mouth Guards",
+        "description": "Custom-fitted protective guards for athletes and those with bruxism, engineered for maximum comfort and long-term protection.",
+        "tag": ""
+      },
+      {
+        "title": "Essix Retainers",
+        "description": "Ultra-thin, crystal-clear retainers that maintain your smile alignment with undetectable precision after orthodontic treatment.",
+        "tag": ""
+      },
+      {
+        "title": "Sleep Dentistry",
+        "description": "Comfortable dental care under conscious sedation for a completely anxiety-free treatment experience. Rest while we perfect your smile.",
+        "tag": ""
+      },
+      {
+        "title": "Porcelain Veneers",
+        "description": "Ultra-thin, custom-crafted porcelain shells that create a luminous, flawless smile. The gold standard in cosmetic dental transformation.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Teeth Whitening",
+        "description": "Professional-grade whitening delivering dramatically brighter, more youthful results in a single session. Safe, fast, and lasting.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Facial Aesthetics",
+    "headline1": "Radiance",
+    "headline2": "Refined",
+    "body": "Our facial aesthetic treatments combine the latest medical advances with a deep understanding of natural beauty, delivering transformative results with zero compromise.",
+    "cta": "Book Facial Consultation",
+    "services": [
+      {
+        "title": "Facial Cleansing",
+        "description": "Medical-grade deep cleansing protocols that purify pores, restore skin balance, and create the perfect canvas for advanced treatments."
+      },
+      {
+        "title": "Skin Rejuvenation",
+        "description": "Advanced treatments stimulating cellular renewal with cutting-edge technology for visibly younger, more radiant, and luminous skin."
+      },
+      {
+        "title": "Facial Harmony",
+        "description": "Precision treatments that enhance facial proportions and create balanced, harmonious aesthetics — tailored to your unique bone structure."
+      },
+      {
+        "title": "Anti-Aging Treatments",
+        "description": "Comprehensive protocols addressing fine lines, volume loss, and skin laxity with medical precision and an artist's eye for natural results."
+      },
+      {
+        "title": "Hydration Therapies",
+        "description": "Intensive hydration protocols that restore moisture, luminosity, and suppleness at the deepest cellular level for lasting radiance."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Our Specialists",
+    "headline1": "Meet The",
+    "headline2": "Expert Team",
+    "members": [
+      {
+        "role": "Medical Director & Surgeon",
+        "bio": "Founder and Medical Director of Luxury Dental Paradiso. Expert in surgical and restorative dentistry, Digital Smile Design, and full-mouth rehabilitation with a holistic approach to oral health and beauty.",
+        "credentials": ["Medical Director", "DSD Certified", "Oral Surgeon"]
+      },
+      {
+        "role": "Specialist Dentist",
+        "bio": "Specialist in conservative and prosthetic dentistry. Expert in porcelain veneers, clear aligner therapy, and precision restorations that combine function with aesthetic excellence.",
+        "credentials": ["Prosthodontics", "Clear Aligners", "Aesthetic Dentistry"]
+      },
+      {
+        "role": "Administration",
+        "bio": "Ensures that every patient journey is seamless, from the first consultation to aftercare. Dedicated to delivering a luxury experience at every touchpoint of your visit.",
+        "credentials": ["Patient Relations", "Clinic Coordination", "Swiss Quality"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Client Stories",
+    "headline1": "Words From",
+    "headline2": "Our Clients",
+    "verified": "verified reviews",
+    "recommended": "Recommended",
+    "prevLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "items": [
+      {
+        "text": "The transformation is absolutely remarkable. The team understood exactly what I envisioned — and then delivered something even more beautiful. My smile is now my greatest source of confidence.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "I was hesitant about veneers, but the team was incredibly reassuring. The results are so natural — everyone assumes I was simply born with this smile. Truly exceptional craftsmanship.",
+        "treatment": "Porcelain Veneers"
+      },
+      {
+        "text": "After 14 months with clear aligners, my bite and smile are perfectly aligned. Seeing the digital preview before starting gave me complete confidence. A life-changing experience.",
+        "treatment": "Clear Aligners"
+      },
+      {
+        "text": "The facial rejuvenation was subtle, natural, and beautifully done. My colleagues thought I had returned from a restorative holiday. The results speak for themselves.",
+        "treatment": "Facial Aesthetics"
+      },
+      {
+        "text": "Professional whitening in one session gave me results I had wanted for years. The clinic environment is stunning, the team exceptional. Completely worth every franc.",
+        "treatment": "Teeth Whitening"
+      },
+      {
+        "text": "I drove from Como specifically for this clinic after seeing their work. Not disappointed — the attention to detail and the personalised approach are unlike anything I had experienced before.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "The entire journey was seamless — from the first digital preview to the final result. The team made me feel cared for at every step. My smile is now something I love to share.",
+        "treatment": "Clear Aligners"
+      },
+      {
+        "text": "As someone who works in design, I appreciate precision and beauty. This team delivers both. The veneers are flawless — they look more natural than my original teeth ever did.",
+        "treatment": "Porcelain Veneers"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Real Results",
+    "headline1": "Transformations",
+    "headline2": "That Speak",
+    "body": "Drag or use arrow keys to reveal each transformation. Every result reflects our commitment to precision and natural beauty.",
+    "before": "Before",
+    "after": "After",
+    "beforeLabel": "Original",
+    "afterLabel": "Transformed",
+    "cases": [
+      {
+        "treatment": "Digital Smile Design",
+        "description": "Complete smile makeover with porcelain veneers"
+      },
+      {
+        "treatment": "Porcelain Veneers",
+        "description": "Full arch porcelain veneer placement"
+      },
+      {
+        "treatment": "Teeth Whitening",
+        "description": "Professional in-office whitening session"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us",
+    "ariaLabel": "Chat with us on WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Book",
+    "headline1": "Begin Your",
+    "headline2": "Transformation",
+    "title": "Begin your journey",
+    "subtitle": "We are here to listen and guide you toward the smile you deserve.",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "service": "Service of interest",
+    "message": "Message",
+    "send": "Send message",
+    "whatsapp": "Chat on WhatsApp",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "serviceInterest": "Service Interest",
+    "selectService": "Select a service",
+    "yourMessage": "Your Message",
+    "messagePlaceholder": "Tell us about your goals and what you'd like to achieve...",
+    "namePlaceholder": "Your full name",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "privacy": "Your information is completely confidential and never shared.",
+    "successTitle": "Message Received",
+    "successMessage": "Thank you for reaching out. We will contact you within 24 hours to confirm your consultation.",
+    "openingHours": "Opening Hours",
+    "contactLabel": "Contact",
+    "getDirections": "Get Directions",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "typicallyReplies": "Typically replies instantly",
+    "weekdays": "Monday – Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "services": {
+      "smileDesign": "Digital Smile Design",
+      "aligners": "Clear Aligners",
+      "veneers": "Porcelain Veneers",
+      "whitening": "Teeth Whitening",
+      "guards": "Mouth Guards / Retainers",
+      "sleep": "Sleep Dentistry",
+      "facial": "Facial Aesthetics",
+      "other": "Other"
+    }
+  },
+  "footer": {
+    "ctaHeadline": "Your Perfect Smile",
+    "ctaHeadlineGold": "Begins in Lugano",
+    "ctaSubtitle": "Luxury dental and facial aesthetics with Swiss precision. International patients welcome.",
+    "bookConsultation": "Book Consultation",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Call the Clinic",
+    "clinic": "Clinic",
+    "treatments": "Treatments",
+    "social": "Social",
+    "privacyPolicy": "Privacy Policy",
+    "sitemap": "Sitemap",
+    "terms": "Terms of Service",
+    "copyright": "All rights reserved.",
+    "description": "Where Swiss precision meets natural beauty.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "weekdays": "Mon–Fri: 9:00 – 19:00",
+    "saturday": "Sat: 10:00 – 17:00",
+    "socialReviews": "Social & Reviews",
+    "googleReviews": "5.0 Google Reviews",
+    "pills": {
+      "dental": "Luxury Dentistry in Lugano",
+      "smile": "Digital Smile Design",
+      "facial": "Facial Aesthetics",
+      "care": "Swiss Premium Care"
+    },
+    "links": {
+      "about": "About",
+      "philosophy": "Philosophy",
+      "technology": "Technology",
+      "team": "Team",
+      "smileDesign": "Smile Design",
+      "veneers": "Porcelain Veneers",
+      "aligners": "Clear Aligners",
+      "sleep": "Sleep Dentistry",
+      "facial": "Facial Aesthetics"
+    }
+  },
+  "latin": {
+    "eyebrow": "International Patients",
+    "headline": "Luxury Dental Experience",
+    "headlineGold": "in Switzerland",
+    "subheadline": "Premium transformations in Lugano, Paradiso",
+    "body": "Personalized care, cutting-edge treatments and Swiss precision. Your journey to the perfect smile begins here.",
+    "body2": "Our multilingual team is ready to guide you from your home country to our clinic. We coordinate everything — from consultation to complete treatment.",
+    "whatsapp": "Chat on WhatsApp",
+    "consultation": "Book Consultation",
+    "features": {
+      "certified": "Swiss certified clinic",
+      "language": "Multilingual assistance",
+      "international": "International patients",
+      "stars": "5-star results"
+    },
+    "idiomaLabel": "Language",
+    "idiomaValue": "IT · ES · EN",
+    "locationLabel": "Location",
+    "locationValue": "Lugano, Switzerland",
+    "attentionLabel": "Service",
+    "attentionValue": "Personalized & multilingual"
+  },
+  "common": {
+    "bookConsultation": "Book a Consultation",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "viewAll": "View All"
+  }
+}

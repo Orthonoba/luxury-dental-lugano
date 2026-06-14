@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import "../styles/animations.css";
+
+@theme {
+  --color-beige: #E8DCCB;
+  --color-beige-light: #F5F0E8;
+  --color-olive: #607C3A;
+  --color-olive-light: #627E3C;
+  --color-gold: #C8A96B;
+  --color-gold-light: #D4B97A;
+  --color-luxury-black: #111111;
+  --color-luxury-dark: #1A1A1A;
+
+  --shadow-card: 0 8px 32px -8px rgba(0,0,0,0.10);
+  --shadow-luxury: 0 24px 64px -12px rgba(96,124,58,0.18);
+  --shadow-gold: 0 16px 48px -8px rgba(200,169,107,0.20);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #C8A96B;
+  color: #ffffff;
+}
+
+/* ── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C8A96B, #D4B97A);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A96B;
+}
+
+/* ── Performance utilities ────────────────────── */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* ── Glassmorphism helpers ────────────────────── */
+.glass-dark {
+  background: rgba(10, 13, 6, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.60);
+}
+
+.glass-gold {
+  background: rgba(200, 169, 107, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 169, 107, 0.20);
+}
+
+/* ── Luxury gradient utilities ────────────────── */
+.gradient-gold-text {
+  background: linear-gradient(135deg, #C8A96B 0%, #E8DCCB 50%, #C8A96B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section spacing ──────────────────────────── */
+.section-pad {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* ── Cinematic shadows ────────────────────────── */
+.shadow-luxury {
+  box-shadow: var(--shadow-luxury);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-gold-glow {
+  box-shadow: var(--shadow-gold);
+}
+
+/* ── Smooth anchor scroll offset ─────────────── */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* ── Reduced-motion accessibility ────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "dental": "Dental",
+    "facial": "Estética Facial",
+    "gallery": "Galería",
+    "team": "Equipo",
+    "testimonials": "Testimonios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "bookNow": "Reservar"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Estética Facial",
+    "headline1": "Transforma",
+    "headline2": "Tu Sonrisa,",
+    "headline3": "Revela Tu Belleza",
+    "subtitle": "Donde la precisión suiza se encuentra con la belleza natural. Clínica premium en Lugano, Ticino.",
+    "ctaPrimary": "Reservar Consulta",
+    "ctaSecondary": "Explorar Servicios",
+    "scroll": "Desplaza",
+    "stats": {
+      "smiles": "Sonrisas Transformadas",
+      "years": "Años de Excelencia",
+      "satisfaction": "Satisfacción de Pacientes"
+    }
+  },
+  "philosophy": {
+    "eyebrow": "Nuestro Enfoque",
+    "headline1": "El Arte de la",
+    "headline2": "Belleza Precisa",
+    "body1": "En Luxury Dental & Facial Estética, creemos que los resultados excepcionales surgen de la intersección entre la precisión científica y la sensibilidad artística.",
+    "body2": "Nuestra filosofía está arraigada en el minimalismo suizo — eliminar lo innecesario, realzar lo esencial y crear resultados que perduren en el tiempo. Cada sonrisa que diseñamos está guiada por un profundo respeto por la belleza natural.",
+    "cta": "Comienza Tu Viaje",
+    "pillars": [
+      {
+        "title": "Precisión Suiza",
+        "description": "Cada tratamiento se ejecuta con meticulosa atención al detalle, combinando excelencia clínica y visión artística para resultados impecables y duraderos."
+      },
+      {
+        "title": "Belleza Natural",
+        "description": "Realzamos tus rasgos naturales, creando resultados armoniosos, equilibrados y auténticamente tuyos — nunca exagerados, siempre refinados."
+      },
+      {
+        "title": "Odontología Digital",
+        "description": "El imaging 3D avanzado y el diseño digital de sonrisa nos permiten planificar y visualizar tu transformación antes de comenzar cualquier tratamiento."
+      },
+      {
+        "title": "Cuidado Personalizado",
+        "description": "Cada plan de tratamiento es únicamente tuyo — diseñado según tus objetivos, anatomía y visión estética, sin compromisos en la calidad."
+      }
+    ]
+  },
+  "dental": {
+    "eyebrow": "Excelencia Dental",
+    "headline1": "Tratamientos Dentales",
+    "headline2": "de Precisión",
+    "learnMore": "Saber Más",
+    "viewAll": "Ver Todos los Tratamientos",
+    "treatments": [
+      {
+        "title": "Diseño de Sonrisa Digital",
+        "description": "Planificación digital 3D avanzada que te permite visualizar tu sonrisa perfecta antes de comenzar cualquier tratamiento. Diseñado con precisión para resultados impecables.",
+        "tag": "Exclusivo"
+      },
+      {
+        "title": "Alineadores Transparentes",
+        "description": "Tratamiento ortodóntico invisible con alineadores de alta precisión para una mordida perfecta y una sonrisa radiante. Discreto, cómodo y efectivo.",
+        "tag": "Popular"
+      },
+      {
+        "title": "Férula Oclusal",
+        "description": "Protecciones personalizadas para deportistas y personas con bruxismo, diseñadas para el máximo confort y protección duradera.",
+        "tag": ""
+      },
+      {
+        "title": "Retenedor Essix",
+        "description": "Retenedores ultrafinos y transparentes que mantienen la alineación de tu sonrisa con precisión imperceptible tras el tratamiento ortodóntico.",
+        "tag": ""
+      },
+      {
+        "title": "Sedación Dental",
+        "description": "Atención dental cómoda bajo sedación consciente para una experiencia completamente libre de ansiedad. Descansa mientras perfeccionamos tu sonrisa.",
+        "tag": ""
+      },
+      {
+        "title": "Carillas de Porcelana",
+        "description": "Finas láminas de porcelana personalizadas que crean una sonrisa luminosa e impecable. El estándar de oro en transformación estética dental.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Blanqueamiento Dental",
+        "description": "Blanqueamiento profesional para resultados visiblemente más brillantes y juveniles en una sola sesión. Seguro, rápido y duradero.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Estética Facial",
+    "headline1": "Luminosidad",
+    "headline2": "Refinada",
+    "body": "Nuestros tratamientos de estética facial combinan los últimos avances médicos con una profunda comprensión de la belleza natural, ofreciendo resultados transformadores sin compromisos.",
+    "cta": "Reservar Consulta Facial",
+    "services": [
+      {
+        "title": "Limpieza Facial Profunda",
+        "description": "Protocolos de limpieza médica que purifican los poros, restauran el equilibrio cutáneo y crean la base perfecta para tratamientos avanzados."
+      },
+      {
+        "title": "Rejuvenecimiento Cutáneo",
+        "description": "Tratamientos avanzados que estimulan la renovación celular con tecnología de vanguardia para una piel visiblemente más joven, radiante y luminosa."
+      },
+      {
+        "title": "Armonía Facial",
+        "description": "Tratamientos de precisión que realzan las proporciones faciales y crean una estética equilibrada y armoniosa, adaptada a tu estructura ósea única."
+      },
+      {
+        "title": "Tratamientos Anti-Edad",
+        "description": "Protocolos completos que abordan líneas de expresión, pérdida de volumen y flacidez cutánea con precisión médica y ojo artístico para resultados naturales."
+      },
+      {
+        "title": "Terapias Hidratantes",
+        "description": "Protocolos de hidratación intensiva que restauran la humedad, luminosidad y suavidad al nivel celular más profundo para una radiancia duradera."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Nuestros Especialistas",
+    "headline1": "Conoce al",
+    "headline2": "Equipo de Expertos",
+    "members": [
+      {
+        "role": "Directora Médica y Cirujana",
+        "bio": "Fundadora y Directora Médica de Luxury Dental Paradiso. Experta en cirugía dental y odontología restaurativa, Diseño de Sonrisa Digital y rehabilitación bucal completa con un enfoque holístico de la salud oral y la belleza.",
+        "credentials": ["Directora Médica", "DSD Certificada", "Cirujana Oral"]
+      },
+      {
+        "role": "Dentista Especialista",
+        "bio": "Especialista en odontología conservadora y prostodóncica. Experto en carillas de porcelana, terapia con alineadores y restauraciones de precisión que combinan función y excelencia estética.",
+        "credentials": ["Prostodoncia", "Alineadores Transparentes", "Odontología Estética"]
+      },
+      {
+        "role": "Administración y Pacientes",
+        "bio": "Garantiza que el recorrido de cada paciente sea impecable, desde la primera consulta hasta el seguimiento. Dedicado a ofrecer una experiencia de lujo en cada momento de tu visita.",
+        "credentials": ["Relaciones con Pacientes", "Coordinación Clínica", "Calidad Suiza"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Historias de Nuestros Pacientes",
+    "headline1": "Las Palabras de",
+    "headline2": "Nuestros Pacientes",
+    "verified": "reseñas verificadas",
+    "recommended": "Recomendado",
+    "prevLabel": "Testimonio anterior",
+    "nextLabel": "Siguiente testimonio",
+    "items": [
+      {
+        "text": "La transformación es absolutamente extraordinaria. El equipo entendió exactamente lo que imaginaba — y entregó algo aún más hermoso. Mi sonrisa es ahora mi mayor fuente de confianza.",
+        "treatment": "Diseño de Sonrisa Digital"
+      },
+      {
+        "text": "Dudaba de las carillas, pero el equipo fue increíblemente tranquilizador. Los resultados son tan naturales — todos asumen que simplemente nací con esta sonrisa. Una artesanía verdaderamente excepcional.",
+        "treatment": "Carillas de Porcelana"
+      },
+      {
+        "text": "Tras 14 meses con alineadores, mi mordida y mi sonrisa están perfectamente alineadas. Ver la vista previa digital antes de empezar me dio plena confianza. Una experiencia que cambia la vida.",
+        "treatment": "Alineadores Transparentes"
+      },
+      {
+        "text": "El rejuvenecimiento facial fue sutil, natural y bellamente realizado. Mis colegas pensaron que había regresado de unas vacaciones reparadoras. Los resultados hablan por sí mismos.",
+        "treatment": "Estética Facial"
+      },
+      {
+        "text": "El blanqueamiento profesional en una sola sesión me dio los resultados que deseaba desde hace años. El ambiente de la clínica es espléndido, el equipo excepcional. Vale absolutamente cada franco.",
+        "treatment": "Blanqueamiento Dental"
+      },
+      {
+        "text": "Vine especialmente desde Como para esta clínica después de ver su trabajo. No me decepcioné — la atención al detalle y el enfoque personalizado son únicos comparados con cualquier experiencia previa.",
+        "treatment": "Diseño de Sonrisa Digital"
+      },
+      {
+        "text": "Todo el proceso fue impecable — desde la vista previa digital hasta el resultado final. El equipo me hizo sentir cuidada en cada paso. Mi sonrisa es ahora algo que amo compartir.",
+        "treatment": "Alineadores Transparentes"
+      },
+      {
+        "text": "Como alguien que trabaja en diseño, valoro la precisión y la belleza. Este equipo ofrece ambas. Las carillas son impecables — parecen más naturales que mis dientes originales.",
+        "treatment": "Carillas de Porcelana"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Resultados Reales",
+    "headline1": "Transformaciones",
+    "headline2": "Que Hablan",
+    "body": "Arrastra o usa las teclas de flecha para revelar cada transformación. Cada resultado refleja nuestro compromiso con la precisión y la belleza natural.",
+    "before": "Antes",
+    "after": "Después",
+    "beforeLabel": "Original",
+    "afterLabel": "Transformado",
+    "cases": [
+      {
+        "treatment": "Diseño de Sonrisa Digital",
+        "description": "Cambio de sonrisa completo con carillas de porcelana"
+      },
+      {
+        "treatment": "Carillas de Porcelana",
+        "description": "Colocación de carillas en todo el arco dental"
+      },
+      {
+        "treatment": "Blanqueamiento Dental",
+        "description": "Sesión de blanqueamiento profesional en consulta"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Escríbenos",
+    "ariaLabel": "Chatear con nosotros en WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Reserva",
+    "headline1": "Comienza Tu",
+    "headline2": "Transformación",
+    "title": "Comienza tu viaje",
+    "subtitle": "Estamos aquí para escucharte y guiarte hacia la sonrisa que mereces.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Número de teléfono",
+    "service": "Servicio de interés",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "whatsapp": "Chatear por WhatsApp",
+    "fullName": "Nombre Completo",
+    "emailAddress": "Correo Electrónico",
+    "phoneNumber": "Número de Teléfono",
+    "serviceInterest": "Servicio de Interés",
+    "selectService": "Selecciona un servicio",
+    "yourMessage": "Tu Mensaje",
+    "messagePlaceholder": "Cuéntanos tus objetivos y lo que te gustaría lograr...",
+    "namePlaceholder": "Tu nombre completo",
+    "sendMessage": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "privacy": "Tu información es completamente confidencial y nunca se comparte.",
+    "successTitle": "Mensaje Recibido",
+    "successMessage": "Gracias por contactarnos. Te responderemos en 24 horas para confirmar tu consulta.",
+    "openingHours": "Horarios",
+    "contactLabel": "Contacto",
+    "getDirections": "Cómo Llegar",
+    "chatWhatsApp": "Chat en WhatsApp",
+    "typicallyReplies": "Generalmente responde al instante",
+    "weekdays": "Lunes – Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "closed": "Cerrado",
+    "services": {
+      "smileDesign": "Diseño de Sonrisa Digital",
+      "aligners": "Alineadores Transparentes",
+      "veneers": "Carillas de Porcelana",
+      "whitening": "Blanqueamiento Dental",
+      "guards": "Férulas / Retenedores",
+      "sleep": "Sedación Dental",
+      "facial": "Estética Facial",
+      "other": "Otro"
+    }
+  },
+  "footer": {
+    "ctaHeadline": "Tu Sonrisa Perfecta",
+    "ctaHeadlineGold": "Comienza en Lugano",
+    "ctaSubtitle": "Tratamientos de lujo con la precisión suiza que mereces. Pacientes internacionales bienvenidos.",
+    "bookConsultation": "Reservar Consulta",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Llamar a la Clínica",
+    "clinic": "Clínica",
+    "treatments": "Tratamientos",
+    "social": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "sitemap": "Mapa del Sitio",
+    "terms": "Términos de Servicio",
+    "copyright": "Todos los derechos reservados.",
+    "description": "Donde la precisión suiza se encuentra con la belleza natural.",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "hours": "Horarios",
+    "weekdays": "Lun–Vie: 9:00 – 19:00",
+    "saturday": "Sáb: 10:00 – 17:00",
+    "socialReviews": "Social & Reseñas",
+    "googleReviews": "5.0 Reseñas de Google",
+    "pills": {
+      "dental": "Odontología de Lujo en Lugano",
+      "smile": "Diseño de Sonrisa Digital",
+      "facial": "Estética Facial",
+      "care": "Atención Premium Suiza"
+    },
+    "links": {
+      "about": "Nosotros",
+      "philosophy": "Filosofía",
+      "technology": "Tecnología",
+      "team": "Equipo",
+      "smileDesign": "Diseño de Sonrisa",
+      "veneers": "Carillas de Porcelana",
+      "aligners": "Alineadores",
+      "sleep": "Sedación Dental",
+      "facial": "Estética Facial"
+    }
+  },
+  "latin": {
+    "eyebrow": "Pacientes Internacionales",
+    "headline": "Experiencia Dental de Lujo",
+    "headlineGold": "en Suiza",
+    "subheadline": "Transformaciones premium en Lugano, Paradiso",
+    "body": "Atención personalizada en español, tratamientos de vanguardia y la precisión suiza que mereces. Tu viaje a la sonrisa perfecta comienza aquí.",
+    "body2": "Contamos con un equipo bilingüe listo para guiarte desde tu país de origen hasta la clínica. Coordinamos todo — desde la consulta hasta el tratamiento completo.",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "consultation": "Reservar Consulta",
+    "features": {
+      "certified": "Clínica certificada en Suiza",
+      "language": "Atención en Español",
+      "international": "Pacientes internacionales",
+      "stars": "Resultados 5 estrellas"
+    },
+    "idiomaLabel": "Idioma",
+    "idiomaValue": "🇪🇸 Español",
+    "locationLabel": "Ubicación",
+    "locationValue": "Lugano, Suiza",
+    "attentionLabel": "Atención",
+    "attentionValue": "Personalizada & en tu idioma"
+  },
+  "common": {
+    "bookConsultation": "Reservar una Consulta",
+    "learnMore": "Saber Más",
+    "contactUs": "Contáctanos",
+    "viewAll": "Ver Todo"
+  }
+}

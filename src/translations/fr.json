@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "dental": "Dentaire",
+    "facial": "Esthétique Faciale",
+    "gallery": "Galerie",
+    "team": "Équipe",
+    "testimonials": "Avis",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Réserver"
+  },
+  "hero": {
+    "badge": "Digital Smile Design & Esthétique Faciale",
+    "headline1": "Transformez",
+    "headline2": "Votre Sourire,",
+    "headline3": "Révélez Votre Beauté",
+    "subtitle": "Où la précision suisse rencontre la beauté naturelle. Clinique premium à Lugano, Tessin.",
+    "ctaPrimary": "Prendre rendez-vous",
+    "ctaSecondary": "Découvrir nos soins",
+    "scroll": "Défiler",
+    "stats": {
+      "smiles": "Sourires transformés",
+      "years": "Années d'excellence",
+      "satisfaction": "Satisfaction des patients"
+    }
+  },
+  "philosophy": {
+    "eyebrow": "Notre Approche",
+    "headline1": "L'Art de la",
+    "headline2": "Beauté de Précision",
+    "body1": "Chez Luxury Dental & Facial Estética, nous croyons que des résultats exceptionnels naissent de l'intersection entre la précision scientifique et la sensibilité artistique.",
+    "body2": "Notre philosophie est ancrée dans le minimalisme suisse — éliminer le superflu, sublimer l'essentiel et délivrer des résultats qui résistent à l'épreuve du temps. Chaque sourire que nous concevons est guidé par un profond respect de la beauté naturelle.",
+    "cta": "Commencez Votre Parcours",
+    "pillars": [
+      {
+        "title": "Précision Suisse",
+        "description": "Chaque traitement est exécuté avec une attention méticuleuse aux détails, alliant excellence clinique et vision artistique pour des résultats irréprochables et durables."
+      },
+      {
+        "title": "Beauté Naturelle",
+        "description": "Nous sublimions vos traits naturels en créant des résultats harmonieux, équilibrés et authentiquement vous — jamais excessifs, toujours raffinés."
+      },
+      {
+        "title": "Dentisterie Numérique",
+        "description": "L'imagerie 3D avancée et la technologie de conception de sourire numérique nous permettent de visualiser et planifier votre transformation avant tout traitement."
+      },
+      {
+        "title": "Soins Personnalisés",
+        "description": "Chaque plan de traitement est uniquement le vôtre — conçu autour de vos objectifs, de votre anatomie et de votre vision esthétique, sans compromis sur la qualité."
+      }
+    ]
+  },
+  "dental": {
+    "eyebrow": "Excellence Dentaire",
+    "headline1": "Traitements",
+    "headline2": "Dentaires de Précision",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tous les traitements",
+    "treatments": [
+      {
+        "title": "Digital Smile Design",
+        "description": "Planification numérique 3D avancée qui vous permet de prévisualiser votre sourire parfait avant tout traitement. Conçu avec précision pour des résultats irréprochables.",
+        "tag": "Signature"
+      },
+      {
+        "title": "Aligneurs Transparents",
+        "description": "Traitement orthodontique invisible utilisant des aligneurs de précision pour un occlusion parfaite et un beau sourire. Discret, confortable et efficace.",
+        "tag": "Populaire"
+      },
+      {
+        "title": "Protège-Dents",
+        "description": "Protège-dents sur mesure pour sportifs et personnes souffrant de bruxisme, conçus pour un confort maximal et une protection à long terme.",
+        "tag": ""
+      },
+      {
+        "title": "Gouttières de Contention",
+        "description": "Gouttières ultrafines et cristallines qui maintiennent l'alignement de votre sourire avec une précision indétectable après un traitement orthodontique.",
+        "tag": ""
+      },
+      {
+        "title": "Dentisterie du Sommeil",
+        "description": "Soins dentaires confortables sous sédation consciente pour une expérience de traitement totalement sans anxiété. Reposez-vous pendant que nous perfectionnons votre sourire.",
+        "tag": ""
+      },
+      {
+        "title": "Facettes en Porcelaine",
+        "description": "Coques en porcelaine ultrafines et sur mesure qui créent un sourire lumineux et impeccable. La référence absolue en transformation dentaire esthétique.",
+        "tag": "Premium"
+      },
+      {
+        "title": "Blanchiment des Dents",
+        "description": "Blanchiment professionnel de qualité médicale offrant des résultats dramatiquement plus lumineux et plus jeunes en une seule séance. Sûr, rapide et durable.",
+        "tag": ""
+      }
+    ]
+  },
+  "facial": {
+    "eyebrow": "Esthétique Faciale",
+    "headline1": "Éclat",
+    "headline2": "Raffiné",
+    "body": "Nos traitements esthétiques faciaux combinent les dernières avancées médicales avec une profonde compréhension de la beauté naturelle, offrant des résultats transformateurs sans compromis.",
+    "cta": "Prendre rendez-vous Facial",
+    "services": [
+      {
+        "title": "Nettoyage Facial",
+        "description": "Protocoles de nettoyage en profondeur de qualité médicale qui purifient les pores, restaurent l'équilibre cutané et créent la base parfaite pour les traitements avancés."
+      },
+      {
+        "title": "Rajeunissement Cutané",
+        "description": "Traitements avancés stimulant le renouvellement cellulaire avec une technologie de pointe pour une peau visiblement plus jeune, plus radieuse et plus lumineuse."
+      },
+      {
+        "title": "Harmonie Faciale",
+        "description": "Traitements de précision qui améliorent les proportions faciales et créent une esthétique équilibrée et harmonieuse — adaptée à votre structure osseuse unique."
+      },
+      {
+        "title": "Traitements Anti-Âge",
+        "description": "Protocoles complets traitant les ridules, la perte de volume et le relâchement cutané avec précision médicale et œil d'artiste pour des résultats naturels."
+      },
+      {
+        "title": "Thérapies Hydratantes",
+        "description": "Protocoles d'hydratation intensifs qui restaurent l'humidité, la luminosité et la souplesse au niveau cellulaire le plus profond pour un éclat durable."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Nos Spécialistes",
+    "headline1": "Rencontrez",
+    "headline2": "Notre Équipe d'Experts",
+    "members": [
+      {
+        "role": "Directeur Médical & Chirurgien",
+        "bio": "Fondateur et Directeur Médical de Luxury Dental Paradiso. Expert en dentisterie chirurgicale et restauratrice, Digital Smile Design et réhabilitation complète de la bouche avec une approche holistique de la santé bucco-dentaire et de la beauté.",
+        "credentials": ["Directeur Médical", "Certifié DSD", "Chirurgien Oral"]
+      },
+      {
+        "role": "Dentiste Spécialiste",
+        "bio": "Spécialiste en dentisterie conservatrice et prothétique. Expert en facettes en porcelaine, traitement par aligneurs transparents et restaurations de précision alliant fonction et excellence esthétique.",
+        "credentials": ["Prothèse Dentaire", "Aligneurs Transparents", "Dentisterie Esthétique"]
+      },
+      {
+        "role": "Administration",
+        "bio": "Veille à ce que chaque parcours patient soit fluide, de la première consultation aux soins de suivi. Engagée à offrir une expérience de luxe à chaque étape de votre visite.",
+        "credentials": ["Relations Patients", "Coordination Clinique", "Qualité Suisse"]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "headline1": "Les Mots de",
+    "headline2": "Nos Patients",
+    "verified": "avis vérifiés",
+    "recommended": "Recommandé",
+    "prevLabel": "Témoignage précédent",
+    "nextLabel": "Témoignage suivant",
+    "items": [
+      {
+        "text": "La transformation est absolument remarquable. L'équipe a compris exactement ce que j'imaginais — et a livré quelque chose encore plus beau. Mon sourire est maintenant ma plus grande source de confiance.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "J'étais hésitante concernant les facettes, mais l'équipe était incroyablement rassurante. Les résultats sont tellement naturels — tout le monde croit que je suis née avec ce sourire. Un savoir-faire vraiment exceptionnel.",
+        "treatment": "Facettes en Porcelaine"
+      },
+      {
+        "text": "Après 14 mois avec des aligneurs transparents, ma morsure et mon sourire sont parfaitement alignés. Voir la prévisualisation numérique avant de commencer m'a donné une confiance totale. Une expérience qui change la vie.",
+        "treatment": "Aligneurs Transparents"
+      },
+      {
+        "text": "Le rajeunissement facial était subtil, naturel et magnifiquement réalisé. Mes collègues ont pensé que j'étais revenue de vacances reposantes. Les résultats parlent d'eux-mêmes.",
+        "treatment": "Esthétique Faciale"
+      },
+      {
+        "text": "Un blanchiment professionnel en une séance m'a donné des résultats que je souhaitais depuis des années. L'environnement de la clinique est splendide, l'équipe exceptionnelle. Cela vaut chaque franc.",
+        "treatment": "Blanchiment des Dents"
+      },
+      {
+        "text": "Je suis venu de Côme spécialement pour cette clinique après avoir vu leur travail. Pas déçu — l'attention aux détails et l'approche personnalisée sont sans pareil.",
+        "treatment": "Digital Smile Design"
+      },
+      {
+        "text": "Tout le parcours était fluide — de la première prévisualisation numérique au résultat final. L'équipe m'a accompagné à chaque étape. Mon sourire est maintenant quelque chose que j'aime partager.",
+        "treatment": "Aligneurs Transparents"
+      },
+      {
+        "text": "En tant que designer, j'apprécie la précision et la beauté. Cette équipe offre les deux. Les facettes sont irréprochables — elles paraissent plus naturelles que mes dents d'origine.",
+        "treatment": "Facettes en Porcelaine"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Résultats Réels",
+    "headline1": "Transformations",
+    "headline2": "Qui Parlent",
+    "body": "Faites glisser ou utilisez les touches fléchées pour révéler chaque transformation. Chaque résultat reflète notre engagement envers la précision et la beauté naturelle.",
+    "before": "Avant",
+    "after": "Après",
+    "beforeLabel": "Original",
+    "afterLabel": "Transformé",
+    "cases": [
+      {
+        "treatment": "Digital Smile Design",
+        "description": "Transformation complète du sourire avec facettes en porcelaine"
+      },
+      {
+        "treatment": "Facettes en Porcelaine",
+        "description": "Pose de facettes en porcelaine sur arcade complète"
+      },
+      {
+        "treatment": "Blanchiment des Dents",
+        "description": "Séance de blanchiment professionnel en cabinet"
+      }
+    ]
+  },
+  "whatsapp": {
+    "tooltip": "Chattez avec nous",
+    "ariaLabel": "Chattez avec nous sur WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Réserver",
+    "headline1": "Commencez Votre",
+    "headline2": "Transformation",
+    "title": "Commencez votre parcours",
+    "subtitle": "Nous sommes là pour vous écouter et vous guider.",
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "phone": "Numéro de téléphone",
+    "service": "Service souhaité",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "whatsapp": "Chat sur WhatsApp",
+    "fullName": "Nom Complet",
+    "emailAddress": "Adresse Email",
+    "phoneNumber": "Numéro de Téléphone",
+    "serviceInterest": "Service d'Intérêt",
+    "selectService": "Sélectionner un service",
+    "yourMessage": "Votre Message",
+    "messagePlaceholder": "Parlez-nous de vos objectifs et de ce que vous souhaitez accomplir...",
+    "namePlaceholder": "Votre nom complet",
+    "sendMessage": "Envoyer le Message",
+    "sending": "Envoi...",
+    "privacy": "Vos informations sont entièrement confidentielles et ne sont jamais partagées.",
+    "successTitle": "Message Reçu",
+    "successMessage": "Merci de nous avoir contacté. Nous vous répondrons dans les 24 heures pour confirmer votre consultation.",
+    "openingHours": "Horaires d'Ouverture",
+    "contactLabel": "Contact",
+    "getDirections": "Obtenir l'Itinéraire",
+    "chatWhatsApp": "Chat sur WhatsApp",
+    "typicallyReplies": "Répond généralement instantanément",
+    "weekdays": "Lundi – Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "closed": "Fermé",
+    "services": {
+      "smileDesign": "Digital Smile Design",
+      "aligners": "Aligneurs Transparents",
+      "veneers": "Facettes en Porcelaine",
+      "whitening": "Blanchiment des Dents",
+      "guards": "Protège-Dents / Contention",
+      "sleep": "Dentisterie du Sommeil",
+      "facial": "Esthétique Faciale",
+      "other": "Autre"
+    }
+  },
+  "footer": {
+    "ctaHeadline": "Votre Sourire Parfait",
+    "ctaHeadlineGold": "Commence à Lugano",
+    "ctaSubtitle": "Traitements de luxe avec la précision suisse que vous méritez",
+    "bookConsultation": "Prendre rendez-vous",
+    "whatsapp": "WhatsApp",
+    "callClinic": "Appeler la clinique",
+    "clinic": "Clinique",
+    "treatments": "Traitements",
+    "social": "Réseaux sociaux",
+    "privacyPolicy": "Politique de confidentialité",
+    "sitemap": "Plan du site",
+    "terms": "Conditions d'utilisation",
+    "copyright": "Tous droits réservés.",
+    "description": "Où la précision suisse rencontre la beauté naturelle.",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires",
+    "weekdays": "Lun–Ven : 9h00 – 19h00",
+    "saturday": "Sam : 10h00 – 17h00",
+    "socialReviews": "Réseaux Sociaux & Avis",
+    "googleReviews": "5.0 Avis Google",
+    "pills": {
+      "dental": "Dentisterie de Luxe à Lugano",
+      "smile": "Digital Smile Design",
+      "facial": "Esthétique Faciale",
+      "care": "Soins Premium Suisses"
+    },
+    "links": {
+      "about": "À Propos",
+      "philosophy": "Philosophie",
+      "technology": "Technologie",
+      "team": "Équipe",
+      "smileDesign": "Conception de Sourire",
+      "veneers": "Facettes en Porcelaine",
+      "aligners": "Aligneurs Transparents",
+      "sleep": "Dentisterie du Sommeil",
+      "facial": "Esthétique Faciale"
+    }
+  },
+  "latin": {
+    "eyebrow": "Patients Internationaux",
+    "headline": "Expérience Dentaire de Luxe",
+    "headlineGold": "en Suisse",
+    "subheadline": "Transformations premium à Lugano, Paradiso",
+    "body": "Soins personnalisés, traitements de pointe et précision suisse. Votre voyage vers le sourire parfait commence ici.",
+    "body2": "Notre équipe multilingue est prête à vous accompagner depuis votre pays jusqu'à notre clinique. Nous coordonnons tout — de la consultation au traitement complet.",
+    "whatsapp": "Chat sur WhatsApp",
+    "consultation": "Prendre rendez-vous",
+    "features": {
+      "certified": "Clinique certifiée suisse",
+      "language": "Assistance multilingue",
+      "international": "Patients internationaux",
+      "stars": "Résultats 5 étoiles"
+    },
+    "idiomaLabel": "Langue",
+    "idiomaValue": "FR · ES · EN",
+    "locationLabel": "Lieu",
+    "locationValue": "Lugano, Suisse",
+    "attentionLabel": "Service",
+    "attentionValue": "Personnalisé & multilingue"
+  },
+  "common": {
+    "bookConsultation": "Prendre rendez-vous",
+    "learnMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "viewAll": "Voir tout"
+  }
+}
