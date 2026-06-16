@@ -3,11 +3,12 @@
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { stagger, fadeUp, LUXURY_EASE } from '@/lib/animations'
+import TiltCard from '@/components/animations/TiltCard'
 
 const teamMeta = [
-  { name: 'Dra. Andrea Calandrino', initials: 'AC', gradient: 'from-olive/15 via-olive/5 to-beige-light', accent: 'bg-olive' },
-  { name: 'Dr. Samperi Francesco',  initials: 'SF', gradient: 'from-gold/15 via-gold/5 to-beige-light',   accent: 'bg-gold' },
-  { name: 'Gaspare Ingoglia',       initials: 'GI', gradient: 'from-luxury-black/8 via-luxury-black/4 to-beige-light', accent: 'bg-luxury-black' },
+  { name: 'Dott. Andrea Calandrino', initials: 'AC', gradient: 'from-olive/15 via-olive/5 to-beige-light', accent: 'bg-olive' },
+  { name: 'Dott. Francesco Samper',  initials: 'FS', gradient: 'from-gold/15 via-gold/5 to-beige-light',   accent: 'bg-gold' },
+  { name: 'Gaspare Ingoglia',        initials: 'GI', gradient: 'from-luxury-black/8 via-luxury-black/4 to-beige-light', accent: 'bg-luxury-black' },
 ]
 
 export default function TeamSection() {
@@ -54,15 +55,16 @@ export default function TeamSection() {
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member, index) => (
-            <motion.article
+            <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15, ease: LUXURY_EASE }}
-              whileHover={{ y: -8, scale: 1.01 }}
-              className="group bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-olive/10 cursor-default"
-              style={{ willChange: 'transform' }}
+            >
+            <TiltCard intensity={8} className="h-full">
+            <article
+              className="group bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-olive/10 cursor-default h-full transition-shadow duration-500"
             >
               {/* Portrait area */}
               <div className={`relative h-72 bg-linear-to-br ${member.gradient} flex items-center justify-center overflow-hidden`}>
@@ -107,7 +109,9 @@ export default function TeamSection() {
                   ))}
                 </div>
               </div>
-            </motion.article>
+            </article>
+            </TiltCard>
+            </motion.div>
           ))}
         </div>
       </div>

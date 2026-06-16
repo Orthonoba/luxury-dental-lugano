@@ -4,18 +4,18 @@ import { motion } from 'framer-motion'
 
 const team = [
   {
-    name: 'Dott. Calandrino Andrea',
+    name: 'Dott. Andrea Calandrino',
     role: 'Odontoiatra — Direttrice Medica',
-    initials: 'CA',
+    initials: 'AC',
     bio: 'Fondatrice e Direttrice Medica di Luxury Dental Paradiso. La Dott.ssa Calandrino porta un approccio olistico, chirurgico e restaurativo a ogni caso — unendo la chirurgia orale avanzata al Digital Smile Design per realizzare trasformazioni complete e personalizzate. La sua filosofia è radicata nella convinzione che la maestria clinica e la visione artistica siano inscindibili.',
     credentials: ['Direttrice Medica', 'Chirurgia Orale e Maxillo-Facciale', 'Digital Smile Design Certificata'],
     accent: 'bg-olive',
     gradient: 'from-olive/15 via-olive/5 to-beige-light',
   },
   {
-    name: 'Dott. Samper Francesco',
+    name: 'Dott. Francesco Samper',
     role: 'Odontoiatra — Dentista Specialista',
-    initials: 'SF',
+    initials: 'FS',
     bio: 'Specialista in odontoiatria conservativa e protesica, il Dott. Samper porta una precisione meticolosa a ogni restauro. La sua esperienza spazia dalle faccette in porcellana alla terapia con allineatori fino alle complesse riabilitazioni complete della bocca. Convinto sostenitore dell\'odontoiatria a minima invasività — ottenere risultati massimi con la minima alterazione dei tessuti.',
     credentials: ['Specialista in Protesi', 'Odontoiatria Estetica', 'Allineatori Certificato'],
     accent: 'bg-gold',

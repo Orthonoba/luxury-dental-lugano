@@ -1,11 +1,40 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { motion, useScroll, useTransform, useMotionValue, useInView, animate } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { stagger, fadeUp, blurIn, LUXURY_EASE } from '@/lib/animations'
 import { Link } from '@/navigation'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
+
+// Counts up from 0 to `to` when the element enters the viewport
+function CountUp({ to, suffix = '', display }: { to: number; suffix?: string; display: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref, { once: true })
+  const count = useMotionValue(0)
+
+  useEffect(() => {
+    if (!isInView) return
+    const controls = animate(count, to, {
+      duration: 1.8,
+      ease: 'easeOut',
+      onUpdate: (v) => {
+        if (!ref.current) return
+        const n = Math.round(v)
+        // Preserve Swiss thousands format (1.200) for values >= 1000
+        const formatted = n >= 1000
+          ? `${Math.floor(n / 1000)}.${String(n % 1000).padStart(3, '0')}`
+          : String(n)
+        ref.current.textContent = formatted + suffix
+      },
+    })
+    return controls.stop
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView])
+
+  // Initial display while not yet in view (avoids flash of "0")
+  return <span ref={ref}>{display}</span>
+}
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -22,9 +51,9 @@ export default function HeroSection() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
   const stats = [
-    { value: '1.200+', label: t('stats.smiles') },
-    { value: '15+', label: t('stats.years') },
-    { value: '98%', label: t('stats.satisfaction') },
+    { display: '1.200+', to: 1200, suffix: '+', label: t('stats.smiles') },
+    { display: '15+',    to: 15,   suffix: '+', label: t('stats.years') },
+    { display: '98%',    to: 98,   suffix: '%', label: t('stats.satisfaction') },
   ]
 
   return (
@@ -175,7 +204,7 @@ export default function HeroSection() {
                   transition={{ delay: 1.2 + i * 0.15, ease: LUXURY_EASE, duration: 0.6 }}
                 >
                   <p className="font-display text-2xl font-bold text-gold leading-none mb-1.5">
-                    {stat.value}
+                    <CountUp to={stat.to} suffix={stat.suffix} display={stat.display} />
                   </p>
                   <p className="text-white/35 text-[9px] tracking-[0.2em] uppercase">{stat.label}</p>
                 </motion.div>
@@ -206,7 +235,9 @@ export default function HeroSection() {
                 transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -bottom-8 -left-8 bg-luxury-black/90 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl"
               >
-                <p className="font-display text-2xl font-bold text-gold leading-none mb-1">1.200+</p>
+                <p className="font-display text-2xl font-bold text-gold leading-none mb-1">
+                  <CountUp to={1200} suffix="+" display="1.200+" />
+                </p>
                 <p className="text-white/40 text-[9px] tracking-[0.2em] uppercase">{t('stats.smiles')}</p>
               </motion.div>
 
@@ -230,7 +261,7 @@ export default function HeroSection() {
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-display text-2xl font-bold text-gold leading-none mb-1.5">
-                {stat.value}
+                <CountUp to={stat.to} suffix={stat.suffix} display={stat.display} />
               </p>
               <p className="text-white/35 text-[10px] tracking-[0.2em] uppercase">{stat.label}</p>
             </div>

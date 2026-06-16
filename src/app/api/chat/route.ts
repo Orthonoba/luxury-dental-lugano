@@ -21,7 +21,7 @@ const FAQ = [
     keywords: ['international', 'abroad', 'travel', 'foreign', 'latin', 'english', 'tourist', 'dental tourism'],
   },
   {
-    a: 'We are located at Via Riva Paradiso 4, 6900 Paradiso / Lugano, Switzerland — directly on the lake promenade.',
+    a: 'We are located at Via Generale Guisan 5, 6900 Paradiso, Lugano, Switzerland.',
     keywords: ['address', 'location', 'where', 'directions', 'how to get', 'map', 'find you'],
   },
   {
@@ -37,7 +37,7 @@ const FAQ = [
     keywords: ['sedation', 'sleep dentistry', 'anxiety', 'fear', 'phobia', 'scared', 'nervous', 'calm'],
   },
   {
-    a: 'Our team includes Dr. Andrea Calandrino (Medical Director & Dentist) and Dr. Samperi Francesco. Both specialise in cosmetic dentistry, facial aesthetics, and digital smile design.',
+    a: 'Our team includes Dott. Andrea Calandrino (Medical Director & Dentist) and Dott. Francesco Samper. Both specialise in cosmetic dentistry, facial aesthetics, and digital smile design.',
     keywords: ['doctor', 'dentist', 'team', 'staff', 'who', 'dr', 'specialist', 'expert'],
   },
 ]
