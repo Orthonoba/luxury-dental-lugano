@@ -37,7 +37,7 @@ export default function PhilosophySection() {
               className="font-display font-bold text-luxury-black leading-[1.08] tracking-tight mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.75rem)' }}
             >
-              {t('headline1')}
+              {t('headline1')}{' '}
               <span className="block text-olive italic">{t('headline2')}</span>
             </motion.h2>
             <p className="text-luxury-black/55 text-lg leading-relaxed mb-6">

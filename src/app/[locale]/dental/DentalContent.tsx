@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ImagePlaceholder } from '@/components/ui'
+import FaqSection from '@/components/sections/FaqSection'
 
 const treatments = [
   {
@@ -212,6 +213,12 @@ export default function DentalContent() {
           </a>
         </div>
       </section>
+
+      {/* FAQ — Aesthetic Dentistry */}
+      <FaqSection category="dental" variant="light" />
+
+      {/* FAQ — Oral Rehabilitation */}
+      <FaqSection category="rehab" variant="dark" />
     </>
   )
 }

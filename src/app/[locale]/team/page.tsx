@@ -7,7 +7,7 @@ import TeamContent from './TeamContent'
 export const metadata: Metadata = {
   title: 'Our Team',
   description:
-    'Meet the specialists behind Luxury Dental Paradiso in Lugano. Dra. Andrea Calandrino, Dr. Samperi Francesco, and Gaspare Ingoglia — a team dedicated to your smile and well-being.',
+    'Meet the specialists behind Luxury Dental Paradiso in Lugano. Dott. Calandrino Andrea, Dott. Samper Francesco, and Gaspare Ingoglia — a team dedicated to your smile and well-being.',
 }
 
 export default function TeamPage() {

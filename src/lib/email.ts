@@ -118,7 +118,8 @@ export async function sendPatientConfirmation(data: PatientConfirmationData): Pr
           <p style="margin: 0; font-size: 13px; line-height: 2;">
             📞 <a href="tel:+41919945051" style="color: #6b7f3a; text-decoration: none;">+41 91 994 5051</a><br/>
             📧 <a href="mailto:info@luxurydental.ch" style="color: #6b7f3a; text-decoration: none;">info@luxurydental.ch</a><br/>
-            📍 Via Riva Paradiso 4, 6900 Paradiso, Lugano (TI)
+            📧 <a href="mailto:info@luxurydental-lugano.ch" style="color: #6b7f3a; text-decoration: none;">info@luxurydental-lugano.ch</a><br/>
+            📍 Via Generale Guisan 5, 6900 Paradiso, Lugano (TI)
           </p>
         </div>
         <p style="margin: 20px 0 0; font-size: 12px; color: #aaa; text-align: center;">
@@ -240,7 +241,8 @@ export async function sendBookingConfirmation(data: BookingConfirmationData): Pr
           <p style="margin: 0; font-size: 13px; line-height: 2;">
             📞 <a href="tel:+41919945051" style="color: #6b7f3a; text-decoration: none;">+41 91 994 5051</a><br/>
             📧 <a href="mailto:info@luxurydental.ch" style="color: #6b7f3a; text-decoration: none;">info@luxurydental.ch</a><br/>
-            📍 Via Riva Paradiso 4, 6900 Paradiso, Lugano (TI)
+            📧 <a href="mailto:info@luxurydental-lugano.ch" style="color: #6b7f3a; text-decoration: none;">info@luxurydental-lugano.ch</a><br/>
+            📍 Via Generale Guisan 5, 6900 Paradiso, Lugano (TI)
           </p>
         </div>
         <p style="margin: 20px 0 0; font-size: 12px; color: #aaa; text-align: center;">

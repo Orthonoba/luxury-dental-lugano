@@ -39,7 +39,7 @@
         "description": "Chaque traitement est exécuté avec une attention méticuleuse aux détails, alliant excellence clinique et vision artistique pour des résultats irréprochables et durables."
       },
       {
-        "title": "Beauté Naturelle",
+        "title": "Beauté Naturelle et Harmonieuse",
         "description": "Nous sublimions vos traits naturels en créant des résultats harmonieux, équilibrés et authentiquement vous — jamais excessifs, toujours raffinés."
       },
       {
@@ -332,5 +332,89 @@
     "learnMore": "En savoir plus",
     "contactUs": "Nous contacter",
     "viewAll": "Voir tout"
+  },
+  "faq": {
+    "eyebrow": "Questions Fréquentes",
+    "facialTitle": "Esthétique Faciale",
+    "dentalTitle": "Dentisterie Esthétique",
+    "rehabTitle": "Réhabilitation Orale",
+    "facial": [
+      {
+        "q": "Quels traitements d'esthétique faciale proposez-vous ?",
+        "a": "Nous proposons le nettoyage facial profond, le rajeunissement cutané, l'harmonie faciale, les traitements anti-âge et les thérapies hydratantes. Chaque protocole est conçu individuellement en fonction de votre type de peau, de votre structure faciale et de vos objectifs esthétiques."
+      },
+      {
+        "q": "Les traitements faciaux sont-ils douloureux ?",
+        "a": "La grande majorité de nos traitements faciaux est peu invasive et réalisée avec une anesthésie topique si nécessaire. La plupart des patients décrivent l'expérience comme confortable et relaxante."
+      },
+      {
+        "q": "Combien de temps durent les résultats des traitements faciaux ?",
+        "a": "Les résultats varient selon le traitement : les thérapies hydratantes offrent des bénéfices immédiats qui s'améliorent avec le temps, tandis que des traitements comme l'harmonie faciale peuvent durer de 12 à 18 mois. Le plan d'entretien recommandé est présenté lors de votre consultation personnalisée."
+      },
+      {
+        "q": "À partir de quel âge ces traitements peuvent-ils être réalisés ?",
+        "a": "Il n'existe pas d'âge minimum strict ; l'indication dépend des besoins individuels de chaque patient. Nous effectuons une évaluation complète lors de la consultation initiale pour déterminer le protocole le plus adapté."
+      },
+      {
+        "q": "De quel temps de récupération ai-je besoin ?",
+        "a": "La plupart des traitements faciaux ne nécessitent pas d'arrêt d'activité. Vous pouvez reprendre vos activités normales immédiatement. Les traitements plus intensifs peuvent entraîner une légère rougeur pendant 24 à 48 heures."
+      },
+      {
+        "q": "À quelle fréquence dois-je renouveler les traitements ?",
+        "a": "La fréquence dépend du traitement et de vos objectifs. Nous recommandons généralement une évaluation tous les 3 à 6 mois pour les traitements d'entretien. Votre médecin établira un plan de suivi personnalisé."
+      }
+    ],
+    "dental": [
+      {
+        "q": "Qu'est-ce que le Digital Smile Design (DSD) ?",
+        "a": "Le Digital Smile Design est une méthodologie avancée combinant la photographie clinique, l'analyse faciale et un logiciel spécialisé pour créer un aperçu 3D précis de votre nouveau sourire avant tout traitement. Vous pouvez approuver chaque détail avant qu'une seule dent ne soit touchée."
+      },
+      {
+        "q": "Les facettes en porcelaine sont-elles permanentes ?",
+        "a": "Les facettes en porcelaine sont une solution esthétique durable pouvant se maintenir en parfait état de 10 à 20 ans avec les soins appropriés. Elles offrent une longévité exceptionnelle par rapport à d'autres options dentaires esthétiques."
+      },
+      {
+        "q": "Combien de temps dure le traitement avec des aligneurs transparents ?",
+        "a": "La durée varie selon la complexité du cas, mais se situe généralement entre 6 et 18 mois. Lors de la consultation diagnostique, nous réalisons une analyse complète et vous présentons une simulation numérique du résultat final."
+      },
+      {
+        "q": "Le blanchiment professionnel endommage-t-il l'émail dentaire ?",
+        "a": "Non. Le blanchiment professionnel supervisé cliniquement utilise des concentrations de peroxyde contrôlées et sûres qui n'endommagent pas l'émail. Il est nettement plus sûr et plus efficace que les produits blanchissants disponibles dans le commerce."
+      },
+      {
+        "q": "En quoi la dentisterie esthétique se distingue-t-elle de la dentisterie conventionnelle ?",
+        "a": "La dentisterie esthétique combine précision clinique et sensibilité artistique pour optimiser à la fois la fonction et l'apparence de votre sourire. Chez Luxury Dental, chaque traitement est conçu en tenant compte de vos proportions faciales, de votre teint et de votre personnalité."
+      },
+      {
+        "q": "Quelles garanties offrez-vous sur les résultats ?",
+        "a": "Nous incluons le suivi post-traitement dans toutes nos procédures et offrons une garantie de satisfaction. Si le résultat ne correspond pas aux attentes convenues lors de la planification numérique, nous le révisons sans frais supplémentaires."
+      }
+    ],
+    "rehab": [
+      {
+        "q": "Qu'est-ce que la réhabilitation buccale complète ?",
+        "a": "La réhabilitation buccale complète est une approche globale qui restaure simultanément la fonction masticatoire, l'esthétique dentaire et la santé buccale générale. Elle est indiquée lorsque plusieurs dents sont affectées, qu'il y a une usure sévère de l'émail, une perte de dimension verticale ou des problèmes d'occlusion nécessitant une reconstruction globale."
+      },
+      {
+        "q": "Combien de temps dure une réhabilitation buccale complète ?",
+        "a": "Le temps dépend de la complexité du cas. Un traitement de réhabilitation complète peut durer de 3 à 12 mois, incluant les phases diagnostique, provisoire et définitive. Nous présentons un plan de traitement détaillé avec un calendrier lors de la consultation initiale."
+      },
+      {
+        "q": "Quand une réhabilitation orale est-elle nécessaire ?",
+        "a": "La réhabilitation est indiquée en cas d'usure dentaire sévère due au bruxisme, de perte de plusieurs dents, de problèmes fonctionnels de l'articulation temporomandibulaire (ATM), d'occlusions altérées ou lorsqu'une transformation esthétique complète de la bouche est souhaitée."
+      },
+      {
+        "q": "Quels matériaux utilisez-vous pour les restaurations ?",
+        "a": "Nous utilisons exclusivement des matériaux de dernière génération : céramiques haute résistance (disilicate de lithium, zircone), résines composites hautement esthétiques et alliages biocompatibles. Tous les matériaux sont conformes aux normes européennes de qualité et de biocompatibilité."
+      },
+      {
+        "q": "Est-il possible de combiner la réhabilitation avec des traitements esthétiques ?",
+        "a": "Absolument. Chez Luxury Dental, nous intégrons la réhabilitation fonctionnelle au Digital Smile Design pour obtenir le meilleur résultat esthétique et fonctionnel possible. Le résultat final est un sourire qui non seulement fonctionne parfaitement, mais est aussi visuellement impeccable."
+      },
+      {
+        "q": "Avez-vous des options pour les patients souffrant d'anxiété dentaire ?",
+        "a": "Oui. Nous proposons la sédation consciente pour toutes les procédures de réhabilitation, ce qui permet de réaliser des traitements extensifs avec plus de confort et moins de rendez-vous. Notre équipe est formée pour faire de chaque visite une expérience calme et positive."
+      }
+    ]
   }
 }

@@ -18,10 +18,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is Digital Smile Design?',
+      name: 'What is Digital Smile Design (DSD)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Digital Smile Design is an advanced 3D digital planning process that lets you preview your perfect smile before any treatment begins, analysing facial proportions, lip dynamics, and dental aesthetics.',
+        text: 'Digital Smile Design is an advanced methodology combining clinical photography, facial analysis, and specialist software to create a precise 3D preview of your new smile before any treatment begins. You can approve every detail before a single tooth is touched.',
       },
     },
     {
@@ -29,23 +29,55 @@ const faqJsonLd = {
       name: 'How long do porcelain veneers last?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porcelain veneers typically last 10–20 years with proper care. They are crafted from high-quality ceramic and bonded to minimal tooth preparation for a natural, durable result.',
+        text: 'Porcelain veneers are a long-lasting aesthetic solution that can last 10 to 20 years with proper care. They offer exceptional longevity compared with other cosmetic dental options.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Are clear aligners as effective as traditional braces?',
+      name: 'How long does treatment with clear aligners take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Clear aligners are highly effective for mild to moderate orthodontic corrections and offer the advantages of being removable and virtually invisible.',
+        text: 'Duration varies according to case complexity, but generally ranges from 6 to 18 months. During the diagnostic consultation we perform a full analysis and present a digital simulation of the final result.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How many shades whiter can professional teeth whitening achieve?',
+      name: 'Does professional teeth whitening damage enamel?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Professional in-office whitening at Luxury Dental can achieve up to 8 shades brighter in a single session, with clinically supervised results superior to over-the-counter alternatives.',
+        text: 'No. Clinically supervised professional whitening uses controlled, safe concentrations of peroxide that do not damage enamel. It is significantly safer and more effective than over-the-counter whitening products.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What guarantees do you offer on dental results?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We include post-treatment follow-up with all procedures and offer a satisfaction guarantee. If the outcome does not meet the expectations agreed upon during digital planning, we revise it at no additional cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is full-mouth rehabilitation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Full-mouth rehabilitation is a comprehensive approach that simultaneously restores chewing function, dental aesthetics, and general oral health. It is indicated when multiple teeth are affected, there is severe enamel wear, or bite problems requiring global reconstruction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does full-mouth rehabilitation take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A full rehabilitation treatment can take 3 to 12 months, including diagnostic, provisional, and definitive phases. We present a detailed treatment plan with a timeline at the initial consultation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you have options for patients with dental anxiety?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We offer conscious sedation for all rehabilitative procedures, allowing extensive treatments to be completed in greater comfort and with fewer appointments.',
       },
     },
   ],

@@ -39,7 +39,7 @@
         "description": "Ogni trattamento è eseguito con meticolosa attenzione al dettaglio, unendo eccellenza clinica e visione artistica per risultati impeccabili e duraturi."
       },
       {
-        "title": "Bellezza Naturale",
+        "title": "Bellezza Naturale e Armoniosa",
         "description": "Esaltiamo i tuoi tratti naturali, creando risultati armoniosi, equilibrati e autenticamente tuoi — mai esagerati, sempre raffinati."
       },
       {
@@ -332,5 +332,89 @@
     "learnMore": "Scopri di Più",
     "contactUs": "Contattaci",
     "viewAll": "Vedi Tutto"
+  },
+  "faq": {
+    "eyebrow": "Domande Frequenti",
+    "facialTitle": "Estetica Facciale",
+    "dentalTitle": "Odontoiatria Estetica",
+    "rehabTitle": "Riabilitazione Orale",
+    "facial": [
+      {
+        "q": "Quali trattamenti di estetica facciale offrite?",
+        "a": "Offriamo pulizia facciale profonda, ringiovanimento cutaneo, armonia facciale, trattamenti anti-age e terapie idratanti. Ogni protocollo è progettato individualmente in base al tipo di pelle, alla struttura facciale e agli obiettivi estetici del paziente."
+      },
+      {
+        "q": "I trattamenti facciali sono dolorosi?",
+        "a": "La grande maggioranza dei nostri trattamenti facciali è minimamente invasiva e viene eseguita con anestetico topico quando necessario. La maggior parte dei pazienti descrive l'esperienza come confortevole e rilassante."
+      },
+      {
+        "q": "Quanto durano i risultati dei trattamenti facciali?",
+        "a": "I risultati variano in base al trattamento: le terapie idratanti offrono benefici immediati che migliorano nel tempo, mentre trattamenti come l'armonia facciale possono durare da 12 a 18 mesi. Il piano di mantenimento consigliato viene illustrato durante la consulenza personalizzata."
+      },
+      {
+        "q": "Da che età si possono eseguire questi trattamenti?",
+        "a": "Non esiste un'età minima rigida; l'indicazione dipende dalle esigenze individuali di ogni paziente. Eseguiamo una valutazione completa nella consulenza iniziale per determinare il protocollo più adatto."
+      },
+      {
+        "q": "Di quanto tempo di recupero ho bisogno?",
+        "a": "La maggior parte dei trattamenti facciali non richiede tempi di recupero. Puoi riprendere le tue attività normali immediatamente. I trattamenti più intensivi possono causare un leggero arrossamento per 24-48 ore."
+      },
+      {
+        "q": "Con quale frequenza devo ripetere i trattamenti?",
+        "a": "La frequenza dipende dal trattamento e dai tuoi obiettivi. Consigliamo di norma una valutazione ogni 3-6 mesi per i trattamenti di mantenimento. Il tuo medico progetterà un piano di follow-up personalizzato."
+      }
+    ],
+    "dental": [
+      {
+        "q": "Cos'è il Digital Smile Design (DSD)?",
+        "a": "Il Digital Smile Design è una metodologia avanzata che combina fotografia clinica, analisi facciale e software specializzato per creare un'anteprima 3D precisa del tuo nuovo sorriso prima di iniziare qualsiasi trattamento. Puoi approvare ogni dettaglio prima che venga toccato un solo dente."
+      },
+      {
+        "q": "Le faccette in porcellana sono permanenti?",
+        "a": "Le faccette in porcellana sono una soluzione estetica duratura che può mantenersi in perfette condizioni tra 10 e 20 anni con la cura adeguata. Offrono una longevità eccezionale rispetto ad altre opzioni estetiche dentali."
+      },
+      {
+        "q": "Quanto dura il trattamento con allineatori trasparenti?",
+        "a": "La durata varia in base alla complessità del caso, ma generalmente oscilla tra 6 e 18 mesi. Durante la consulenza diagnostica eseguiamo un'analisi completa e ti presentiamo una simulazione digitale del risultato finale."
+      },
+      {
+        "q": "Lo sbiancamento professionale danneggia lo smalto?",
+        "a": "No. Lo sbiancamento professionale supervisionato clinicamente utilizza concentrazioni controllate e sicure di perossido che non danneggiano lo smalto. È significativamente più sicuro ed efficace dei prodotti sbiancanti disponibili in commercio."
+      },
+      {
+        "q": "In cosa si differenzia l'odontoiatria estetica da quella convenzionale?",
+        "a": "L'odontoiatria estetica combina precisione clinica con sensibilità artistica per ottimizzare sia la funzione che l'aspetto del tuo sorriso. Da Luxury Dental, ogni trattamento è progettato tenendo conto delle proporzioni facciali, del tono della pelle e della personalità del paziente."
+      },
+      {
+        "q": "Che garanzie offrite sui risultati?",
+        "a": "Includiamo il follow-up post-trattamento in tutte le procedure e offriamo una garanzia di soddisfazione. Se il risultato non soddisfa le aspettative concordate durante la pianificazione digitale, lo rivediamo senza costi aggiuntivi."
+      }
+    ],
+    "rehab": [
+      {
+        "q": "Cos'è la riabilitazione orale completa?",
+        "a": "La riabilitazione orale completa è un approccio integrale che ripristina simultaneamente la funzione masticatoria, l'estetica dentale e la salute orale generale. È indicata quando più denti sono compromessi, vi è grave usura dello smalto, perdita di dimensione verticale o problemi di occlusione che richiedono una ricostruzione globale."
+      },
+      {
+        "q": "Quanto tempo richiede una riabilitazione orale completa?",
+        "a": "Il tempo dipende dalla complessità del caso. Un trattamento di riabilitazione completa può richiedere da 3 a 12 mesi, includendo le fasi diagnostica, provvisoria e definitiva. Presentiamo un piano di trattamento dettagliato con cronogramma nella consulenza iniziale."
+      },
+      {
+        "q": "Quando è necessaria la riabilitazione orale?",
+        "a": "La riabilitazione è indicata in caso di grave usura dentale da bruxismo, perdita di più elementi dentari, problemi funzionali dell'articolazione temporomandibolare (ATM), occlusioni alterate o quando si desidera una trasformazione estetica completa della bocca."
+      },
+      {
+        "q": "Quali materiali utilizzate per le restaurazioni?",
+        "a": "Utilizziamo esclusivamente materiali di ultima generazione: ceramiche ad alta resistenza (disilicato di litio, zirconio), resine composite ad alta estetica e leghe biocompatibili. Tutti i materiali rispettano le normative europee di qualità e biocompatibilità."
+      },
+      {
+        "q": "È possibile combinare la riabilitazione con trattamenti estetici?",
+        "a": "Assolutamente. Da Luxury Dental integriamo la riabilitazione funzionale con il Digital Smile Design per ottenere il miglior risultato estetico e funzionale possibile. Il risultato finale è un sorriso che non solo funziona perfettamente, ma è anche visivamente impeccabile."
+      },
+      {
+        "q": "Avete opzioni per i pazienti con ansia dentale?",
+        "a": "Sì. Offriamo sedazione conscia per tutte le procedure riabilitative, che consente di eseguire trattamenti estesi con maggiore comfort e meno appuntamenti. Il nostro team è formato per rendere ogni visita un'esperienza tranquilla e positiva."
+      }
+    ]
   }
 }

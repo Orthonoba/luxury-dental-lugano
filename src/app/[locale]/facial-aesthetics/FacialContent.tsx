@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ImagePlaceholder } from '@/components/ui'
+import FaqSection from '@/components/sections/FaqSection'
 
 const treatments = [
   {
@@ -143,6 +144,9 @@ export default function FacialContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ — Facial Aesthetics */}
+      <FaqSection category="facial" variant="light" />
 
       {/* CTA */}
       <section className="py-24 bg-luxury-black">

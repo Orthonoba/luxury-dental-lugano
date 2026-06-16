@@ -29,6 +29,7 @@ export interface ClinicConfig {
     phone: string
     phoneSecondary?: string
     email: string
+    emailSecondary?: string
     /** Full wa.me WhatsApp URL e.g. https://wa.me/41919945051 */
     whatsapp: string
     address: {

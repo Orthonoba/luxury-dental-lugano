@@ -250,10 +250,18 @@ export default function Footer() {
                 </p>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
-                  className="text-white/40 text-xs hover:text-gold transition-colors"
+                  className="block text-white/40 text-xs hover:text-gold transition-colors"
                 >
                   {SITE_CONFIG.contact.email}
                 </a>
+                {SITE_CONFIG.contact.emailSecondary && (
+                  <a
+                    href={`mailto:${SITE_CONFIG.contact.emailSecondary}`}
+                    className="block text-white/30 text-xs mt-0.5 hover:text-gold transition-colors"
+                  >
+                    {SITE_CONFIG.contact.emailSecondary}
+                  </a>
+                )}
               </div>
               <div className="pt-2 border-t border-white/6">
                 <p className="text-[10px] tracking-[0.2em] text-white/20 uppercase font-medium mb-1.5">

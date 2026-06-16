@@ -39,7 +39,7 @@
         "description": "Jede Behandlung wird mit akribischer Liebe zum Detail ausgeführt und verbindet klinische Exzellenz mit künstlerischer Vision für makellose und dauerhafte Ergebnisse."
       },
       {
-        "title": "Natürliche Schönheit",
+        "title": "Natürliche & Harmonische Schönheit",
         "description": "Wir betonen Ihre natürlichen Züge und schaffen harmonische, ausgewogene und authentische Ergebnisse — niemals übertrieben, immer raffiniert."
       },
       {
@@ -332,5 +332,89 @@
     "learnMore": "Mehr erfahren",
     "contactUs": "Kontakt",
     "viewAll": "Alle anzeigen"
+  },
+  "faq": {
+    "eyebrow": "Häufig gestellte Fragen",
+    "facialTitle": "Gesichtsästhetik",
+    "dentalTitle": "Ästhetische Zahnheilkunde",
+    "rehabTitle": "Mundrehabilitation",
+    "facial": [
+      {
+        "q": "Welche gesichtsästhetischen Behandlungen bieten Sie an?",
+        "a": "Wir bieten tiefe Gesichtsreinigung, Hautverjüngung, Gesichtsharmonie, Anti-Aging-Behandlungen und Hydratationstherapien an. Jedes Protokoll wird individuell nach Ihrem Hauttyp, Ihrer Gesichtsstruktur und Ihren ästhetischen Zielen konzipiert."
+      },
+      {
+        "q": "Sind Gesichtsbehandlungen schmerzhaft?",
+        "a": "Die große Mehrzahl unserer Gesichtsbehandlungen ist minimal-invasiv und wird bei Bedarf mit Lokalanästhesie durchgeführt. Die meisten Patienten beschreiben die Erfahrung als angenehm und entspannend."
+      },
+      {
+        "q": "Wie lange halten die Ergebnisse an?",
+        "a": "Die Ergebnisse variieren je nach Behandlung: Hydratationstherapien bieten sofortige Vorteile, die sich mit der Zeit verbessern, während Behandlungen wie die Gesichtsharmonie 12 bis 18 Monate anhalten können. Den empfohlenen Pflegeplan erläutern wir in Ihrer persönlichen Beratung."
+      },
+      {
+        "q": "Ab welchem Alter können diese Behandlungen durchgeführt werden?",
+        "a": "Es gibt kein striktes Mindestalter; die Indikation hängt von den individuellen Bedürfnissen jedes Patienten ab. Bei der Erstberatung führen wir eine vollständige Bewertung durch, um das am besten geeignete Protokoll zu bestimmen."
+      },
+      {
+        "q": "Wie viel Erholungszeit benötige ich?",
+        "a": "Die meisten Gesichtsbehandlungen erfordern keine Ausfallzeit. Sie können sofort zu Ihren normalen Aktivitäten zurückkehren. Bei intensiveren Behandlungen kann es zu einer leichten Rötung für 24 bis 48 Stunden kommen."
+      },
+      {
+        "q": "Wie oft sollte ich die Behandlungen wiederholen?",
+        "a": "Die Häufigkeit hängt von der Behandlung und Ihren Zielen ab. Wir empfehlen in der Regel eine Bewertung alle 3 bis 6 Monate für Erhaltungsbehandlungen. Ihr Arzt wird einen individualisierten Nachsorgeplan erstellen."
+      }
+    ],
+    "dental": [
+      {
+        "q": "Was ist Digital Smile Design (DSD)?",
+        "a": "Digital Smile Design ist eine fortschrittliche Methodik, die klinische Fotografie, Gesichtsanalyse und Spezialsoftware kombiniert, um eine präzise 3D-Vorschau Ihres neuen Lächelns vor Beginn jeder Behandlung zu erstellen. Sie können jedes Detail genehmigen, bevor ein einziger Zahn berührt wird."
+      },
+      {
+        "q": "Sind Porzellanveneers dauerhaft?",
+        "a": "Porzellanveneers sind eine langlebige ästhetische Lösung, die bei richtiger Pflege 10 bis 20 Jahre halten kann. Sie bieten im Vergleich zu anderen kosmetischen Zahnbehandlungen eine außergewöhnliche Langlebigkeit."
+      },
+      {
+        "q": "Wie lange dauert die Behandlung mit transparenten Alignern?",
+        "a": "Die Dauer variiert je nach Fallkomplexität, beträgt aber im Allgemeinen 6 bis 18 Monate. Während der Diagnoseberatung führen wir eine vollständige Analyse durch und präsentieren Ihnen eine digitale Simulation des Endergebnisses."
+      },
+      {
+        "q": "Schädigt professionelles Zahnbleichen den Zahnschmelz?",
+        "a": "Nein. Klinisch überwachtes professionelles Bleichen verwendet kontrollierte, sichere Peroxidkonzentrationen, die den Zahnschmelz nicht schädigen. Es ist deutlich sicherer und effektiver als im Handel erhältliche Bleichprodukte."
+      },
+      {
+        "q": "Wie unterscheidet sich die ästhetische Zahnheilkunde von der konventionellen?",
+        "a": "Ästhetische Zahnheilkunde verbindet klinische Präzision mit künstlerischer Sensibilität, um sowohl die Funktion als auch das Aussehen Ihres Lächelns zu optimieren. Bei Luxury Dental wird jede Behandlung unter Berücksichtigung Ihrer Gesichtsanteile, Hautfarbe und Persönlichkeit konzipiert."
+      },
+      {
+        "q": "Welche Garantien bieten Sie auf Ergebnisse?",
+        "a": "Wir schließen die Nachsorge nach der Behandlung in alle Verfahren ein und bieten eine Zufriedenheitsgarantie. Wenn das Ergebnis nicht den bei der digitalen Planung vereinbarten Erwartungen entspricht, überarbeiten wir es ohne zusätzliche Kosten."
+      }
+    ],
+    "rehab": [
+      {
+        "q": "Was ist eine vollständige Mundrehabilitation?",
+        "a": "Die vollständige Mundrehabilitation ist ein umfassender Ansatz, der gleichzeitig die Kaufunktion, die Zahnästhetik und die allgemeine Mundgesundheit wiederherstellt. Sie ist angezeigt, wenn mehrere Zähne betroffen sind, ein schwerer Zahnschmelzverschleiß vorliegt, vertikale Dimension verloren gegangen ist oder Bissprobleme eine globale Rekonstruktion erfordern."
+      },
+      {
+        "q": "Wie lange dauert eine vollständige Mundrehabilitation?",
+        "a": "Die Zeit hängt von der Fallkomplexität ab. Eine vollständige Rehabilitationsbehandlung kann 3 bis 12 Monate dauern, einschließlich diagnostischer, provisorischer und definitiver Phasen. Bei der Erstberatung präsentieren wir einen detaillierten Behandlungsplan mit Zeitplan."
+      },
+      {
+        "q": "Wann ist eine Mundrehabilitation notwendig?",
+        "a": "Eine Rehabilitation ist angezeigt bei schwerem Zahnverschleiß durch Bruxismus, Verlust mehrerer Zähne, funktionellen Problemen des Kiefergelenks (KG), veränderten Bissen oder wenn eine vollständige ästhetische Transformation des Mundes gewünscht wird."
+      },
+      {
+        "q": "Welche Materialien verwenden Sie für Restaurationen?",
+        "a": "Wir verwenden ausschließlich modernste Materialien: hochfeste Keramiken (Lithiumdisilikat, Zirkoniumdioxid), ästhetische Komposit-Harze und biokompatible Legierungen. Alle Materialien entsprechen den europäischen Qualitäts- und Biokompatibilitätsnormen."
+      },
+      {
+        "q": "Kann ich Rehabilitation mit ästhetischen Behandlungen kombinieren?",
+        "a": "Absolut. Bei Luxury Dental integrieren wir die funktionale Rehabilitation mit dem Digital Smile Design, um das bestmögliche ästhetische und funktionale Ergebnis zu erzielen. Das Endergebnis ist ein Lächeln, das nicht nur perfekt funktioniert, sondern auch optisch makellos ist."
+      },
+      {
+        "q": "Haben Sie Optionen für Patienten mit Zahnarztangst?",
+        "a": "Ja. Wir bieten bewusste Sedierung für alle rehabilitativen Eingriffe an, was es ermöglicht, umfangreiche Behandlungen mit größerem Komfort und weniger Terminen durchzuführen. Unser Team ist darauf geschult, jeden Besuch zu einer ruhigen und positiven Erfahrung zu machen."
+      }
+    ]
   }
 }

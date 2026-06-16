@@ -39,7 +39,7 @@
         "description": "Cada tratamiento se ejecuta con meticulosa atención al detalle, combinando excelencia clínica y visión artística para resultados impecables y duraderos."
       },
       {
-        "title": "Belleza Natural",
+        "title": "Belleza Natural y Armónica",
         "description": "Realzamos tus rasgos naturales, creando resultados armoniosos, equilibrados y auténticamente tuyos — nunca exagerados, siempre refinados."
       },
       {
@@ -332,5 +332,89 @@
     "learnMore": "Saber Más",
     "contactUs": "Contáctanos",
     "viewAll": "Ver Todo"
+  },
+  "faq": {
+    "eyebrow": "Preguntas Frecuentes",
+    "facialTitle": "Estética Facial",
+    "dentalTitle": "Odontología Estética",
+    "rehabTitle": "Rehabilitación Oral",
+    "facial": [
+      {
+        "q": "¿Qué tratamientos de estética facial ofrecen?",
+        "a": "Ofrecemos limpieza facial profunda, rejuvenecimiento cutáneo, armonía facial, tratamientos antiedad y terapias hidratantes. Cada protocolo se diseña de forma personalizada según tu tipo de piel, estructura facial y objetivos estéticos."
+      },
+      {
+        "q": "¿Son dolorosos los tratamientos faciales?",
+        "a": "La gran mayoría de nuestros tratamientos faciales son mínimamente invasivos y se realizan con anestésico tópico cuando es necesario. La mayoría de los pacientes describen la experiencia como cómoda y relajante."
+      },
+      {
+        "q": "¿Cuánto duran los resultados de los tratamientos faciales?",
+        "a": "Los resultados varían según el tratamiento: las terapias hidratantes ofrecen beneficios inmediatos que mejoran con el tiempo, mientras que tratamientos como la armonía facial pueden durar de 12 a 18 meses. Te explicamos el mantenimiento recomendado en tu consulta personalizada."
+      },
+      {
+        "q": "¿A partir de qué edad se pueden realizar estos tratamientos?",
+        "a": "No existe una edad mínima estricta; la indicación depende de las necesidades individuales de cada paciente. Realizamos una valoración completa en la consulta inicial para determinar el protocolo más adecuado para ti."
+      },
+      {
+        "q": "¿Cuánto tiempo necesito para la recuperación?",
+        "a": "La mayoría de nuestros tratamientos faciales no requieren tiempo de recuperación. Puedes retomar tu actividad habitual inmediatamente. En tratamientos más intensivos puede haber un leve enrojecimiento durante 24 a 48 horas."
+      },
+      {
+        "q": "¿Con qué frecuencia debo repetir los tratamientos?",
+        "a": "La frecuencia depende del tratamiento y de tus objetivos. Generalmente recomendamos una valoración cada 3 a 6 meses para los tratamientos de mantenimiento. Tu médico te diseñará un plan de seguimiento personalizado."
+      }
+    ],
+    "dental": [
+      {
+        "q": "¿Qué es el Diseño de Sonrisa Digital (DSD)?",
+        "a": "El Diseño de Sonrisa Digital es una metodología avanzada que combina fotografía clínica, análisis facial y software especializado para crear una previsualización en 3D de tu nueva sonrisa antes de comenzar cualquier tratamiento. Puedes aprobar cada detalle antes de que toquemos un solo diente."
+      },
+      {
+        "q": "¿Las carillas de porcelana son permanentes?",
+        "a": "Las carillas de porcelana son una solución estética duradera que puede mantenerse en perfectas condiciones entre 10 y 20 años con el cuidado adecuado. Ofrecen una longevidad excepcional comparadas con otras opciones estéticas dentales."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el tratamiento con alineadores transparentes?",
+        "a": "La duración varía según la complejidad del caso, pero en general oscila entre 6 y 18 meses. Durante la consulta de diagnóstico realizamos un análisis completo y te mostramos una simulación digital del resultado final."
+      },
+      {
+        "q": "¿El blanqueamiento profesional daña el esmalte dental?",
+        "a": "No. El blanqueamiento profesional supervisado clínicamente utiliza concentraciones controladas de peróxido que no dañan el esmalte. Es significativamente más seguro y eficaz que los productos de blanqueamiento de venta libre disponibles en el mercado."
+      },
+      {
+        "q": "¿En qué se diferencia la odontología estética de la odontología convencional?",
+        "a": "La odontología estética combina precisión clínica con sensibilidad artística para optimizar tanto la función como la apariencia de tu sonrisa. En Luxury Dental, cada tratamiento se diseña teniendo en cuenta las proporciones faciales, el tono de piel y la personalidad del paciente."
+      },
+      {
+        "q": "¿Qué garantías ofrecen sobre los resultados?",
+        "a": "Incluimos seguimiento post-tratamiento en todos nuestros procedimientos y ofrecemos una garantía de satisfacción. Si el resultado no cumple las expectativas acordadas durante la planificación digital, lo revisamos sin coste adicional."
+      }
+    ],
+    "rehab": [
+      {
+        "q": "¿Qué es la rehabilitación oral completa?",
+        "a": "La rehabilitación oral completa es un enfoque integral que restaura de forma simultánea la función masticatoria, la estética dental y la salud bucal general. Está indicada cuando hay varias piezas afectadas, desgaste severo del esmalte, pérdida de dimensión vertical o problemas de mordida que requieren una reconstrucción global."
+      },
+      {
+        "q": "¿Cuánto tiempo lleva una rehabilitación oral completa?",
+        "a": "El tiempo depende de la complejidad del caso. Un tratamiento de rehabilitación completa puede durar entre 3 y 12 meses, incluyendo las fases de diagnóstico, provisionales y definitiva. Te presentamos un plan de tratamiento detallado con cronograma en la consulta inicial."
+      },
+      {
+        "q": "¿Cuándo es necesaria la rehabilitación oral?",
+        "a": "La rehabilitación está indicada en casos de desgaste dental severo por bruxismo, pérdida de múltiples piezas, problemas funcionales de la articulación temporomandibular (ATM), mordidas alteradas o cuando se desea una transformación estética completa de la boca."
+      },
+      {
+        "q": "¿Qué materiales utilizan para las restauraciones?",
+        "a": "Utilizamos materiales de última generación: cerámica de alta resistencia (disilicato de litio, zirconio), resinas compuestas de alta estética y aleaciones biocompatibles. Todos los materiales cumplen las normativas europeas de calidad y biocompatibilidad."
+      },
+      {
+        "q": "¿Es posible combinar la rehabilitación con tratamientos estéticos?",
+        "a": "Absolutamente. En Luxury Dental integramos la rehabilitación funcional con el Diseño de Sonrisa Digital para obtener el mejor resultado estético y funcional posible. El resultado final es una sonrisa que no solo funciona perfectamente, sino que también es visualmente impecable."
+      },
+      {
+        "q": "¿Tienen opciones para pacientes con ansiedad dental?",
+        "a": "Sí. Ofrecemos sedación consciente para todos los procedimientos rehabilitadores, lo que permite realizar tratamientos extensos con mayor comodidad y en menos citas. Nuestro equipo está formado para hacer de cada visita una experiencia tranquila y positiva."
+      }
+    ]
   }
 }
