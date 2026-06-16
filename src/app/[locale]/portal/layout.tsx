@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import { getSession } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import PortalNav from '@/components/portal/PortalNav'
+
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+}
 
 export default async function PortalLayout({
   children,
