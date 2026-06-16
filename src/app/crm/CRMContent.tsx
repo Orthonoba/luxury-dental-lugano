@@ -201,6 +201,13 @@ export default function CRMContent({ authorized, leads, messages, subscribers }:
           <p className="text-white/30 text-[11px] mt-0.5">Luxury Dental Paradiso</p>
         </div>
         <div className="ml-auto flex items-center gap-4 text-white/30 text-xs">
+          <a
+            href="/crm/patients"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/20 text-gold/70 text-[10px] tracking-[0.15em] uppercase hover:bg-gold/10 hover:text-gold transition-colors"
+          >
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="5.5" cy="3.5" r="2" stroke="currentColor" strokeWidth="1.3"/><path d="M1.5 9c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/></svg>
+            Patient Portal
+          </a>
           <span>{leads.length} leads</span>
           <span>·</span>
           <span>{messages.length} messages</span>
